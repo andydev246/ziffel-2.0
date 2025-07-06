@@ -32,6 +32,11 @@ public class RLPromptGenerator {
         public String getExpectedContains() {
             return expectedContains;
         }
+
+        @Override
+        public String toString() {
+            return "[prompt=\"" + prompt + "\", intent=\"" + intent + "\", expectedContains=\"" + expectedContains + "\"]";
+        }
     }
 
     public static List<PromptTestCase> generateTestCases(
@@ -39,7 +44,7 @@ public class RLPromptGenerator {
             String intent,
             String expectedContains
     ) {
-        List<PromptTestCase> cases = new ArrayList<PromptTestCase>();
+        List<PromptTestCase> cases = new ArrayList<>();
         List<String> generated = generateCombinations(rlTemplate);
         for (String prompt : generated) {
             cases.add(new PromptTestCase(prompt, intent, expectedContains));
@@ -48,8 +53,8 @@ public class RLPromptGenerator {
     }
 
     private static List<String> generateCombinations(Map<String, List<String>> template) {
-        List<String> result = new ArrayList<String>();
-        build(template, new ArrayList<String>(template.keySet()), 0, "", result);
+        List<String> result = new ArrayList<>();
+        build(template, new ArrayList<>(template.keySet()), 0, "", result);
         return result;
     }
 
@@ -66,9 +71,8 @@ public class RLPromptGenerator {
         }
     }
 
-    // New multi-turn conversation generator
     public static List<List<PromptTestCase>> generateConversationPaths(FsmDefinition fsm, String startState) {
-        List<List<PromptTestCase>> conversations = new ArrayList<List<PromptTestCase>>();
+        List<List<PromptTestCase>> conversations = new ArrayList<>();
         walkFsm(fsm, startState, new ArrayList<>(), conversations);
         return conversations;
     }
@@ -78,13 +82,13 @@ public class RLPromptGenerator {
                                 List<List<PromptTestCase>> allPaths) {
         FsmState state = fsm.states.get(currentState);
         if (state == null || state.transitions == null || state.transitions.isEmpty()) {
-            allPaths.add(new ArrayList<>(currentPath)); // end of conversation
+            allPaths.add(new ArrayList<>(currentPath)); // End of path
             return;
         }
 
         for (Map.Entry<String, FsmTransition> entry : state.transitions.entrySet()) {
-            String nextState = entry.getKey();
             FsmTransition transition = entry.getValue();
+            String nextState = transition.next;  // ✅ Correctly use the actual target state
 
             List<PromptTestCase> prompts = transition.rlTemplate != null
                     ? generateTestCases(transition.rlTemplate, transition.intent, transition.expectedContains)

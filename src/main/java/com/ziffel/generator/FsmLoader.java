@@ -22,6 +22,7 @@ public class FsmLoader {
         public String prompt;
         public String expectedContains;
         public Map<String, List<String>> rlTemplate;
+        public String next;
     }
 
     public static FsmDefinition loadFromFile(String filePath) throws Exception {

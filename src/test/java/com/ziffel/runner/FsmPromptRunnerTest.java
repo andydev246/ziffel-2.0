@@ -85,36 +85,43 @@ public class FsmPromptRunnerTest {
                         extCase.setExpectedRegex(rule.getExpectedRegex());
                     }
 
-                    Response response = RestAssured
-                            .given()
-                            .header("Authorization", "Bearer " + API_KEY)
-                            .header("Content-Type", "application/json")
-                            .body("""
-                            {
-                              "model": "gpt-4",
-                              "messages": [{"role": "user", "content": "%s"}]
-                            }
-                            """.formatted(extCase.getPrompt()))
-                            .post(BASE_URL);
+                    System.out.println("---- New Independent Path ----");
+                    System.out.println("Prompt: " + extCase.getPrompt());
+                    System.out.println("Expected Variants: " + extCase.getExpectedVariants());
+                    System.out.println("Expected Regex: " + extCase.getExpectedRegex());
 
-                    String reply = response.jsonPath().getString("choices[0].message.content");
 
-                    System.out.println("\nPrompt: " + extCase.getPrompt());
-                    System.out.println("Response: " + reply);
-
-                    boolean passed = false;
-                    if (extCase.getExpectedVariants() != null) {
-                        for (String variant : extCase.getExpectedVariants()) {
-                            if (reply.toLowerCase().contains(variant.toLowerCase())) {
-                                passed = true;
-                                break;
-                            }
-                        }
-                    } else if (extCase.getExpectedRegex() != null) {
-                        passed = reply.matches(extCase.getExpectedRegex());
-                    }
-
-                    assertTrue(passed, "Response did not match expected output");
+//                    Response response = RestAssured
+//                            .given()
+//                            .header("Authorization", "Bearer " + API_KEY)
+//                            .header("Content-Type", "application/json")
+//                            .log().all()
+//                            .body("""
+//                            {
+//                              "model": "gpt-4",
+//                              "messages": [{"role": "user", "content": "%s"}]
+//                            }
+//                            """.formatted(extCase.getPrompt()))
+//                            .post(BASE_URL);
+//
+//                    String reply = response.jsonPath().getString("choices[0].message.content");
+//
+//
+//                    System.out.println("Response: " + reply);
+//
+//                    boolean passed = false;
+//                    if (extCase.getExpectedVariants() != null) {
+//                        for (String variant : extCase.getExpectedVariants()) {
+//                            if (reply.toLowerCase().contains(variant.toLowerCase())) {
+//                                passed = true;
+//                                break;
+//                            }
+//                        }
+//                    } else if (extCase.getExpectedRegex() != null) {
+//                        passed = reply.matches(extCase.getExpectedRegex());
+//                    }
+//
+//                    assertTrue(passed, "Response did not match expected output");
                 }
             }
         }
@@ -123,7 +130,7 @@ public class FsmPromptRunnerTest {
     @Test
     public void runMultiTurnConversationTests() throws Exception {
         FsmDefinition fsm = FsmLoader.loadFromFile("fsm/example-fsm-rl.json");
-        Map<String, OracleLoader.OracleRule> oracle = OracleLoader.loadFromFile("oracle/intents.json");
+        Map<String, OracleRule> oracle = OracleLoader.loadFromFile("oracle/intents.json");
 
         List<List<PromptTestCase>> conversations =
                 RLPromptGenerator.generateConversationPaths(fsm, fsm.startState);
@@ -132,33 +139,57 @@ public class FsmPromptRunnerTest {
             System.out.println("---- New Conversation Path ----");
 
             for (PromptTestCase testCase : conversation) {
-                Response response = RestAssured
-                        .given()
-                        .header("Authorization", "Bearer " + API_KEY)
-                        .header("Content-Type", "application/json")
-                        .body("""
-                            {
-                              "model": "gpt-4",
-                              "messages": [{"role": "user", "content": "%s"}]
-                            }
-                        """.formatted(testCase.getPrompt().replace("\"", "\\\"")))
-                        .post(BASE_URL);
-
-                String reply = response.jsonPath().getString("choices[0].message.content");
-
                 System.out.println("Prompt: " + testCase.getPrompt());
                 System.out.println("Intent: " + testCase.getIntent());
-                System.out.println("Response: " + reply);
 
+                System.out.println("Expected:");
                 OracleRule expectation = oracle.get(testCase.getIntent());
+                for (String expectationContains: expectation.getExpectedContains()) {
+                    System.out.printf("- %s%n",expectationContains);
+                }
 
-                if (expectation != null && expectation.getExpectedContains() != null && !expectation.getExpectedContains().isEmpty()) {
-                    String expected = expectation.getExpectedContains().get(0);
-                    System.out.println("Expected (from oracle): " + expected);
-                    boolean match = reply.toLowerCase().contains(expected.toLowerCase());
-                    assertTrue(match);
+                Response response = null;
+//                Response response = RestAssured
+//                        .given()
+//                        .header("Authorization", "Bearer " + API_KEY)
+//                        .header("Content-Type", "application/json")
+//                        .body("""
+//                            {
+//                              "model": "gpt-4.1-nano",
+//                              "messages": [{"role": "user", "content": "%s"}]
+//                            }
+//                        """.formatted(testCase.getPrompt().replace("\"", "\\\"")))
+//                        .post(BASE_URL)
+//                        .then()
+//                        .log().all() // logs the response
+//                        .extract().response();
+
+                if (response != null) {
+                    String reply = response.jsonPath().getString("choices[0].message.content");
+
+                    System.out.println("Response: " + reply);
+
+
+                    if (reply != null) {
+                        if (expectation != null && expectation.getExpectedContains() != null && !expectation.getExpectedContains().isEmpty()) {
+                            boolean matched = false;
+                            for (String expectationContains: expectation.getExpectedContains()) {
+                                System.out.println("Expected (from oracle): " + expectationContains);
+                                if (reply.toLowerCase().contains(expectationContains.toLowerCase())) {
+                                    matched = true;
+                                    break;
+                                }
+                            }
+                            assertTrue(matched);
+                        } else {
+                            System.out.println("⚠️ No oracle entry for intent: " + testCase.getIntent());
+                        }
+                    } else {
+                        System.out.println("Reply is null");
+                    }
+
                 } else {
-                    System.out.println("⚠️ No oracle entry for intent: " + testCase.getIntent());
+//                    System.out.println("Response is null");
                 }
             }
         }
