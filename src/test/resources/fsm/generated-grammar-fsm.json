@@ -1,0 +1,85 @@
+{
+  "startState" : "Start",
+  "states" : {
+    "Start" : {
+      "transitions" : {
+        "askassistance" : {
+          "intent" : "business.inquiry",
+          "rlTemplate" : {
+            "prefix" : [ "", "Hey", "Hi" ],
+            "action" : [ "need", "want", "looking for" ],
+            "object" : [ "help", "information" ]
+          },
+          "expectedContains" : "general help",
+          "next" : "Question1"
+        }
+      }
+    },
+    "FollowUp1" : {
+      "transitions" : {
+        "clarifyinformation" : {
+          "intent" : "general.inquiry",
+          "rlTemplate" : {
+            "prefix" : [ "", "Hey", "Hi" ],
+            "action" : [ "need", "want", "looking for" ],
+            "object" : [ "help", "information" ]
+          },
+          "expectedContains" : "general help",
+          "next" : "End"
+        }
+      }
+    },
+    "Question2" : {
+      "transitions" : {
+        "clarifyinformation" : {
+          "intent" : "support.request",
+          "rlTemplate" : {
+            "prefix" : [ "", "Hey", "Hi" ],
+            "action" : [ "need", "want", "looking for" ],
+            "object" : [ "help", "information" ]
+          },
+          "expectedContains" : "support assistance",
+          "next" : "Solution1"
+        }
+      }
+    },
+    "Confirmation3" : {
+      "transitions" : {
+        "reportinformation" : {
+          "intent" : "product.information",
+          "rlTemplate" : {
+            "prefix" : [ "", "Hey", "Hi" ],
+            "action" : [ "need", "want", "looking for" ],
+            "object" : [ "help", "information" ]
+          },
+          "expectedContains" : "product details",
+          "next" : "Problem1"
+        }
+      }
+    },
+    "End" : {
+      "transitions" : {
+        "reportdetails" : {
+          "intent" : "business.inquiry",
+          "rlTemplate" : {
+            "prefix" : [ "", "Hey", "Hi" ],
+            "action" : [ "need", "want", "looking for" ],
+            "object" : [ "help", "information" ]
+          },
+          "expectedContains" : "general help",
+          "next" : "Problem1"
+        },
+        "confirmdetails" : {
+          "intent" : "business.inquiry",
+          "rlTemplate" : {
+            "prefix" : [ "", "Hey", "Hi" ],
+            "action" : [ "need", "want", "looking for" ],
+            "object" : [ "help", "information" ]
+          },
+          "expectedContains" : "general help",
+          "next" : "End"
+        }
+      }
+    }
+  }
+}

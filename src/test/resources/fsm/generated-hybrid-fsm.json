@@ -1,0 +1,68 @@
+{
+  "startState": "SoftwaretestingState",
+  "states": {
+    "SoftwaretestingState": {
+      "transitions": {
+        "whatQuestion": {
+          "intent": "software_testing.definition.request",
+          "expectedContains": "software testing",
+          "rlTemplate": {
+            "question": ["What is Software testing?"]
+          },
+          "next": "QualityassuranceState"
+        },
+        "howQuestion": {
+          "intent": "software_testing.process.request",
+          "expectedContains": "software testing",
+          "rlTemplate": {
+            "question": ["How does Software testing work?"]
+          },
+          "next": "QualityassuranceState"
+        }
+      }
+    },
+    "QualityassuranceState": {
+      "transitions": {
+        "whatQuestion": {
+          "intent": "quality_assurance.definition.request",
+          "expectedContains": "quality assurance",
+          "rlTemplate": {
+            "question": ["What is Quality assurance?"]
+          },
+          "next": "AutomationState"
+        },
+        "howQuestion": {
+          "intent": "quality_assurance.process.request",
+          "expectedContains": "quality assurance",
+          "rlTemplate": {
+            "question": ["How does Quality assurance work?"]
+          },
+          "next": "AutomationState"
+        }
+      }
+    },
+    "AutomationState": {
+      "transitions": {
+        "whatQuestion": {
+          "intent": "automation.definition.request",
+          "expectedContains": "automation",
+          "rlTemplate": {
+            "question": ["What is Automation?"]
+          },
+          "next": "End"
+        },
+        "howQuestion": {
+          "intent": "automation.process.request",
+          "expectedContains": "automation",
+          "rlTemplate": {
+            "question": ["How does Automation work?"]
+          },
+          "next": "End"
+        }
+      }
+    },
+    "End": {
+      "transitions": {}
+    }
+  }
+}

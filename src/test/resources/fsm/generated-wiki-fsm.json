@@ -1,0 +1,92 @@
+{
+  "startState": "ArtificialintelligenceState",
+  "states": {
+    "ArtificialintelligenceState": {
+      "transitions": {
+        "whatQuestion": {
+          "intent": "artificial_intelligence.definition.request",
+          "expectedContains": "artificial intelligence",
+          "rlTemplate": {
+            "question": ["What is Artificial intelligence?","Can you explain Artificial intelligence?","Tell me about Artificial intelligence","I want to know more about Artificial intelligence"]
+          },
+          "next": "MachinelearningState"
+        },
+        "howQuestion": {
+          "intent": "artificial_intelligence.process.request",
+          "expectedContains": "artificial intelligence",
+          "rlTemplate": {
+            "question": ["How does Artificial intelligence work?","How can I use Artificial intelligence?","How do I get started with Artificial intelligence?","How is Artificial intelligence implemented?"]
+          },
+          "next": "MachinelearningState"
+        },
+        "whyQuestion": {
+          "intent": "artificial_intelligence.reason.request",
+          "expectedContains": "artificial intelligence",
+          "rlTemplate": {
+            "question": ["Why is Artificial intelligence important?","Why should I care about Artificial intelligence?","Why does Artificial intelligence matter?","Why was Artificial intelligence created?"]
+          },
+          "next": "MachinelearningState"
+        }
+      }
+    },
+    "MachinelearningState": {
+      "transitions": {
+        "whatQuestion": {
+          "intent": "machine_learning.definition.request",
+          "expectedContains": "machine learning",
+          "rlTemplate": {
+            "question": ["What is Machine learning?","Can you explain Machine learning?","Tell me about Machine learning","I want to know more about Machine learning"]
+          },
+          "next": "BlockchainState"
+        },
+        "howQuestion": {
+          "intent": "machine_learning.process.request",
+          "expectedContains": "machine learning",
+          "rlTemplate": {
+            "question": ["How does Machine learning work?","How can I use Machine learning?","How do I get started with Machine learning?","How is Machine learning implemented?"]
+          },
+          "next": "BlockchainState"
+        },
+        "whyQuestion": {
+          "intent": "machine_learning.reason.request",
+          "expectedContains": "machine learning",
+          "rlTemplate": {
+            "question": ["Why is Machine learning important?","Why should I care about Machine learning?","Why does Machine learning matter?","Why was Machine learning created?"]
+          },
+          "next": "BlockchainState"
+        }
+      }
+    },
+    "BlockchainState": {
+      "transitions": {
+        "whatQuestion": {
+          "intent": "blockchain.definition.request",
+          "expectedContains": "blockchain",
+          "rlTemplate": {
+            "question": ["What is Blockchain?","Can you explain Blockchain?","Tell me about Blockchain","I want to know more about Blockchain"]
+          },
+          "next": "End"
+        },
+        "howQuestion": {
+          "intent": "blockchain.process.request",
+          "expectedContains": "blockchain",
+          "rlTemplate": {
+            "question": ["How does Blockchain work?","How can I use Blockchain?","How do I get started with Blockchain?","How is Blockchain implemented?"]
+          },
+          "next": "End"
+        },
+        "whyQuestion": {
+          "intent": "blockchain.reason.request",
+          "expectedContains": "blockchain",
+          "rlTemplate": {
+            "question": ["Why is Blockchain important?","Why should I care about Blockchain?","Why does Blockchain matter?","Why was Blockchain created?"]
+          },
+          "next": "End"
+        }
+      }
+    },
+    "End": {
+      "transitions": {}
+    }
+  }
+}

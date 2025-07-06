@@ -90,15 +90,19 @@ public class RLPromptGenerator {
             FsmTransition transition = entry.getValue();
             String nextState = transition.next;  // ✅ Correctly use the actual target state
 
-            List<PromptTestCase> prompts = transition.rlTemplate != null
-                    ? generateTestCases(transition.rlTemplate, transition.intent, transition.expectedContains)
-                    : List.of(new PromptTestCase(transition.prompt, transition.intent, transition.expectedContains));
-
-            for (PromptTestCase testCase : prompts) {
-                currentPath.add(testCase);
-                walkFsm(fsm, nextState, currentPath, allPaths);
-                currentPath.remove(currentPath.size() - 1);
+            // Use only the first question from rlTemplate to avoid duplicate paths
+            String prompt;
+            if (transition.rlTemplate != null && transition.rlTemplate.containsKey("question")) {
+                List<String> questions = transition.rlTemplate.get("question");
+                prompt = questions.isEmpty() ? "Tell me about this topic" : questions.get(0);
+            } else {
+                prompt = transition.prompt != null ? transition.prompt : "Tell me about this topic";
             }
+            
+            PromptTestCase testCase = new PromptTestCase(prompt, transition.intent, transition.expectedContains);
+            currentPath.add(testCase);
+            walkFsm(fsm, nextState, currentPath, allPaths);
+            currentPath.remove(currentPath.size() - 1);
         }
     }
 }

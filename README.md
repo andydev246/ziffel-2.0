@@ -36,7 +36,7 @@ src/
 
 ## 🛠️ How It Works
 
-### 1. Define FSM Flow
+### 1. Define FSM Flow (Manual or Auto-Generated)
 In `fsm/example-fsm-rl.json`:
 ```json
 "transitions": {
@@ -67,6 +67,45 @@ mvn test
 * Responses are matched against oracles
 * Failures indicate unexpected or degraded model behavior
 
+## 🤖 Auto-Generation Features
+
+### Grammar-Based FSM Generation
+Generate FSMs using predefined grammar templates:
+
+```bash
+# Using CLI
+java -cp target/classes com.ziffel.cli.FsmGeneratorCLI grammar fsm.json 5 3 0.4
+
+# Using Java API
+GrammarBasedFsmGenerator generator = new GrammarBasedFsmGenerator();
+FsmGenerationConfig config = new FsmGenerationConfig();
+config.maxStates = 5;
+config.maxTransitionsPerState = 3;
+String fsmJson = generator.generateFsmJson(config);
+```
+
+### Wikipedia-Based Content Generation
+Generate domain-specific FSMs using Wikipedia content:
+
+```bash
+# Using CLI
+java -cp target/classes com.ziffel.cli.FsmGeneratorCLI wikipedia "artificial intelligence" 3 fsm.json oracle.json
+
+# Using Java API
+WikipediaContentGenerator generator = new WikipediaContentGenerator();
+List<WikiTopic> topics = generator.searchAndExtractTopics("machine learning", 5);
+String fsmJson = generator.generateDomainSpecificFsm(topics, config);
+Map<String, Object> oracle = generator.generateOracleFromTopics(topics, config);
+```
+
+### Hybrid Generation
+Combine grammar templates with Wikipedia content:
+
+```bash
+# Using CLI
+java -cp target/classes com.ziffel.cli.FsmGeneratorCLI hybrid "software testing" 2 fsm.json oracle.json
+```
+
 ## 🔮 Why This Matters
 LLMs like ChatGPT often respond fluently—but not always correctly. Ziffel 2.0 focuses on semantic validation by explicitly modeling the expected intent and content of responses.
 
@@ -76,6 +115,9 @@ LLMs like ChatGPT often respond fluently—but not always correctly. Ziffel 2.0 
 * JUnit 5
 * Rest Assured
 * Jackson (for JSON)
+* Jsoup (for web scraping)
+* Stanford CoreNLP (for NLP)
+* Apache OpenNLP (for grammar processing)
 
 ## 🚀 Roadmap
 * Support for multi-turn conversations
