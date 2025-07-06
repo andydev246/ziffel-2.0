@@ -1,5 +1,5 @@
 {
-  "initialState": "Neutral",
+  "startState": "Neutral",
   "states": {
     "Neutral": {
       "transitions": {

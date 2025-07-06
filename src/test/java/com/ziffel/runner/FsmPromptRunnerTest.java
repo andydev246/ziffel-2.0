@@ -119,4 +119,49 @@ public class FsmPromptRunnerTest {
             }
         }
     }
+
+    @Test
+    public void runMultiTurnConversationTests() throws Exception {
+        FsmDefinition fsm = FsmLoader.loadFromFile("fsm/example-fsm-rl.json");
+        Map<String, OracleLoader.OracleRule> oracle = OracleLoader.loadFromFile("oracle/intents.json");
+
+        List<List<PromptTestCase>> conversations =
+                RLPromptGenerator.generateConversationPaths(fsm, fsm.startState);
+
+        for (List<PromptTestCase> conversation : conversations) {
+            System.out.println("---- New Conversation Path ----");
+
+            for (PromptTestCase testCase : conversation) {
+                Response response = RestAssured
+                        .given()
+                        .header("Authorization", "Bearer " + API_KEY)
+                        .header("Content-Type", "application/json")
+                        .body("""
+                            {
+                              "model": "gpt-4",
+                              "messages": [{"role": "user", "content": "%s"}]
+                            }
+                        """.formatted(testCase.getPrompt().replace("\"", "\\\"")))
+                        .post(BASE_URL);
+
+                String reply = response.jsonPath().getString("choices[0].message.content");
+
+                System.out.println("Prompt: " + testCase.getPrompt());
+                System.out.println("Intent: " + testCase.getIntent());
+                System.out.println("Response: " + reply);
+
+                OracleRule expectation = oracle.get(testCase.getIntent());
+
+                if (expectation != null && expectation.getExpectedContains() != null && !expectation.getExpectedContains().isEmpty()) {
+                    String expected = expectation.getExpectedContains().get(0);
+                    System.out.println("Expected (from oracle): " + expected);
+                    boolean match = reply.toLowerCase().contains(expected.toLowerCase());
+                    assertTrue(match);
+                } else {
+                    System.out.println("⚠️ No oracle entry for intent: " + testCase.getIntent());
+                }
+            }
+        }
+    }
+
 }

@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import com.ziffel.generator.FsmLoader.FsmDefinition;
+import com.ziffel.generator.FsmLoader.FsmState;
+import com.ziffel.generator.FsmLoader.FsmTransition;
+
 public class RLPromptGenerator {
 
     public static class PromptTestCase {
@@ -35,7 +39,7 @@ public class RLPromptGenerator {
             String intent,
             String expectedContains
     ) {
-        List<PromptTestCase> cases = new ArrayList<>();
+        List<PromptTestCase> cases = new ArrayList<PromptTestCase>();
         List<String> generated = generateCombinations(rlTemplate);
         for (String prompt : generated) {
             cases.add(new PromptTestCase(prompt, intent, expectedContains));
@@ -44,8 +48,8 @@ public class RLPromptGenerator {
     }
 
     private static List<String> generateCombinations(Map<String, List<String>> template) {
-        List<String> result = new ArrayList<>();
-        build(template, new ArrayList<>(template.keySet()), 0, "", result);
+        List<String> result = new ArrayList<String>();
+        build(template, new ArrayList<String>(template.keySet()), 0, "", result);
         return result;
     }
 
@@ -59,6 +63,38 @@ public class RLPromptGenerator {
         List<String> options = template.get(key);
         for (String option : options) {
             build(template, keys, index + 1, current + " " + option, result);
+        }
+    }
+
+    // New multi-turn conversation generator
+    public static List<List<PromptTestCase>> generateConversationPaths(FsmDefinition fsm, String startState) {
+        List<List<PromptTestCase>> conversations = new ArrayList<List<PromptTestCase>>();
+        walkFsm(fsm, startState, new ArrayList<>(), conversations);
+        return conversations;
+    }
+
+    private static void walkFsm(FsmDefinition fsm, String currentState,
+                                List<PromptTestCase> currentPath,
+                                List<List<PromptTestCase>> allPaths) {
+        FsmState state = fsm.states.get(currentState);
+        if (state == null || state.transitions == null || state.transitions.isEmpty()) {
+            allPaths.add(new ArrayList<>(currentPath)); // end of conversation
+            return;
+        }
+
+        for (Map.Entry<String, FsmTransition> entry : state.transitions.entrySet()) {
+            String nextState = entry.getKey();
+            FsmTransition transition = entry.getValue();
+
+            List<PromptTestCase> prompts = transition.rlTemplate != null
+                    ? generateTestCases(transition.rlTemplate, transition.intent, transition.expectedContains)
+                    : List.of(new PromptTestCase(transition.prompt, transition.intent, transition.expectedContains));
+
+            for (PromptTestCase testCase : prompts) {
+                currentPath.add(testCase);
+                walkFsm(fsm, nextState, currentPath, allPaths);
+                currentPath.remove(currentPath.size() - 1);
+            }
         }
     }
 }

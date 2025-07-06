@@ -9,6 +9,7 @@ import java.util.Map;
 public class FsmLoader {
 
     public static class FsmDefinition {
+        public String startState;
         public Map<String, FsmState> states;
     }
 
