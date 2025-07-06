@@ -62,6 +62,7 @@ In `oracle/intents.json`:
 ```bash
 mvn test
 ```
+* (Or Tests can be run from IntelliJ using JUnit)
 * Prompts are generated from RL templates
 * Sent to the LLM via API
 * Responses are matched against oracles
