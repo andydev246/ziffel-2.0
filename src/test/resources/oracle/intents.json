@@ -1,0 +1,45 @@
+{
+  "account.reset": {
+    "expectedContains": [
+      "reset your password",
+      "recover your account",
+      "click the link to reset"
+    ],
+    "expectedRegex": ".*(reset|recover).*(password|account).*"
+  },
+  "account.codeIssue": {
+    "expectedContains": [
+      "send you a new verification code",
+      "resend the code",
+      "generate a new code"
+    ]
+  },
+  "account.success": {
+    "expectedContains": [
+      "Glad to help",
+      "Happy to hear that",
+      "You're welcome"
+    ]
+  },
+  "billing.inquiry": {
+    "expectedContains": [
+      "check your billing",
+      "your invoice details",
+      "billing department"
+    ]
+  },
+  "billing.refund": {
+    "expectedContains": [
+      "your refund request has been submitted",
+      "we're processing your refund",
+      "expect the refund in 5-7 business days"
+    ]
+  },
+  "billing.confirmation": {
+    "expectedContains": [
+      "You're welcome",
+      "Glad to help",
+      "Happy we could clarify"
+    ]
+  }
+}
