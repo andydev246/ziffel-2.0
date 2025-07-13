@@ -1,298 +1,409 @@
 {
   "ei.grief.shock": {
     "expectedContains": [
-      "shock",
-      "normalize shock",
-      "validate numbness",
-      "encourage patience"
-    ]
+      "I understand this must feel completely unreal right now",
+      "shock is your mind's way of protecting you from overwhelming pain",
+      "it's completely normal to feel numb and disconnected",
+      "your brain is trying to process something that feels impossible",
+      "this initial shock is a natural defense mechanism",
+      "it's okay if you can't believe this is really happening"
+    ],
+    "expectedRegex": ".*(unreal|protecting|numb|disconnected|impossible|defense|believe).*"
   },
   "ei.grief.anger": {
     "expectedContains": [
-      "angry",
-      "validate anger",
-      "normalize response",
-      "acknowledge unfairness"
-    ]
+      "anger is a completely natural and necessary part of grief",
+      "I understand why you're so furious about this injustice",
+      "anger can actually help you feel more in control",
+      "it's not fair that this happened to you",
+      "your anger is valid and serves a purpose",
+      "anger often protects us from feeling the deeper pain"
+    ],
+    "expectedRegex": ".*(natural|furious|injustice|control|fair|valid|protects).*"
   },
   "ei.grief.sadness": {
     "expectedContains": [
-      "sad",
-      "acknowledge sadness",
-      "validate emotion",
-      "normalize grief"
-    ]
+      "I can see how deeply and profoundly sad you are",
+      "this sadness is the natural response to losing someone you love",
+      "it's okay to feel this empty and lost",
+      "your tears are healing and necessary",
+      "grief can feel absolutely overwhelming and all-consuming",
+      "this sadness honors the love you shared"
+    ],
+    "expectedRegex": ".*(profoundly|natural|empty|tears|healing|overwhelming|honors).*"
   },
   "ei.grief.denial.anger": {
     "expectedContains": [
-      "can't be happening",
-      "normalize denial",
-      "validate confusion",
-      "encourage self-compassion"
-    ]
+      "I understand you can't believe this is real",
+      "denial is your mind's way of coping with unbearable loss",
+      "it's normal to keep expecting them to walk through the door",
+      "your brain is trying to protect you from the full impact",
+      "this is a lot to accept all at once",
+      "denial gives you time to process gradually"
+    ],
+    "expectedRegex": ".*(believe|denial|coping|expecting|protect|accept|gradually).*"
   },
   "ei.grief.denial.sadness": {
     "expectedContains": [
-      "numb",
-      "normalize numbness",
-      "validate distance",
-      "encourage patience"
-    ]
+      "feeling numb is your mind's way of protecting you",
+      "it's okay if you can't feel anything right now",
+      "this emotional numbness is a normal survival response",
+      "your mind is trying to shield you from overwhelming pain",
+      "this numbness won't last forever",
+      "it's normal to feel disconnected from reality"
+    ],
+    "expectedRegex": ".*(numb|protecting|survival|shield|pain|forever|disconnected).*"
   },
   "ei.grief.denial.acceptance": {
     "expectedContains": [
-      "know they're gone",
-      "acknowledge progress",
-      "validate difficulty",
-      "encourage patience"
-    ]
+      "I can see you're starting to understand the reality",
+      "acceptance doesn't mean you're okay with what happened",
+      "it's normal to know intellectually but not emotionally",
+      "this is a really difficult and painful step",
+      "you're being very brave to face this truth",
+      "acceptance is about acknowledging reality, not liking it"
+    ],
+    "expectedRegex": ".*(understand|reality|intellectually|emotionally|brave|truth|acknowledging).*"
   },
   "ei.grief.anger.self.blame": {
     "expectedContains": [
-      "my fault",
-      "acknowledge guilt",
-      "normalize response",
-      "gently challenge self-blame"
-    ]
+      "I understand why you feel responsible, but this wasn't your fault",
+      "survivor guilt is very common and very painful",
+      "you couldn't have prevented this no matter what you did",
+      "be gentle with yourself - you're already in enough pain",
+      "guilt is often anger turned inward",
+      "you did the best you could with what you knew"
+    ],
+    "expectedRegex": ".*(responsible|fault|survivor guilt|prevented|gentle|anger|best).*"
   },
   "ei.grief.anger.others": {
     "expectedContains": [
-      "blame",
-      "validate anger",
-      "acknowledge need for answers",
-      "encourage support"
-    ]
+      "I understand why you need someone to blame",
+      "anger can help us feel more in control of an uncontrollable situation",
+      "it's normal to want answers and someone to hold responsible",
+      "your anger is valid and serves a purpose",
+      "but blaming others won't bring them back",
+      "anger often covers up the deeper pain of loss"
+    ],
+    "expectedRegex": ".*(blame|control|answers|responsible|valid|back|covers).*"
   },
   "ei.grief.anger.sadness": {
     "expectedContains": [
-      "angry but sad",
-      "acknowledge transition",
-      "validate sadness",
-      "encourage emotional expression"
-    ]
+      "anger often covers up deeper sadness and pain",
+      "it's okay to feel both angry and profoundly sad",
+      "all your feelings are valid and necessary",
+      "anger can be exhausting to maintain",
+      "underneath the anger is just raw pain",
+      "this is a natural progression in grief"
+    ],
+    "expectedRegex": ".*(covers|sadness|angry|valid|exhausting|raw|progression).*"
   },
   "ei.grief.sadness.isolation": {
     "expectedContains": [
-      "alone",
-      "validate withdrawal",
-      "acknowledge isolation",
-      "encourage gentle connection"
-    ]
+      "I understand why you want to be alone right now",
+      "but isolation can make grief feel even more overwhelming",
+      "it's okay to need space and time to yourself",
+      "people can help, even if it's hard to let them",
+      "you don't have to do this completely alone",
+      "connection can help ease the pain"
+    ],
+    "expectedRegex": ".*(alone|isolation|overwhelming|space|help|alone|connection).*"
   },
   "ei.grief.sadness.acceptance": {
     "expectedContains": [
-      "understand they're not coming back",
-      "acknowledge progress",
-      "validate pain",
-      "normalize acceptance"
-    ]
+      "I can see you're starting to accept the reality of the loss",
+      "acceptance doesn't mean you're okay with what happened",
+      "acceptance is a process, not a destination",
+      "you're being very brave to face this truth",
+      "this is really hard work you're doing",
+      "acceptance means acknowledging reality, not liking it"
+    ],
+    "expectedRegex": ".*(accept|reality|okay|process|brave|work|acknowledging).*"
   },
   "ei.grief.sadness.guilt": {
     "expectedContains": [
-      "guilty for still being here",
-      "normalize survivor guilt",
-      "challenge irrational beliefs",
-      "encourage self-compassion"
-    ]
+      "survivor guilt is very common and very painful",
+      "you deserve to be happy and to live your life",
+      "they wouldn't want you to suffer like this",
+      "it's okay that you're still here and they're not",
+      "you have nothing to feel guilty about",
+      "guilt won't bring them back or change anything"
+    ],
+    "expectedRegex": ".*(survivor guilt|happy|suffer|here|guilty|back|change).*"
   },
   "ei.grief.guilt.forgiveness": {
     "expectedContains": [
-      "couldn't have prevented",
-      "acknowledge progress",
-      "encourage self-compassion",
-      "validate difficulty"
-    ]
+      "I'm glad you're starting to see it wasn't your fault",
+      "forgiveness is a gift you give yourself",
+      "you're learning to be kinder and more compassionate to yourself",
+      "this is really important healing work",
+      "self-compassion is essential for healing",
+      "you deserve forgiveness and peace"
+    ],
+    "expectedRegex": ".*(fault|forgiveness|kinder|compassionate|healing|compassion|peace).*"
   },
   "ei.grief.guilt.sadness": {
     "expectedContains": [
-      "guilt is overwhelming",
-      "challenge guilt",
-      "offer hope",
-      "validate deserving happiness"
-    ]
+      "guilt can be absolutely crushing and overwhelming",
+      "but you don't deserve to suffer like this",
+      "you deserve happiness, peace, and love",
+      "guilt won't bring them back or change anything",
+      "be gentle with yourself - you're already in enough pain",
+      "you have nothing to feel guilty about"
+    ],
+    "expectedRegex": ".*(crushing|overwhelming|suffer|happiness|peace|back|gentle).*"
   },
   "ei.grief.guilt.acceptance": {
     "expectedContains": [
-      "trying to forgive myself",
-      "acknowledge effort",
-      "encourage patience",
-      "validate healing work"
-    ]
+      "I'm glad you're working on forgiving yourself",
+      "this is really important healing work you're doing",
+      "self-forgiveness takes time and patience",
+      "you're being very brave to face this",
+      "this is a sign of real growth and healing",
+      "you're learning to be kinder to yourself"
+    ],
+    "expectedRegex": ".*(forgiving|healing|patience|brave|growth|kinder).*"
   },
   "ei.grief.blame.acceptance": {
     "expectedContains": [
-      "blaming others won't bring them back",
-      "acknowledge insight",
-      "validate anger",
-      "encourage self-compassion"
-    ]
+      "I'm glad you're seeing that blaming won't help",
+      "this is a really important insight and breakthrough",
+      "you're learning to let go of what you can't control",
+      "this is a sign of real healing and growth",
+      "you're being very wise to recognize this",
+      "letting go of blame can be very freeing"
+    ],
+    "expectedRegex": ".*(blaming|insight|breakthrough|control|healing|wise|freeing).*"
   },
   "ei.grief.blame.sadness": {
     "expectedContains": [
-      "anger is exhausting",
-      "acknowledge exhaustion",
-      "validate sadness",
-      "encourage healing"
-    ]
+      "anger can be absolutely exhausting to maintain",
+      "it's normal to feel tired of being angry",
+      "sadness often follows anger in the natural grief process",
+      "this is a natural and healthy progression",
+      "your feelings are all valid and necessary",
+      "exhaustion often leads to deeper emotional work"
+    ],
+    "expectedRegex": ".*(exhausting|tired|sadness|natural|progression|valid|emotional).*"
   },
   "ei.grief.blame.understanding": {
     "expectedContains": [
-      "understand that sometimes bad things just happen",
-      "acknowledge realization",
-      "validate difficulty",
-      "support acceptance"
-    ]
+      "I'm glad you're starting to understand the bigger picture",
+      "sometimes bad things just happen without reason",
+      "this is a really important realization and breakthrough",
+      "you're learning to accept what you can't control",
+      "this is a sign of real growth and wisdom",
+      "understanding can bring a sense of peace"
+    ],
+    "expectedRegex": ".*(understand|happen|realization|breakthrough|control|growth|peace).*"
   },
   "ei.grief.isolation.connection": {
     "expectedContains": [
-      "need people",
-      "acknowledge need for connection",
-      "validate fear",
-      "encourage support"
-    ]
+      "I'm glad you're realizing you need people",
+      "connection can be very healing during grief",
+      "it's okay to need support and help",
+      "people want to help you through this",
+      "you don't have to do this completely alone",
+      "social support is crucial for healing"
+    ],
+    "expectedRegex": ".*(realizing|connection|healing|support|help|alone|social).*"
   },
   "ei.grief.isolation.sadness": {
     "expectedContains": [
-      "being alone makes the pain worse",
-      "acknowledge impact",
-      "validate difficulty",
-      "offer gentle encouragement"
-    ]
+      "isolation can make grief feel even more overwhelming",
+      "being alone with your thoughts can be very difficult",
+      "connection can help ease the pain and loneliness",
+      "people can provide comfort and understanding",
+      "you deserve support and companionship right now",
+      "social isolation can prolong the grieving process"
+    ],
+    "expectedRegex": ".*(isolation|overwhelming|thoughts|connection|comfort|support|prolong).*"
   },
   "ei.grief.isolation.acceptance": {
     "expectedContains": [
-      "ready to let people in",
-      "acknowledge readiness",
-      "validate pace",
-      "encourage gradual steps"
-    ]
+      "I'm glad you're ready to let people in",
+      "this is a really positive and healthy step",
+      "it's okay to take this at your own pace",
+      "people want to support you through this",
+      "you're being very brave to open up",
+      "reaching out is a sign of strength"
+    ],
+    "expectedRegex": ".*(ready|positive|healthy|pace|support|brave|strength).*"
   },
   "ei.grief.acceptance.meaning": {
     "expectedContains": [
-      "honor their memory",
-      "validate honoring",
-      "encourage exploration",
-      "support meaning-making"
-    ]
+      "honoring their memory is so important for healing",
+      "finding meaning can help transform the pain",
+      "you can carry their love and legacy forward",
+      "this is a beautiful way to remember and honor them",
+      "meaning-making is a crucial part of grief work",
+      "their memory can live on through your actions"
+    ],
+    "expectedRegex": ".*(honoring|meaning|transform|love|legacy|beautiful|memory).*"
   },
   "ei.grief.acceptance.growth": {
     "expectedContains": [
-      "changed me",
-      "acknowledge transformation",
-      "validate growth",
-      "encourage positive change"
-    ]
+      "I can see how this experience has changed you",
+      "growth often comes from our most difficult experiences",
+      "you're becoming stronger and more resilient through this",
+      "this pain is teaching you important life lessons",
+      "you're developing real wisdom and depth",
+      "post-traumatic growth is very real"
+    ],
+    "expectedRegex": ".*(changed|growth|difficult|stronger|resilient|wisdom|post-traumatic).*"
   },
   "ei.grief.acceptance.setback": {
     "expectedContains": [
-      "thought I was doing better",
-      "normalize setbacks",
-      "validate progress",
-      "explain non-linear nature"
-    ]
+      "setbacks are completely normal in the grief process",
+      "healing isn't always linear - it's more like a spiral",
+      "it's okay to have bad days and difficult moments",
+      "this doesn't mean you're not making progress",
+      "be patient and gentle with yourself",
+      "grief has its own timeline and rhythm"
+    ],
+    "expectedRegex": ".*(setbacks|linear|spiral|bad days|progress|patient|timeline).*"
   },
   "ei.grief.forgiveness.meaning": {
     "expectedContains": [
-      "wouldn't want me to suffer",
-      "validate insight",
-      "connect to honoring",
-      "encourage self-compassion"
-    ]
+      "they wouldn't want you to suffer like this",
+      "honoring their memory means living well and fully",
+      "forgiveness honors their love and wishes for you",
+      "this is what they would want for you",
+      "you're honoring them by healing and growing",
+      "their love can guide you toward peace"
+    ],
+    "expectedRegex": ".*(suffer|honoring|forgiveness|love|wishes|healing|peace).*"
   },
   "ei.grief.forgiveness.growth": {
     "expectedContains": [
-      "forgiving myself is helping me grow",
-      "acknowledge growth",
-      "validate strength",
-      "connect to resilience"
-    ]
+      "I'm glad forgiveness is helping you grow",
+      "this is a sign of real strength and resilience",
+      "you're becoming more compassionate and understanding",
+      "this pain is transforming you in positive ways",
+      "you're developing real emotional maturity",
+      "forgiveness is a powerful healing force"
+    ],
+    "expectedRegex": ".*(forgiveness|strength|resilience|compassionate|transforming|maturity|healing).*"
   },
   "ei.grief.forgiveness.connection": {
     "expectedContains": [
-      "ready to let people help",
-      "acknowledge progression",
-      "validate deserving support",
-      "encourage connection"
-    ]
+      "I'm glad you're ready to let people help you",
+      "you deserve support, love, and understanding",
+      "people want to be there for you through this",
+      "connection can be very healing during grief",
+      "you're being very brave to open up",
+      "vulnerability is a sign of strength"
+    ],
+    "expectedRegex": ".*(ready|deserve|support|connection|healing|brave|vulnerability).*"
   },
   "ei.grief.understanding.meaning": {
     "expectedContains": [
-      "taught me about what really matters",
-      "validate insight",
-      "acknowledge learning",
-      "support meaning-making"
-    ]
+      "I'm glad you're finding meaning in this experience",
+      "this loss is teaching you what truly matters in life",
+      "you're gaining real wisdom and perspective",
+      "meaning can help transform the pain into purpose",
+      "you're learning important life lessons",
+      "this experience is shaping your values and priorities"
+    ],
+    "expectedRegex": ".*(meaning|matters|wisdom|perspective|transform|lessons|values).*"
   },
   "ei.grief.understanding.growth": {
     "expectedContains": [
-      "new perspective on life",
-      "acknowledge transformation",
-      "validate new perspective",
-      "support authentic living"
-    ]
+      "I can see how this has changed your perspective on life",
+      "you're developing real wisdom and emotional maturity",
+      "this experience is making you stronger and more resilient",
+      "you're learning what truly matters and what doesn't",
+      "growth often comes from our most difficult experiences",
+      "this pain is teaching you important life lessons"
+    ],
+    "expectedRegex": ".*(perspective|wisdom|maturity|stronger|resilient|matters|lessons).*"
   },
   "ei.grief.understanding.acceptance": {
     "expectedContains": [
-      "some things are beyond my control",
-      "validate realization",
-      "acknowledge difficulty",
-      "support focus on controllable"
-    ]
+      "I'm glad you're learning to accept what you can't control",
+      "this is a really important life lesson and breakthrough",
+      "you're developing real wisdom and emotional maturity",
+      "acceptance doesn't mean you're okay with what happened",
+      "this is a sign of real growth and healing",
+      "letting go of control can bring peace"
+    ],
+    "expectedRegex": ".*(control|lesson|breakthrough|wisdom|acceptance|growth|peace).*"
   },
   "ei.grief.connection.meaning": {
     "expectedContains": [
-      "connecting with others who understand",
-      "validate connection",
-      "acknowledge shared experience",
-      "support mutual healing"
-    ]
+      "connecting with others who understand is incredibly valuable",
+      "shared experience can be very healing and comforting",
+      "you're not alone in this journey",
+      "community and support groups can be very helpful",
+      "shared grief can create deep bonds",
+      "finding your tribe can be very healing"
+    ],
+    "expectedRegex": ".*(connecting|shared|healing|comforting|alone|community|bonds).*"
   },
   "ei.grief.connection.growth": {
     "expectedContains": [
-      "turn your pain into something positive",
-      "validate helping others",
-      "acknowledge growth",
-      "support positive transformation"
-    ]
+      "helping others can be very healing for you",
+      "turning pain into purpose is incredibly powerful",
+      "you're making something positive from this loss",
+      "helping others honors their memory beautifully",
+      "this is a beautiful way to grow and heal",
+      "service to others can transform grief"
+    ],
+    "expectedRegex": ".*(helping|purpose|positive|honors|beautiful|grow|service).*"
   },
   "ei.grief.connection.setback": {
     "expectedContains": [
-      "people don't understand",
-      "validate disappointment",
-      "normalize experience",
-      "offer hope for understanding"
-    ]
+      "not everyone understands grief and loss",
+      "it's normal to feel disappointed by people's responses",
+      "some people just don't get it and never will",
+      "but there are people who do understand",
+      "don't give up on finding your support network",
+      "grief can be very isolating when others don't understand"
+    ],
+    "expectedRegex": ".*(understands|disappointed|responses|understand|support|isolating).*"
   },
   "ei.grief.meaning.growth": {
     "expectedContains": [
-      "honor their memory by helping others",
-      "validate honoring",
-      "acknowledge purpose",
-      "support meaning-making"
-    ]
+      "honoring their memory by helping others is beautiful",
+      "you're creating meaning from this profound loss",
+      "this is a powerful way to heal and grow",
+      "you're turning pain into purpose and service",
+      "this honors both their life and yours",
+      "meaning-making is crucial for long-term healing"
+    ],
+    "expectedRegex": ".*(honoring|meaning|heal|purpose|service|honors|long-term).*"
   },
   "ei.grief.meaning.integration": {
     "expectedContains": [
-      "carry this loss as part of who you are",
-      "validate insight",
-      "acknowledge integration",
-      "support honoring both"
-    ]
+      "this loss is becoming part of who you are",
+      "you're learning to carry it with grace and wisdom",
+      "this experience is shaping your identity",
+      "you're integrating this into your life story",
+      "this is a sign of real healing and growth",
+      "the loss becomes part of your strength"
+    ],
+    "expectedRegex": ".*(part|grace|wisdom|shaping|integrating|healing|strength).*"
   },
   "ei.grief.meaning.setback": {
     "expectedContains": [
-      "meaning feels elusive",
-      "normalize fluctuations",
-      "validate difficult days",
-      "encourage patience"
-    ]
+      "meaning can feel elusive and hard to find sometimes",
+      "it's normal to have days when meaning feels distant",
+      "meaning often comes and goes in waves",
+      "be patient with yourself during these times",
+      "meaning will return when you're ready",
+      "the search for meaning is part of the process"
+    ],
+    "expectedRegex": ".*(elusive|distant|waves|patient|return|search|process).*"
   },
   "ei.grief.growth.integration": {
     "expectedContains": [
-      "stronger, more compassionate person",
-      "acknowledge growth",
-      "validate transformation",
-      "connect to honoring memory"
-    ]
+      "I can see how much you've grown through this experience",
+      "you're becoming a stronger, more compassionate person",
+      "this experience is transforming you in positive ways",
+      "you're developing real resilience and wisdom",
+      "this growth honors their memory beautifully",
+      "post-traumatic growth is very real and powerful"
+    ],
+    "expectedRegex": ".*(grown|stronger|compassionate|transforming|resilience|honors|post-traumatic).*"
   }
 } 

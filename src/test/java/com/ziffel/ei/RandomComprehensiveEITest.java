@@ -224,7 +224,7 @@ public class RandomComprehensiveEITest {
             // Check if we've visited this state too many times
             int visitCount = stateVisitCount.getOrDefault(currentState, 0);
             if (visitCount >= maxVisitsPerState) {
-                System.out.println("DEBUG: Reached maxVisitsPerState!");
+//                System.out.println("DEBUG: Reached maxVisitsPerState!");
 
                 break;
             }
