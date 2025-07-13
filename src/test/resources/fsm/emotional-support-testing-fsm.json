@@ -1,0 +1,219 @@
+{
+  "startState": "UserNeedsSupport",
+  "states": {
+    "UserNeedsSupport": {
+      "transitions": {
+        "requestEmotionalSupport": {
+          "intent": "ei.request.support",
+          "expectedContains": "how can I help",
+          "rlTemplate": {
+            "prefix": ["I need", "Can you help me", "I'm looking for"],
+            "support": ["emotional support", "someone to talk to", "help with my feelings"],
+            "context": ["right now", "today", "with what I'm going through"]
+          },
+          "target": "ExpressEmotion"
+        },
+        "requestEmpathy": {
+          "intent": "ei.request.empathy",
+          "expectedContains": "understand",
+          "rlTemplate": {
+            "prefix": ["I need", "Can you", "I want"],
+            "request": ["someone to understand me", "empathy", "someone to listen"],
+            "context": ["with my situation", "about what happened", "with my feelings"]
+          },
+          "target": "ExpressEmotion"
+        },
+        "requestValidation": {
+          "intent": "ei.request.validation",
+          "expectedContains": "okay to feel",
+          "rlTemplate": {
+            "prefix": ["I need", "Can you tell me", "I want to know"],
+            "request": ["if my feelings are normal", "if it's okay to feel this way", "validation"],
+            "context": ["about what I'm feeling", "about my reaction", "about my emotions"]
+          },
+          "target": "ExpressEmotion"
+        }
+      }
+    },
+    "ExpressEmotion": {
+      "transitions": {
+        "expressAnger": {
+          "intent": "ei.express.anger",
+          "expectedContains": "understand your frustration",
+          "rlTemplate": {
+            "prefix": ["I'm so", "I feel", ""],
+            "emotion": ["frustrated", "angry", "furious", "upset"],
+            "context": ["with this situation", "about what happened", "at work", "with my boss"]
+          },
+          "target": "SeekResponse"
+        },
+        "expressSadness": {
+          "intent": "ei.express.sadness",
+          "expectedContains": "hear your sadness",
+          "rlTemplate": {
+            "prefix": ["I'm", "I feel", ""],
+            "emotion": ["sad", "down", "depressed", "heartbroken"],
+            "context": ["about the loss", "today", "lately", "with my relationship"]
+          },
+          "target": "SeekResponse"
+        },
+        "expressFear": {
+          "intent": "ei.express.fear",
+          "expectedContains": "understand your fear",
+          "rlTemplate": {
+            "prefix": ["I'm", "I feel", ""],
+            "emotion": ["scared", "anxious", "worried", "terrified"],
+            "context": ["about the future", "about my health", "about what might happen"]
+          },
+          "target": "SeekResponse"
+        },
+        "expressJoy": {
+          "intent": "ei.express.joy",
+          "expectedContains": "happy for you",
+          "rlTemplate": {
+            "prefix": ["I'm so", "I feel", ""],
+            "emotion": ["happy", "thrilled", "excited", "delighted"],
+            "context": ["about the news", "with the results", "about my achievement"]
+          },
+          "target": "SeekResponse"
+        },
+        "expressSurprise": {
+          "intent": "ei.express.surprise",
+          "expectedContains": "understand your surprise",
+          "rlTemplate": {
+            "prefix": ["I'm", "I feel", ""],
+            "emotion": ["shocked", "amazed", "surprised", "stunned"],
+            "context": ["by this news", "by what happened", "by the results"]
+          },
+          "target": "SeekResponse"
+        }
+      }
+    },
+    "SeekResponse": {
+      "transitions": {
+        "askForUnderstanding": {
+          "intent": "ei.seek.understanding",
+          "expectedContains": "understand",
+          "rlTemplate": {
+            "prefix": ["Do you", "Can you", "I want you to"],
+            "request": ["understand how I feel", "see my perspective", "get where I'm coming from"],
+            "context": ["in this situation", "about what happened", "with my feelings"]
+          },
+          "target": "EscalateEmotion"
+        },
+        "askForValidation": {
+          "intent": "ei.seek.validation",
+          "expectedContains": "okay to feel",
+          "rlTemplate": {
+            "prefix": ["Is it", "Do you think", "Can you tell me if"],
+            "request": ["okay to feel this way", "my feelings are normal", "I'm overreacting"],
+            "context": ["about this", "in this situation", "with what happened"]
+          },
+          "target": "EscalateEmotion"
+        },
+        "askForSupport": {
+          "intent": "ei.seek.support",
+          "expectedContains": "here for you",
+          "rlTemplate": {
+            "prefix": ["Can you", "I need you to", "Will you"],
+            "request": ["be here for me", "support me", "help me through this"],
+            "context": ["right now", "with this", "through this difficult time"]
+          },
+          "target": "EscalateEmotion"
+        }
+      }
+    },
+    "EscalateEmotion": {
+      "transitions": {
+        "escalateEmotion": {
+          "intent": "ei.escalate.crisis",
+          "expectedContains": "deeply affecting you",
+          "rlTemplate": {
+            "prefix": ["I'm getting", "This is becoming", "I feel like"],
+            "intensity": ["more and more frustrated", "increasingly anxious", "more depressed", "more angry"],
+            "context": ["with this situation", "about everything", "about what's happening"]
+          },
+          "target": "CrisisRequest"
+        },
+        "expressMixedEmotions": {
+          "intent": "ei.mixed.emotions",
+          "expectedContains": "mixed emotions",
+          "rlTemplate": {
+            "prefix": ["I'm", "I feel", ""],
+            "emotion1": ["happy about the good news", "excited about the opportunity", "relieved about the outcome"],
+            "but": ["but also", "however", "though"],
+            "emotion2": ["sad about the loss", "worried about the challenges", "anxious about the future"]
+          },
+          "target": "ComplexRequest"
+        },
+        "expressImprovement": {
+          "intent": "ei.improvement.closure",
+          "expectedContains": "feeling better",
+          "prompt": "I'm feeling a bit better now. Thank you for listening.",
+          "target": "SupportEnd"
+        }
+      }
+    },
+    "CrisisRequest": {
+      "transitions": {
+        "requestCrisisHelp": {
+          "intent": "ei.crisis.help",
+          "expectedContains": "deeply affecting you",
+          "rlTemplate": {
+            "prefix": ["I need", "Can you help me", "I'm asking for"],
+            "request": ["help with this crisis", "support right now", "someone to talk to"],
+            "context": ["because I'm really struggling", "because this is serious", "because I can't handle this"]
+          },
+          "target": "SupportEnd"
+        },
+        "requestProfessional": {
+          "intent": "ei.crisis.professional",
+          "expectedContains": "professional help",
+          "rlTemplate": {
+            "prefix": ["Should I", "Do you think I need", "I'm wondering if"],
+            "request": ["talk to a professional", "see a therapist", "get professional help"],
+            "context": ["for this", "about my feelings", "with what I'm going through"]
+          },
+          "target": "SupportEnd"
+        }
+      }
+    },
+    "ComplexRequest": {
+      "transitions": {
+        "requestComplexSupport": {
+          "intent": "ei.complex.support",
+          "expectedContains": "complex situation",
+          "rlTemplate": {
+            "prefix": ["Can you help me", "I need help", "I want you to"],
+            "request": ["understand these mixed feelings", "sort through these emotions", "make sense of this"],
+            "context": ["because I'm confused", "because it's complicated", "because I don't understand"]
+          },
+          "target": "SupportEnd"
+        },
+        "requestValidation": {
+          "intent": "ei.complex.validation",
+          "expectedContains": "mixed emotions",
+          "rlTemplate": {
+            "prefix": ["Is it", "Do you think", "Can you tell me if"],
+            "request": ["normal to feel this way", "okay to have mixed emotions", "weird to feel both"],
+            "context": ["about this", "in this situation", "with what happened"]
+          },
+          "target": "SupportEnd"
+        }
+      }
+    },
+    "SupportEnd": {
+      "transitions": {
+        "thankForSupport": {
+          "intent": "ei.end.thanks",
+          "expectedContains": "thank you",
+          "prompt": "Thank you for your support. I really appreciate it.",
+          "target": "End"
+        }
+      }
+    },
+    "End": {
+      "transitions": {}
+    }
+  }
+} 

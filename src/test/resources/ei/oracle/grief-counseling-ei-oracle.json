@@ -1,0 +1,298 @@
+{
+  "ei.grief.shock": {
+    "expectedContains": [
+      "shock",
+      "normalize shock",
+      "validate numbness",
+      "encourage patience"
+    ]
+  },
+  "ei.grief.anger": {
+    "expectedContains": [
+      "angry",
+      "validate anger",
+      "normalize response",
+      "acknowledge unfairness"
+    ]
+  },
+  "ei.grief.sadness": {
+    "expectedContains": [
+      "sad",
+      "acknowledge sadness",
+      "validate emotion",
+      "normalize grief"
+    ]
+  },
+  "ei.grief.denial.anger": {
+    "expectedContains": [
+      "can't be happening",
+      "normalize denial",
+      "validate confusion",
+      "encourage self-compassion"
+    ]
+  },
+  "ei.grief.denial.sadness": {
+    "expectedContains": [
+      "numb",
+      "normalize numbness",
+      "validate distance",
+      "encourage patience"
+    ]
+  },
+  "ei.grief.denial.acceptance": {
+    "expectedContains": [
+      "know they're gone",
+      "acknowledge progress",
+      "validate difficulty",
+      "encourage patience"
+    ]
+  },
+  "ei.grief.anger.self.blame": {
+    "expectedContains": [
+      "my fault",
+      "acknowledge guilt",
+      "normalize response",
+      "gently challenge self-blame"
+    ]
+  },
+  "ei.grief.anger.others": {
+    "expectedContains": [
+      "blame",
+      "validate anger",
+      "acknowledge need for answers",
+      "encourage support"
+    ]
+  },
+  "ei.grief.anger.sadness": {
+    "expectedContains": [
+      "angry but sad",
+      "acknowledge transition",
+      "validate sadness",
+      "encourage emotional expression"
+    ]
+  },
+  "ei.grief.sadness.isolation": {
+    "expectedContains": [
+      "alone",
+      "validate withdrawal",
+      "acknowledge isolation",
+      "encourage gentle connection"
+    ]
+  },
+  "ei.grief.sadness.acceptance": {
+    "expectedContains": [
+      "understand they're not coming back",
+      "acknowledge progress",
+      "validate pain",
+      "normalize acceptance"
+    ]
+  },
+  "ei.grief.sadness.guilt": {
+    "expectedContains": [
+      "guilty for still being here",
+      "normalize survivor guilt",
+      "challenge irrational beliefs",
+      "encourage self-compassion"
+    ]
+  },
+  "ei.grief.guilt.forgiveness": {
+    "expectedContains": [
+      "couldn't have prevented",
+      "acknowledge progress",
+      "encourage self-compassion",
+      "validate difficulty"
+    ]
+  },
+  "ei.grief.guilt.sadness": {
+    "expectedContains": [
+      "guilt is overwhelming",
+      "challenge guilt",
+      "offer hope",
+      "validate deserving happiness"
+    ]
+  },
+  "ei.grief.guilt.acceptance": {
+    "expectedContains": [
+      "trying to forgive myself",
+      "acknowledge effort",
+      "encourage patience",
+      "validate healing work"
+    ]
+  },
+  "ei.grief.blame.acceptance": {
+    "expectedContains": [
+      "blaming others won't bring them back",
+      "acknowledge insight",
+      "validate anger",
+      "encourage self-compassion"
+    ]
+  },
+  "ei.grief.blame.sadness": {
+    "expectedContains": [
+      "anger is exhausting",
+      "acknowledge exhaustion",
+      "validate sadness",
+      "encourage healing"
+    ]
+  },
+  "ei.grief.blame.understanding": {
+    "expectedContains": [
+      "understand that sometimes bad things just happen",
+      "acknowledge realization",
+      "validate difficulty",
+      "support acceptance"
+    ]
+  },
+  "ei.grief.isolation.connection": {
+    "expectedContains": [
+      "need people",
+      "acknowledge need for connection",
+      "validate fear",
+      "encourage support"
+    ]
+  },
+  "ei.grief.isolation.sadness": {
+    "expectedContains": [
+      "being alone makes the pain worse",
+      "acknowledge impact",
+      "validate difficulty",
+      "offer gentle encouragement"
+    ]
+  },
+  "ei.grief.isolation.acceptance": {
+    "expectedContains": [
+      "ready to let people in",
+      "acknowledge readiness",
+      "validate pace",
+      "encourage gradual steps"
+    ]
+  },
+  "ei.grief.acceptance.meaning": {
+    "expectedContains": [
+      "honor their memory",
+      "validate honoring",
+      "encourage exploration",
+      "support meaning-making"
+    ]
+  },
+  "ei.grief.acceptance.growth": {
+    "expectedContains": [
+      "changed me",
+      "acknowledge transformation",
+      "validate growth",
+      "encourage positive change"
+    ]
+  },
+  "ei.grief.acceptance.setback": {
+    "expectedContains": [
+      "thought I was doing better",
+      "normalize setbacks",
+      "validate progress",
+      "explain non-linear nature"
+    ]
+  },
+  "ei.grief.forgiveness.meaning": {
+    "expectedContains": [
+      "wouldn't want me to suffer",
+      "validate insight",
+      "connect to honoring",
+      "encourage self-compassion"
+    ]
+  },
+  "ei.grief.forgiveness.growth": {
+    "expectedContains": [
+      "forgiving myself is helping me grow",
+      "acknowledge growth",
+      "validate strength",
+      "connect to resilience"
+    ]
+  },
+  "ei.grief.forgiveness.connection": {
+    "expectedContains": [
+      "ready to let people help",
+      "acknowledge progression",
+      "validate deserving support",
+      "encourage connection"
+    ]
+  },
+  "ei.grief.understanding.meaning": {
+    "expectedContains": [
+      "taught me about what really matters",
+      "validate insight",
+      "acknowledge learning",
+      "support meaning-making"
+    ]
+  },
+  "ei.grief.understanding.growth": {
+    "expectedContains": [
+      "new perspective on life",
+      "acknowledge transformation",
+      "validate new perspective",
+      "support authentic living"
+    ]
+  },
+  "ei.grief.understanding.acceptance": {
+    "expectedContains": [
+      "some things are beyond my control",
+      "validate realization",
+      "acknowledge difficulty",
+      "support focus on controllable"
+    ]
+  },
+  "ei.grief.connection.meaning": {
+    "expectedContains": [
+      "connecting with others who understand",
+      "validate connection",
+      "acknowledge shared experience",
+      "support mutual healing"
+    ]
+  },
+  "ei.grief.connection.growth": {
+    "expectedContains": [
+      "turn your pain into something positive",
+      "validate helping others",
+      "acknowledge growth",
+      "support positive transformation"
+    ]
+  },
+  "ei.grief.connection.setback": {
+    "expectedContains": [
+      "people don't understand",
+      "validate disappointment",
+      "normalize experience",
+      "offer hope for understanding"
+    ]
+  },
+  "ei.grief.meaning.growth": {
+    "expectedContains": [
+      "honor their memory by helping others",
+      "validate honoring",
+      "acknowledge purpose",
+      "support meaning-making"
+    ]
+  },
+  "ei.grief.meaning.integration": {
+    "expectedContains": [
+      "carry this loss as part of who you are",
+      "validate insight",
+      "acknowledge integration",
+      "support honoring both"
+    ]
+  },
+  "ei.grief.meaning.setback": {
+    "expectedContains": [
+      "meaning feels elusive",
+      "normalize fluctuations",
+      "validate difficult days",
+      "encourage patience"
+    ]
+  },
+  "ei.grief.growth.integration": {
+    "expectedContains": [
+      "stronger, more compassionate person",
+      "acknowledge growth",
+      "validate transformation",
+      "connect to honoring memory"
+    ]
+  }
+} 

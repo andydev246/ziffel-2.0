@@ -53,27 +53,26 @@ public class FsmPromptRunnerTest {
         Map<String, OracleRule> oracleMap = OracleLoader.loadFromFile("oracle/intents.json");
 
         for (Map.Entry<String, FsmState> stateEntry : fsm.states.entrySet()) {
-            for (Map.Entry<String, FsmTransition> transEntry : stateEntry.getValue().transitions.entrySet()) {
-                FsmTransition trans = transEntry.getValue();
+            for (FsmTransition transition : stateEntry.getValue().transitions.values()) {
 
                 List<PromptTestCase> testCases;
-                if (trans.rlTemplate != null) {
+                if (transition.rlTemplate != null) {
                     testCases = RLPromptGenerator.generateTestCases(
-                            trans.rlTemplate,
-                            trans.intent,
+                            transition.rlTemplate,
+                            transition.intent,
                             ""
                     );
-                } else if (trans.prompt != null) {
+                } else if (transition.prompt != null) {
                     testCases = List.of(new PromptTestCase(
-                            trans.prompt,
-                            trans.intent,
+                            transition.prompt,
+                            transition.intent,
                             ""
                     ));
                 } else {
                     continue;
                 }
 
-                OracleRule rule = oracleMap.get(trans.intent);
+                OracleRule rule = oracleMap.get(transition.intent);
 
                 for (PromptTestCase testCase : testCases) {
                     ExtendedPromptTestCase extCase = new ExtendedPromptTestCase(

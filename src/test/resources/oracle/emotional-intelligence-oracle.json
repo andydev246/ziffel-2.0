@@ -1,0 +1,232 @@
+{
+  "ei.start": {
+    "expectedContains": [
+      "hello",
+      "hi",
+      "how can I help",
+      "what can I assist you with"
+    ],
+    "expectedRegex": ".*(hello|hi|help|assist).*"
+  },
+  "ei.anger.empathy": {
+    "expectedContains": [
+      "understand your frustration",
+      "understand how you're feeling",
+      "hear your anger",
+      "see why you'd feel that way",
+      "understand your frustration",
+      "that sounds really difficult"
+    ],
+    "expectedRegex": ".*(understand|hear|see|difficult|frustration).*"
+  },
+  "ei.anger.validation": {
+    "expectedContains": [
+      "your feelings are valid",
+      "it's okay to feel that way",
+      "your reaction makes sense",
+      "you have every right to feel that way",
+      "completely understandable"
+    ],
+    "expectedRegex": ".*(valid|okay|sense|right|understandable).*"
+  },
+  "ei.anger.calming": {
+    "expectedContains": [
+      "take a deep breath",
+      "stay calm",
+      "let's breathe together",
+      "try to stay calm",
+      "this feeling will pass"
+    ],
+    "expectedRegex": ".*(breathe|calm|pass).*"
+  },
+  "ei.sadness.empathy": {
+    "expectedContains": [
+      "hear your sadness",
+      "understand how sad you feel",
+      "hear how sad you're feeling",
+      "that sounds really hard",
+      "I can see why you'd feel that way"
+    ],
+    "expectedRegex": ".*(hear|understand|sad|hard).*"
+  },
+  "ei.sadness.support": {
+    "expectedContains": [
+      "here for you",
+      "here to support you",
+      "you're not alone",
+      "I want to help you through this",
+      "we'll get through this together"
+    ],
+    "expectedRegex": ".*(here|support|alone|help|together).*"
+  },
+  "ei.sadness.validation": {
+    "expectedContains": [
+      "okay to feel sad",
+      "your feelings matter",
+      "it's normal to feel this way",
+      "your sadness is important",
+      "it's okay to grieve"
+    ],
+    "expectedRegex": ".*(okay|matter|normal|important|grieve).*"
+  },
+  "ei.fear.reassurance": {
+    "expectedContains": [
+      "understand your fear",
+      "your fear is valid",
+      "it's natural to be afraid",
+      "let's work through this step by step",
+      "we'll figure this out together"
+    ],
+    "expectedRegex": ".*(understand|fear|valid|natural|work).*"
+  },
+  "ei.fear.support": {
+    "expectedContains": [
+      "not alone",
+      "here to help you",
+      "you're not alone in this",
+      "I'm here to support you",
+      "we'll get through this"
+    ],
+    "expectedRegex": ".*(alone|help|support|through).*"
+  },
+  "ei.fear.calming": {
+    "expectedContains": [
+      "stay calm",
+      "try to stay calm",
+      "take deep breaths",
+      "everything will be okay",
+      "this feeling will pass"
+    ],
+    "expectedRegex": ".*(calm|breathe|okay|pass).*"
+  },
+  "ei.joy.celebration": {
+    "expectedContains": [
+      "happy for you",
+      "that's wonderful",
+      "that's fantastic",
+      "I'm so happy for you",
+      "that's great news"
+    ],
+    "expectedRegex": ".*(happy|wonderful|fantastic|great).*"
+  },
+  "ei.joy.validation": {
+    "expectedContains": [
+      "deserve to feel happy",
+      "you should be happy",
+      "you have every right to celebrate",
+      "this is worth celebrating",
+      "you earned this happiness"
+    ],
+    "expectedRegex": ".*(deserve|happy|celebrate|worth|earned).*"
+  },
+  "ei.joy.support": {
+    "expectedContains": [
+      "celebrate with you",
+      "I'm celebrating with you",
+      "this is fantastic",
+      "I'm so excited for you",
+      "let's celebrate this"
+    ],
+    "expectedRegex": ".*(celebrate|fantastic|excited).*"
+  },
+  "ei.surprise.acknowledgment": {
+    "expectedContains": [
+      "understand your surprise",
+      "that is unexpected",
+      "I can see why you're shocked",
+      "that's quite surprising",
+      "I understand your reaction"
+    ],
+    "expectedRegex": ".*(understand|unexpected|shocked|surprising|reaction).*"
+  },
+  "ei.surprise.validation": {
+    "expectedContains": [
+      "natural to be surprised",
+      "anyone would be surprised",
+      "that's a normal reaction",
+      "it's okay to be shocked",
+      "that's completely understandable"
+    ],
+    "expectedRegex": ".*(natural|surprised|normal|shocked|understandable).*"
+  },
+  "ei.escalation.crisis": {
+    "expectedContains": [
+      "deeply affecting you",
+      "really affecting you",
+      "this is serious",
+      "let's take a moment",
+      "breathe and work through this"
+    ],
+    "expectedRegex": ".*(deeply|serious|moment|breathe|work).*"
+  },
+  "ei.mixed.emotions": {
+    "expectedContains": [
+      "mixed emotions",
+      "complex feelings",
+      "conflicting emotions",
+      "many feelings",
+      "complicated situation"
+    ],
+    "expectedRegex": ".*(mixed|complex|conflicting|many|complicated).*"
+  },
+  "ei.mixed.acknowledgment": {
+    "expectedContains": [
+      "mixed emotions",
+      "completely normal",
+      "understandable",
+      "natural to feel",
+      "many feelings involved"
+    ],
+    "expectedRegex": ".*(mixed|normal|understandable|natural|feelings).*"
+  },
+  "ei.mixed.support": {
+    "expectedContains": [
+      "complex situation",
+      "here to support you",
+      "work through this",
+      "figure this out",
+      "support you through it"
+    ],
+    "expectedRegex": ".*(complex|support|work|figure).*"
+  },
+  "ei.crisis.intervention": {
+    "expectedContains": [
+      "deeply affecting you",
+      "take a moment",
+      "breathe together",
+      "work through this",
+      "serious situation"
+    ],
+    "expectedRegex": ".*(deeply|moment|breathe|work|serious).*"
+  },
+  "ei.crisis.professional": {
+    "expectedContains": [
+      "professional help",
+      "counselor",
+      "therapist",
+      "professional support",
+      "talk to someone"
+    ],
+    "expectedRegex": ".*(professional|counselor|therapist|support|someone).*"
+  },
+  "ei.resolution.closure": {
+    "expectedContains": [
+      "feeling better",
+      "thank you",
+      "appreciate",
+      "helpful",
+      "good to talk"
+    ],
+    "expectedRegex": ".*(better|thank|appreciate|helpful|talk).*"
+  },
+  "ei.end.farewell": {
+    "expectedContains": [
+      "thank you",
+      "take care",
+      "goodbye",
+      "farewell",
+      "wish you well"
+    ],
+    "expectedRegex": ".*(thank|care|goodbye|farewell|well).*"
+  }
+} 

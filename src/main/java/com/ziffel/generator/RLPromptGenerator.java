@@ -88,13 +88,14 @@ public class RLPromptGenerator {
 
         for (Map.Entry<String, FsmTransition> entry : state.transitions.entrySet()) {
             FsmTransition transition = entry.getValue();
-            String nextState = transition.next;  // ✅ Correctly use the actual target state
+            String nextState = transition.next;  // Use next for target state
 
-            // Use only the first question from rlTemplate to avoid duplicate paths
+            // Generate prompt from RL template or use existing prompt
             String prompt;
-            if (transition.rlTemplate != null && transition.rlTemplate.containsKey("question")) {
-                List<String> questions = transition.rlTemplate.get("question");
-                prompt = questions.isEmpty() ? "Tell me about this topic" : questions.get(0);
+            if (transition.rlTemplate != null) {
+                // Generate a single prompt from the RL template
+                List<String> generatedPrompts = generateCombinations(transition.rlTemplate);
+                prompt = generatedPrompts.isEmpty() ? "Tell me about this topic" : generatedPrompts.get(0);
             } else {
                 prompt = transition.prompt != null ? transition.prompt : "Tell me about this topic";
             }

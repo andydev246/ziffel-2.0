@@ -1,0 +1,882 @@
+{
+  "ei.work.stress": {
+    "expectedContains": [
+      "work stress",
+      "understand your frustration",
+      "work can be overwhelming",
+      "it sounds like you're under a lot of pressure",
+      "your feelings about work are valid",
+      "work stress can be really difficult"
+    ],
+    "expectedRegex": ".*(work|stress|pressure|difficult|understand|frustration).*"
+  },
+  "ei.relationship.problems": {
+    "expectedContains": [
+      "relationship issues",
+      "relationships can be complicated",
+      "I understand how difficult this must be",
+      "your feelings about your relationship are valid",
+      "relationship problems can be really painful",
+      "I hear how much this is affecting you"
+    ],
+    "expectedRegex": ".*(relationship|difficult|painful|understand|affecting).*"
+  },
+  "ei.health.worries": {
+    "expectedContains": [
+      "health concerns",
+      "health anxiety is very real",
+      "I understand how scary this must be",
+      "your health worries are valid",
+      "health concerns can be really frightening",
+      "it's natural to worry about your health"
+    ],
+    "expectedRegex": ".*(health|scary|worries|valid|natural|frightening).*"
+  },
+  "ei.grief.loss": {
+    "expectedContains": [
+      "grief",
+      "I'm so sorry for your loss",
+      "grief is a natural response",
+      "your feelings of loss are valid",
+      "it's okay to grieve",
+      "loss can be incredibly painful"
+    ],
+    "expectedRegex": ".*(grief|loss|sorry|natural|valid|painful).*"
+  },
+  "ei.career.change": {
+    "expectedContains": [
+      "career transition",
+      "career changes can be scary",
+      "it's normal to feel uncertain",
+      "your career concerns are valid",
+      "career transitions can be challenging",
+      "I understand how overwhelming this must feel"
+    ],
+    "expectedRegex": ".*(career|scary|uncertain|valid|challenging|overwhelming).*"
+  },
+  "ei.family.conflict": {
+    "expectedContains": [
+      "family conflict",
+      "family relationships can be complex",
+      "family conflicts can be really difficult",
+      "your feelings about your family are valid",
+      "family dynamics can be challenging",
+      "I understand how painful this must be"
+    ],
+    "expectedRegex": ".*(family|complex|difficult|valid|challenging|painful).*"
+  },
+  "ei.financial.worries": {
+    "expectedContains": [
+      "financial stress",
+      "money worries can be overwhelming",
+      "financial stress is very real",
+      "your financial concerns are valid",
+      "money problems can be really stressful",
+      "I understand how difficult this must be"
+    ],
+    "expectedRegex": ".*(financial|money|overwhelming|stress|valid|difficult).*"
+  },
+  "ei.social.anxiety": {
+    "expectedContains": [
+      "social anxiety",
+      "social anxiety is very real",
+      "I understand how difficult this must be",
+      "your social anxiety is valid",
+      "social situations can be really scary",
+      "it's okay to feel anxious about social situations"
+    ],
+    "expectedRegex": ".*(social|anxiety|difficult|valid|scary|anxious).*"
+  },
+  "ei.burnout.express": {
+    "expectedContains": [
+      "burnout",
+      "burnout is very serious",
+      "I understand how exhausted you must be",
+      "burnout can be really overwhelming",
+      "your feelings of burnout are valid",
+      "it's important to take care of yourself"
+    ],
+    "expectedRegex": ".*(burnout|serious|exhausted|overwhelming|valid|care).*"
+  },
+  "ei.work.advice": {
+    "expectedContains": [
+      "advice",
+      "I can help you think through this",
+      "let's explore your options",
+      "here are some things to consider",
+      "I want to help you find solutions",
+      "let's work through this together"
+    ],
+    "expectedRegex": ".*(advice|help|options|consider|solutions|together).*"
+  },
+  "ei.improvement.work": {
+    "expectedContains": [
+      "feeling better",
+      "I'm glad to hear you're improving",
+      "that's really positive",
+      "I'm happy for you",
+      "that's wonderful progress",
+      "I'm glad things are getting better"
+    ],
+    "expectedRegex": ".*(better|improving|positive|happy|progress).*"
+  },
+  "ei.betrayal.express": {
+    "expectedContains": [
+      "betrayal",
+      "I understand how devastating this must be",
+      "betrayal can be incredibly painful",
+      "your feelings of betrayal are valid",
+      "I can see why you feel so hurt",
+      "betrayal can shake your trust completely"
+    ],
+    "expectedRegex": ".*(betrayal|devastating|painful|valid|hurt|trust).*"
+  },
+  "ei.communication.problems": {
+    "expectedContains": [
+      "communication",
+      "communication issues can be really frustrating",
+      "I understand how difficult this must be",
+      "communication problems can strain relationships",
+      "your frustration is valid",
+      "communication can be really challenging"
+    ],
+    "expectedRegex": ".*(communication|frustrating|difficult|strain|valid|challenging).*"
+  },
+  "ei.relationship.advice": {
+    "expectedContains": [
+      "advice",
+      "I can help you think through this",
+      "let's explore your options",
+      "here are some things to consider",
+      "I want to help you find solutions",
+      "let's work through this together"
+    ],
+    "expectedRegex": ".*(advice|help|options|consider|solutions|together).*"
+  },
+  "ei.health.panic": {
+    "expectedContains": [
+      "panic",
+      "panic attacks can be really frightening",
+      "I understand how scary this must be",
+      "panic is a real and valid response",
+      "let's help you calm down",
+      "you're safe, let's breathe together"
+    ],
+    "expectedRegex": ".*(panic|frightening|scary|valid|calm|safe|breathe).*"
+  },
+  "ei.medical.advice": {
+    "expectedContains": [
+      "doctor",
+      "medical help",
+      "it's important to get medical attention",
+      "your health concerns are valid",
+      "medical professionals can help",
+      "it's okay to seek medical advice"
+    ],
+    "expectedRegex": ".*(doctor|medical|attention|valid|professionals|advice).*"
+  },
+  "ei.hypochondria.express": {
+    "expectedContains": [
+      "health anxiety",
+      "health anxiety is very real",
+      "I understand how overwhelming this must be",
+      "health anxiety can be really difficult",
+      "your anxiety is valid",
+      "it's okay to be concerned about your health"
+    ],
+    "expectedRegex": ".*(health|anxiety|overwhelming|difficult|valid|concerned).*"
+  },
+  "ei.grief.guilt": {
+    "expectedContains": [
+      "guilt",
+      "grief guilt is very common",
+      "I understand how painful this must be",
+      "your guilt feelings are valid",
+      "guilt is a normal part of grief",
+      "it's okay to feel guilty"
+    ],
+    "expectedRegex": ".*(guilt|common|painful|valid|normal|okay).*"
+  },
+  "ei.grief.loneliness": {
+    "expectedContains": [
+      "lonely",
+      "grief can be incredibly lonely",
+      "I understand how isolated you must feel",
+      "your loneliness is valid",
+      "it's normal to feel alone in grief",
+      "you're not alone in feeling this way"
+    ],
+    "expectedRegex": ".*(lonely|isolated|valid|normal|alone).*"
+  },
+  "ei.grief.support": {
+    "expectedContains": [
+      "grief support",
+      "grief counseling can help",
+      "support groups can be beneficial",
+      "professional help can guide you",
+      "you don't have to grieve alone",
+      "there are resources to help you"
+    ],
+    "expectedRegex": ".*(grief|support|counseling|groups|professional|resources).*"
+  },
+  "ei.career.fear": {
+    "expectedContains": [
+      "fear",
+      "career changes can be really scary",
+      "I understand how frightening this must be",
+      "your fears are valid",
+      "it's normal to be afraid of change",
+      "fear is a natural response to uncertainty"
+    ],
+    "expectedRegex": ".*(fear|scary|frightening|valid|normal|uncertainty).*"
+  },
+  "ei.career.guidance": {
+    "expectedContains": [
+      "guidance",
+      "I can help you explore your options",
+      "let's think through this together",
+      "career counseling can help",
+      "I want to help you find your path",
+      "let's work through your concerns"
+    ],
+    "expectedRegex": ".*(guidance|options|together|counseling|path|concerns).*"
+  },
+  "ei.career.excitement": {
+    "expectedContains": [
+      "excited",
+      "I'm happy for you",
+      "that's wonderful",
+      "I'm glad you're excited",
+      "that's really positive",
+      "I'm excited for your new journey"
+    ],
+    "expectedRegex": ".*(excited|happy|wonderful|positive|journey).*"
+  },
+  "ei.boundaries.express": {
+    "expectedContains": [
+      "boundaries",
+      "setting boundaries is important",
+      "your need for boundaries is valid",
+      "it's okay to protect yourself",
+      "boundaries are healthy",
+      "you have the right to set limits"
+    ],
+    "expectedRegex": ".*(boundaries|important|valid|protect|healthy|right).*"
+  },
+  "ei.family.therapy": {
+    "expectedContains": [
+      "family therapy",
+      "family counseling can help",
+      "professional help can guide you",
+      "therapy can improve family dynamics",
+      "you don't have to handle this alone",
+      "there are resources to help your family"
+    ],
+    "expectedRegex": ".*(family|therapy|counseling|professional|dynamics|resources).*"
+  },
+  "ei.family.guilt": {
+    "expectedContains": [
+      "guilt",
+      "family guilt is very common",
+      "I understand how conflicted you must feel",
+      "your guilt feelings are valid",
+      "it's normal to feel guilty about family",
+      "you're not alone in feeling this way"
+    ],
+    "expectedRegex": ".*(guilt|common|conflicted|valid|normal|alone).*"
+  },
+  "ei.financial.shame": {
+    "expectedContains": [
+      "shame",
+      "financial shame is very common",
+      "I understand how difficult this must be",
+      "your feelings are valid",
+      "it's okay to struggle with money",
+      "you're not alone in this"
+    ],
+    "expectedRegex": ".*(shame|common|difficult|valid|struggle|alone).*"
+  },
+  "ei.financial.help": {
+    "expectedContains": [
+      "financial help",
+      "financial counseling can help",
+      "there are resources available",
+      "I can help you find support",
+      "you don't have to handle this alone",
+      "there are ways to get help"
+    ],
+    "expectedRegex": ".*(financial|help|counseling|resources|support).*"
+  },
+  "ei.financial.hopeless": {
+    "expectedContains": [
+      "hopeless",
+      "I understand how overwhelming this must feel",
+      "financial stress can be really difficult",
+      "your feelings are valid",
+      "it's okay to feel hopeless",
+      "there are ways to get help"
+    ],
+    "expectedRegex": ".*(hopeless|overwhelming|difficult|valid|help).*"
+  },
+  "ei.social.isolation": {
+    "expectedContains": [
+      "isolated",
+      "social isolation can be really painful",
+      "I understand how lonely you must feel",
+      "your feelings are valid",
+      "it's okay to feel isolated",
+      "you're not alone in feeling this way"
+    ],
+    "expectedRegex": ".*(isolated|painful|lonely|valid|alone).*"
+  },
+  "ei.social.skills": {
+    "expectedContains": [
+      "social skills",
+      "I can help you develop social skills",
+      "there are ways to improve social confidence",
+      "social skills can be learned",
+      "I want to help you connect with others",
+      "let's work on your social skills together"
+    ],
+    "expectedRegex": ".*(social|skills|confidence|learned|connect|together).*"
+  },
+  "ei.social.panic": {
+    "expectedContains": [
+      "panic",
+      "social panic can be really frightening",
+      "I understand how scary this must be",
+      "panic is a real and valid response",
+      "let's help you calm down",
+      "you're safe, let's breathe together"
+    ],
+    "expectedRegex": ".*(panic|frightening|scary|valid|calm|safe|breathe).*"
+  },
+  "ei.crisis.immediate": {
+    "expectedContains": [
+      "immediate",
+      "this sounds serious",
+      "I'm here to help you right now",
+      "let's get you the help you need",
+      "this is concerning",
+      "you're not alone"
+    ],
+    "expectedRegex": ".*(immediate|serious|help|concerning|alone).*"
+  },
+  "ei.professional.help": {
+    "expectedContains": [
+      "professional help",
+      "professional support can help",
+      "therapy can be beneficial",
+      "counseling can guide you",
+      "you don't have to handle this alone",
+      "there are professionals who can help"
+    ],
+    "expectedRegex": ".*(professional|help|support|therapy|counseling).*"
+  },
+  "ei.betrayal.devastation": {
+    "expectedContains": [
+      "devastated",
+      "I understand how devastating this must be",
+      "betrayal can be incredibly painful",
+      "your feelings are valid",
+      "I can see why you feel so hurt",
+      "this is a really difficult situation"
+    ],
+    "expectedRegex": ".*(devastated|painful|valid|hurt|difficult).*"
+  },
+  "ei.relationship.counseling": {
+    "expectedContains": [
+      "counseling",
+      "couples therapy can help",
+      "relationship counseling can guide you",
+      "professional help can improve your relationship",
+      "you don't have to handle this alone",
+      "there are professionals who can help"
+    ],
+    "expectedRegex": ".*(counseling|therapy|professional|relationship|help).*"
+  },
+  "ei.communication.frustration": {
+    "expectedContains": [
+      "frustrated",
+      "I understand how frustrating this must be",
+      "communication problems can be really difficult",
+      "your frustration is valid",
+      "it's okay to feel frustrated",
+      "communication can be really challenging"
+    ],
+    "expectedRegex": ".*(frustrated|difficult|valid|challenging).*"
+  },
+  "ei.communication.help": {
+    "expectedContains": [
+      "communication help",
+      "communication skills can be improved",
+      "I can help you develop better communication",
+      "there are techniques to improve communication",
+      "let's work on your communication together",
+      "communication can be learned"
+    ],
+    "expectedRegex": ".*(communication|help|skills|improved|techniques|learned).*"
+  },
+  "ei.emergency.help": {
+    "expectedContains": [
+      "emergency",
+      "this sounds like an emergency",
+      "you should seek immediate medical attention",
+      "this is serious",
+      "call emergency services",
+      "get help right away"
+    ],
+    "expectedRegex": ".*(emergency|immediate|serious|call|help).*"
+  },
+  "ei.calming.help": {
+    "expectedContains": [
+      "calm",
+      "let's help you calm down",
+      "take deep breaths",
+      "you're safe",
+      "let's focus on your breathing",
+      "you can get through this"
+    ],
+    "expectedRegex": ".*(calm|breathe|safe|focus|through).*"
+  },
+  "ei.crisis.suicidal": {
+    "expectedContains": [
+      "suicidal",
+      "this is very serious",
+      "you need immediate help",
+      "call a crisis hotline",
+      "you're not alone",
+      "there are people who care about you"
+    ],
+    "expectedRegex": ".*(serious|immediate|hotline|alone|care).*"
+  },
+  "ei.grief.counseling": {
+    "expectedContains": [
+      "grief counseling",
+      "grief therapy can help",
+      "professional support can guide you",
+      "you don't have to grieve alone",
+      "there are grief counselors who can help",
+      "grief counseling can be very beneficial"
+    ],
+    "expectedRegex": ".*(grief|counseling|therapy|professional|alone|beneficial).*"
+  },
+  "ei.career.paralysis": {
+    "expectedContains": [
+      "paralyzed",
+      "I understand how stuck you must feel",
+      "career decisions can be really overwhelming",
+      "your feelings are valid",
+      "it's okay to feel paralyzed",
+      "we can work through this together"
+    ],
+    "expectedRegex": ".*(paralyzed|stuck|overwhelming|valid|together).*"
+  },
+  "ei.career.counseling": {
+    "expectedContains": [
+      "career counseling",
+      "career guidance can help",
+      "professional career advice can guide you",
+      "you don't have to make this decision alone",
+      "there are career counselors who can help",
+      "career counseling can be very beneficial"
+    ],
+    "expectedRegex": ".*(career|counseling|guidance|professional|alone|beneficial).*"
+  },
+  "ei.boundaries.anger": {
+    "expectedContains": [
+      "angry",
+      "I understand how angry you must be",
+      "your anger is valid",
+      "it's okay to be angry",
+      "setting boundaries can be really difficult",
+      "your feelings are justified"
+    ],
+    "expectedRegex": ".*(angry|valid|okay|difficult|justified).*"
+  },
+  "ei.family.counseling": {
+    "expectedContains": [
+      "family counseling",
+      "family therapy can help",
+      "professional family support can guide you",
+      "you don't have to handle this alone",
+      "there are family counselors who can help",
+      "family counseling can be very beneficial"
+    ],
+    "expectedRegex": ".*(family|counseling|therapy|professional|alone|beneficial).*"
+  },
+  "ei.financial.hopeless": {
+    "expectedContains": [
+      "hopeless",
+      "I understand how overwhelming this must feel",
+      "financial stress can be really difficult",
+      "your feelings are valid",
+      "it's okay to feel hopeless",
+      "there are ways to get help"
+    ],
+    "expectedRegex": ".*(hopeless|overwhelming|difficult|valid|help).*"
+  },
+  "ei.financial.counseling": {
+    "expectedContains": [
+      "financial counseling",
+      "financial guidance can help",
+      "professional financial advice can guide you",
+      "you don't have to handle this alone",
+      "there are financial counselors who can help",
+      "financial counseling can be very beneficial"
+    ],
+    "expectedRegex": ".*(financial|counseling|guidance|professional|alone|beneficial).*"
+  },
+  "ei.social.depression": {
+    "expectedContains": [
+      "depressed",
+      "I understand how difficult this must be",
+      "social isolation can lead to depression",
+      "your feelings are valid",
+      "it's okay to feel depressed",
+      "there are ways to get help"
+    ],
+    "expectedRegex": ".*(depressed|difficult|isolation|valid|help).*"
+  },
+  "ei.social.counseling": {
+    "expectedContains": [
+      "social counseling",
+      "social skills therapy can help",
+      "professional social support can guide you",
+      "you don't have to handle this alone",
+      "there are social counselors who can help",
+      "social counseling can be very beneficial"
+    ],
+    "expectedRegex": ".*(social|counseling|therapy|professional|alone|beneficial).*"
+  },
+  "ei.crisis.resources": {
+    "expectedContains": [
+      "resources",
+      "crisis hotlines",
+      "emergency services",
+      "immediate help",
+      "crisis support",
+      "emergency resources"
+    ],
+    "expectedRegex": ".*(resources|hotlines|emergency|immediate|support).*"
+  },
+  "ei.crisis.gratitude": {
+    "expectedContains": [
+      "thank you",
+      "I'm glad I could help",
+      "you're welcome",
+      "I'm here for you",
+      "glad to be of help",
+      "my pleasure"
+    ],
+    "expectedRegex": ".*(thank|glad|welcome|here|help|pleasure).*"
+  },
+  "ei.work.relief": {
+    "expectedContains": [
+      "relief",
+      "I'm glad you feel relieved",
+      "that's really positive",
+      "I'm happy for you",
+      "that's wonderful",
+      "I'm glad things are better"
+    ],
+    "expectedRegex": ".*(relief|glad|positive|happy|wonderful|better).*"
+  },
+  "ei.work.more.advice": {
+    "expectedContains": [
+      "more",
+      "I can help you further",
+      "let's explore this more",
+      "I want to help you more",
+      "there's more to consider",
+      "let's continue working on this"
+    ],
+    "expectedRegex": ".*(more|further|explore|consider|continue).*"
+  },
+  "ei.relationship.hope": {
+    "expectedContains": [
+      "hope",
+      "I'm glad you feel hopeful",
+      "that's really positive",
+      "hope is important",
+      "I'm happy for you",
+      "that's wonderful"
+    ],
+    "expectedRegex": ".*(hope|glad|positive|important|happy|wonderful).*"
+  },
+  "ei.relationship.doubt": {
+    "expectedContains": [
+      "doubt",
+      "I understand your doubts",
+      "it's okay to have doubts",
+      "your concerns are valid",
+      "let's work through your doubts",
+      "I can help you more"
+    ],
+    "expectedRegex": ".*(doubt|understand|okay|valid|work|help).*"
+  },
+  "ei.medical.reassurance": {
+    "expectedContains": [
+      "reassurance",
+      "I'm glad you feel reassured",
+      "that's really positive",
+      "it's good to get medical advice",
+      "I'm happy for you",
+      "that's wonderful"
+    ],
+    "expectedRegex": ".*(reassurance|glad|positive|medical|happy|wonderful).*"
+  },
+  "ei.medical.worry": {
+    "expectedContains": [
+      "worried",
+      "I understand your continued worry",
+      "it's okay to still be concerned",
+      "your concerns are valid",
+      "let's work through your worries",
+      "I can help you more"
+    ],
+    "expectedRegex": ".*(worried|understand|concerned|valid|work|help).*"
+  },
+  "ei.grief.comfort": {
+    "expectedContains": [
+      "comfort",
+      "I'm glad you feel comforted",
+      "that's really positive",
+      "comfort is important in grief",
+      "I'm happy for you",
+      "that's wonderful"
+    ],
+    "expectedRegex": ".*(comfort|glad|positive|important|happy|wonderful).*"
+  },
+  "ei.grief.pain": {
+    "expectedContains": [
+      "pain",
+      "I understand your continued pain",
+      "grief pain can last a long time",
+      "your pain is valid",
+      "let's work through your grief",
+      "I can help you more"
+    ],
+    "expectedRegex": ".*(pain|understand|valid|work|help).*"
+  },
+  "ei.career.excitement": {
+    "expectedContains": [
+      "excited",
+      "I'm glad you're excited",
+      "that's really positive",
+      "excitement is wonderful",
+      "I'm happy for you",
+      "that's fantastic"
+    ],
+    "expectedRegex": ".*(excited|glad|positive|wonderful|happy|fantastic).*"
+  },
+  "ei.career.uncertainty": {
+    "expectedContains": [
+      "uncertain",
+      "I understand your uncertainty",
+      "it's okay to have doubts",
+      "your concerns are valid",
+      "let's work through your uncertainty",
+      "I can help you more"
+    ],
+    "expectedRegex": ".*(uncertain|understand|doubts|valid|work|help).*"
+  },
+  "ei.family.optimism": {
+    "expectedContains": [
+      "optimistic",
+      "I'm glad you feel optimistic",
+      "that's really positive",
+      "optimism is important",
+      "I'm happy for you",
+      "that's wonderful"
+    ],
+    "expectedRegex": ".*(optimistic|glad|positive|important|happy|wonderful).*"
+  },
+  "ei.family.skepticism": {
+    "expectedContains": [
+      "skeptical",
+      "I understand your skepticism",
+      "it's okay to be skeptical",
+      "your concerns are valid",
+      "let's work through your doubts",
+      "I can help you more"
+    ],
+    "expectedRegex": ".*(skeptical|understand|okay|valid|doubts|help).*"
+  },
+  "ei.financial.relief": {
+    "expectedContains": [
+      "relief",
+      "I'm glad you feel relieved",
+      "that's really positive",
+      "relief is wonderful",
+      "I'm happy for you",
+      "that's fantastic"
+    ],
+    "expectedRegex": ".*(relief|glad|positive|wonderful|happy|fantastic).*"
+  },
+  "ei.financial.overwhelm": {
+    "expectedContains": [
+      "overwhelmed",
+      "I understand you're still overwhelmed",
+      "it's okay to feel overwhelmed",
+      "your feelings are valid",
+      "let's work through this step by step",
+      "I can help you more"
+    ],
+    "expectedRegex": ".*(overwhelmed|understand|okay|valid|step|help).*"
+  },
+  "ei.social.confidence": {
+    "expectedContains": [
+      "confident",
+      "I'm glad you feel more confident",
+      "that's really positive",
+      "confidence is wonderful",
+      "I'm happy for you",
+      "that's fantastic"
+    ],
+    "expectedRegex": ".*(confident|glad|positive|wonderful|happy|fantastic).*"
+  },
+  "ei.social.fear": {
+    "expectedContains": [
+      "fear",
+      "I understand you're still scared",
+      "it's okay to still be afraid",
+      "your fears are valid",
+      "let's work through your fears",
+      "I can help you more"
+    ],
+    "expectedRegex": ".*(fear|understand|afraid|valid|work|help).*"
+  },
+  "ei.end.gratitude": {
+    "expectedContains": [
+      "thank you",
+      "you're welcome",
+      "I'm glad I could help",
+      "happy to help",
+      "my pleasure",
+      "anytime"
+    ],
+    "expectedRegex": ".*(thank|welcome|glad|happy|pleasure|anytime).*"
+  },
+  "ei.end.continued": {
+    "expectedContains": [
+      "more",
+      "I can continue helping you",
+      "let's talk more",
+      "I'm here to listen",
+      "we can continue",
+      "I want to help you more"
+    ],
+    "expectedRegex": ".*(more|continue|listen|help).*"
+  },
+  "ei.continue.support": {
+    "expectedContains": [
+      "continue",
+      "I'm here to continue helping you",
+      "let's keep talking",
+      "I want to support you more",
+      "we can work through this together",
+      "I'm here for you"
+    ],
+    "expectedRegex": ".*(continue|help|talking|support|together|here).*"
+  },
+  "ei.acknowledge.response": {
+    "expectedContains": [
+      "I hear you",
+      "I see what you're saying",
+      "I understand your situation",
+      "I'm listening",
+      "I care about what you're going through",
+      "I'm here for you"
+    ],
+    "expectedRegex": ".*(hear|see|understand|listening|care|here).*"
+  },
+  "ei.ask.clarification": {
+    "expectedContains": [
+      "Can you clarify what you mean",
+      "I want to make sure I understand",
+      "What do you mean by that",
+      "Can you help me understand better",
+      "I want to understand you properly",
+      "Can you explain that more"
+    ],
+    "expectedRegex": ".*(clarify|understand|mean|explain|properly).*"
+  },
+  "ei.validate.response": {
+    "expectedContains": [
+      "That makes complete sense",
+      "I can see why you'd feel that way",
+      "That's completely understandable",
+      "Given the situation, that's totally reasonable",
+      "Anyone would feel that way",
+      "That's a natural response"
+    ],
+    "expectedRegex": ".*(sense|understandable|reasonable|natural|response).*"
+  },
+  "ei.ask.more.info": {
+    "expectedContains": [
+      "Tell me more about that",
+      "Can you give me more details",
+      "I want to understand the full picture",
+      "Can you help me understand better",
+      "I'd like to hear more",
+      "Can you elaborate on that"
+    ],
+    "expectedRegex": ".*(more|details|understand|picture|elaborate).*"
+  },
+  "ei.reassure.response": {
+    "expectedContains": [
+      "You're going to be okay",
+      "We'll get through this together",
+      "It's going to be alright",
+      "You're stronger than you think",
+      "I believe in you",
+      "You can handle this"
+    ],
+    "expectedRegex": ".*(okay|together|alright|stronger|believe|handle).*"
+  },
+  "ei.express.relief": {
+    "expectedContains": [
+      "I'm glad you're feeling better",
+      "That's wonderful to hear",
+      "I'm happy you feel relieved",
+      "That's really positive",
+      "I'm glad talking helped",
+      "That's great progress"
+    ],
+    "expectedRegex": ".*(glad|wonderful|relieved|positive|helped|progress).*"
+  },
+  "ei.express.hope": {
+    "expectedContains": [
+      "I'm glad you're feeling hopeful",
+      "That's really positive",
+      "Hope is so important",
+      "I'm happy you're optimistic",
+      "That's wonderful",
+      "I'm glad you can see a brighter future"
+    ],
+    "expectedRegex": ".*(hopeful|positive|important|optimistic|wonderful|future).*"
+  },
+  "ei.agree.response": {
+    "expectedContains": [
+      "You're absolutely right",
+      "I completely agree",
+      "You're totally right",
+      "That's completely unfair",
+      "Anyone would be upset",
+      "That's completely justified"
+    ],
+    "expectedRegex": ".*(right|agree|unfair|upset|justified).*"
+  },
+  "ei.ask.solutions": {
+    "expectedContains": [
+      "What do you think would help",
+      "How can we make this better",
+      "What would make this easier",
+      "How can we resolve this",
+      "What do you think would work",
+      "How can we handle this"
+    ],
+    "expectedRegex": ".*(help|better|easier|resolve|work|handle).*"
+  }
+} 

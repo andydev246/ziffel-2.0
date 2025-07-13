@@ -199,10 +199,10 @@ public class GrammarBasedFsmGenerator {
         
         // Determine next state
         if (random.nextDouble() < config.conversationEndProbability) {
-            transitionNode.put("next", "End");
+            transitionNode.put("target", "End");
         } else {
             String[] nextStates = {"Question1", "Problem1", "Solution1", "Confirmation1"};
-            transitionNode.put("next", nextStates[random.nextInt(nextStates.length)]);
+            transitionNode.put("target", nextStates[random.nextInt(nextStates.length)]);
         }
         
         return transitionNode;

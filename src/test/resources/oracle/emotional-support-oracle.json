@@ -1,0 +1,192 @@
+{
+  "ei.request.support": {
+    "expectedContains": [
+      "how can I help",
+      "I'm here to help",
+      "what can I do",
+      "tell me more",
+      "I want to help you"
+    ],
+    "expectedRegex": ".*(help|support|assist|here).*"
+  },
+  "ei.request.empathy": {
+    "expectedContains": [
+      "I understand",
+      "I hear you",
+      "I can see",
+      "I get it",
+      "I understand how you feel"
+    ],
+    "expectedRegex": ".*(understand|hear|see|get).*"
+  },
+  "ei.request.validation": {
+    "expectedContains": [
+      "okay to feel",
+      "normal to feel",
+      "your feelings are valid",
+      "it's understandable",
+      "completely normal"
+    ],
+    "expectedRegex": ".*(okay|normal|valid|understandable).*"
+  },
+  "ei.express.anger": {
+    "expectedContains": [
+      "understand your frustration",
+      "understand your anger",
+      "that sounds difficult",
+      "I can see why you'd feel that way",
+      "your frustration is valid"
+    ],
+    "expectedRegex": ".*(understand|frustration|anger|difficult|valid).*"
+  },
+  "ei.express.sadness": {
+    "expectedContains": [
+      "hear your sadness",
+      "understand your sadness",
+      "that sounds really hard",
+      "I can see why you'd feel that way",
+      "your sadness is important"
+    ],
+    "expectedRegex": ".*(hear|understand|sadness|hard|important).*"
+  },
+  "ei.express.fear": {
+    "expectedContains": [
+      "understand your fear",
+      "your fear is valid",
+      "it's natural to be afraid",
+      "I can see why you'd be worried",
+      "your anxiety makes sense"
+    ],
+    "expectedRegex": ".*(understand|fear|valid|natural|worried|anxiety).*"
+  },
+  "ei.express.joy": {
+    "expectedContains": [
+      "happy for you",
+      "that's wonderful",
+      "that's fantastic",
+      "I'm so happy for you",
+      "that's great news"
+    ],
+    "expectedRegex": ".*(happy|wonderful|fantastic|great).*"
+  },
+  "ei.express.surprise": {
+    "expectedContains": [
+      "understand your surprise",
+      "that is unexpected",
+      "I can see why you're shocked",
+      "that's quite surprising",
+      "I understand your reaction"
+    ],
+    "expectedRegex": ".*(understand|unexpected|shocked|surprising|reaction).*"
+  },
+  "ei.seek.understanding": {
+    "expectedContains": [
+      "I do understand",
+      "I can see your perspective",
+      "I get where you're coming from",
+      "I understand how you feel",
+      "I can relate to that"
+    ],
+    "expectedRegex": ".*(understand|perspective|coming from|relate).*"
+  },
+  "ei.seek.validation": {
+    "expectedContains": [
+      "it's okay to feel that way",
+      "your feelings are normal",
+      "you're not overreacting",
+      "that's a natural response",
+      "completely understandable"
+    ],
+    "expectedRegex": ".*(okay|normal|overreacting|natural|understandable).*"
+  },
+  "ei.seek.support": {
+    "expectedContains": [
+      "I'm here for you",
+      "I'll support you",
+      "I want to help you",
+      "you're not alone",
+      "I'll be here"
+    ],
+    "expectedRegex": ".*(here|support|help|alone).*"
+  },
+  "ei.escalate.crisis": {
+    "expectedContains": [
+      "deeply affecting you",
+      "really affecting you",
+      "this is serious",
+      "let's take a moment",
+      "this sounds serious"
+    ],
+    "expectedRegex": ".*(deeply|serious|moment|affecting).*"
+  },
+  "ei.mixed.emotions": {
+    "expectedContains": [
+      "mixed emotions",
+      "complex feelings",
+      "conflicting emotions",
+      "many feelings",
+      "complicated situation"
+    ],
+    "expectedRegex": ".*(mixed|complex|conflicting|many|complicated).*"
+  },
+  "ei.improvement.closure": {
+    "expectedContains": [
+      "feeling better",
+      "glad to hear",
+      "that's good",
+      "I'm glad",
+      "that's positive"
+    ],
+    "expectedRegex": ".*(better|glad|good|positive).*"
+  },
+  "ei.crisis.help": {
+    "expectedContains": [
+      "deeply affecting you",
+      "this is serious",
+      "let's work through this",
+      "I'm here to help",
+      "this sounds serious"
+    ],
+    "expectedRegex": ".*(deeply|serious|work|help).*"
+  },
+  "ei.crisis.professional": {
+    "expectedContains": [
+      "professional help",
+      "counselor",
+      "therapist",
+      "professional support",
+      "talk to someone"
+    ],
+    "expectedRegex": ".*(professional|counselor|therapist|support|someone).*"
+  },
+  "ei.complex.support": {
+    "expectedContains": [
+      "complex situation",
+      "mixed feelings",
+      "complicated emotions",
+      "I can help you understand",
+      "let's work through this"
+    ],
+    "expectedRegex": ".*(complex|mixed|complicated|understand|work).*"
+  },
+  "ei.complex.validation": {
+    "expectedContains": [
+      "normal to feel",
+      "okay to have mixed emotions",
+      "natural to feel both",
+      "completely normal",
+      "understandable"
+    ],
+    "expectedRegex": ".*(normal|okay|mixed|natural|understandable).*"
+  },
+  "ei.end.thanks": {
+    "expectedContains": [
+      "you're welcome",
+      "glad I could help",
+      "happy to help",
+      "anytime",
+      "take care"
+    ],
+    "expectedRegex": ".*(welcome|glad|happy|anytime|care).*"
+  }
+} 

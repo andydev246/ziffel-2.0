@@ -11,7 +11,7 @@
             "action": ["forgot", "lost", "can't remember"],
             "object": ["my password", "the login credentials"]
           },
-          "next": "AuthFlow"
+          "target": "AuthFlow"
         },
         "billingIssue": {
           "intent": "billing.inquiry",
@@ -21,7 +21,7 @@
             "problem": ["I have an issue", "There’s a problem"],
             "detail": ["with my invoice", "with the last payment"]
           },
-          "next": "BillingFlow"
+          "target": "BillingFlow"
         }
       }
     },
@@ -31,13 +31,13 @@
           "prompt": "The verification code is not working",
           "intent": "account.codeIssue",
           "expectedContains": "send you a new verification code",
-          "next": "Exit"
+          "target": "Exit"
         },
         "successReset": {
           "prompt": "Thanks, I was able to reset it",
           "intent": "account.success",
           "expectedContains": "Glad to help",
-          "next": "Exit"
+          "target": "Exit"
         }
       }
     },
@@ -51,13 +51,13 @@
             "action": ["a refund", "my money back"],
             "reason": ["for the last charge", ""]
           },
-          "next": "Exit"
+          "target": "Exit"
         },
         "confirmation": {
           "prompt": "That explains the invoice. Thank you!",
           "intent": "billing.confirmation",
           "expectedContains": "You're welcome",
-          "next": "Exit"
+          "target": "Exit"
         }
       }
     },

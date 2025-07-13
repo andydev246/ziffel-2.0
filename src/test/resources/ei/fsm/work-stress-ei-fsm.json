@@ -1,0 +1,160 @@
+{
+  "startState": "InitialContact",
+  "states": {
+    "InitialContact": {
+      "transitions": {
+        "workStress": {
+          "intent": "ei.work.stress",
+          "expectedContains": "work stress",
+          "rlTemplate": {
+            "prefix": ["I'm really stressed about work", "Work is overwhelming me", "I can't handle my job anymore"],
+            "context": ["my boss is micromanaging", "I have too many deadlines", "my colleagues are toxic"],
+            "intensity": ["I'm at my breaking point", "I can't sleep because of it", "I'm considering quitting"]
+          },
+          "target": "WorkStressDetails"
+        }
+      }
+    },
+    "WorkStressDetails": {
+      "transitions": {
+        "expressBurnout": {
+          "intent": "ei.burnout.express",
+          "expectedContains": "burnout",
+          "rlTemplate": {
+            "prefix": ["I think I'm burned out", "I'm completely exhausted", "I have nothing left to give"],
+            "symptoms": ["I can't focus", "I'm irritable all the time", "I don't care anymore"],
+            "duration": ["This has been going on for months", "I can't remember the last time I felt good", "I'm at my limit"]
+          },
+          "target": "WorkStressDetails"
+        },
+        "seekWorkAdvice": {
+          "intent": "ei.work.advice",
+          "expectedContains": "advice",
+          "rlTemplate": {
+            "prefix": ["What should I do", "How do I handle this", "I need advice"],
+            "request": ["about my work situation", "on how to cope", "on what to do next"],
+            "options": ["Should I quit", "Should I talk to HR", "Should I look for another job"]
+          },
+          "target": "WorkStressDetails"
+        },
+        "respondWithEmpathy": {
+          "intent": "ei.respond.empathy",
+          "expectedContains": "I understand",
+          "rlTemplate": {
+            "prefix": ["I know", "I understand", "I get it"],
+            "empathy": ["how stressful work can be", "how overwhelming this must feel", "how difficult this is"],
+            "context": ["work stress is really hard", "I can see why you're struggling", "that sounds awful"]
+          },
+          "target": "WorkStressDetails"
+        },
+        "acknowledgeResponse": {
+          "intent": "ei.acknowledge.response",
+          "expectedContains": "I hear you",
+          "rlTemplate": {
+            "prefix": ["I hear you", "I see", "I understand"],
+            "acknowledgment": ["how hard this is", "what you're saying", "your situation"],
+            "context": ["and I'm listening", "and I care", "and I'm here"]
+          },
+          "target": "WorkStressDetails"
+        },
+        "askForClarification": {
+          "intent": "ei.ask.clarification",
+          "expectedContains": "can you clarify",
+          "rlTemplate": {
+            "prefix": ["Can you clarify", "What do you mean by", "I want to make sure I understand"],
+            "request": ["what you're saying", "how you're feeling", "the situation"],
+            "context": ["so I can help better", "to understand you", "to support you properly"]
+          },
+          "target": "WorkStressDetails"
+        },
+        "respondWithValidation": {
+          "intent": "ei.validate.response",
+          "expectedContains": "that makes sense",
+          "rlTemplate": {
+            "prefix": ["That makes sense", "I can see why", "That's understandable"],
+            "validation": ["you'd feel that way", "you're stressed", "you're overwhelmed"],
+            "context": ["given the situation", "considering what happened", "with everything going on"]
+          },
+          "target": "WorkStressDetails"
+        },
+        "askForMoreInfo": {
+          "intent": "ei.ask.more.info",
+          "expectedContains": "tell me more",
+          "rlTemplate": {
+            "prefix": ["Tell me more", "Can you give me more details", "I want to understand"],
+            "request": ["about your work situation", "about what's happening", "about how you're feeling"],
+            "context": ["so I can help better", "to understand the full picture", "to support you properly"]
+          },
+          "target": "WorkStressDetails"
+        },
+        "respondWithReassurance": {
+          "intent": "ei.reassure.response",
+          "expectedContains": "you're going to be okay",
+          "rlTemplate": {
+            "prefix": ["You're going to be okay", "It's going to be alright", "We'll get through this"],
+            "reassurance": ["together", "step by step", "one day at a time"],
+            "context": ["I believe in you", "You're stronger than you think", "You can handle this"]
+          },
+          "target": "WorkStressDetails"
+        },
+        "respondWithAgreement": {
+          "intent": "ei.agree.response",
+          "expectedContains": "you're absolutely right",
+          "rlTemplate": {
+            "prefix": ["You're absolutely right", "I completely agree", "You're totally right"],
+            "agreement": ["that's unfair", "that's frustrating", "that's unacceptable"],
+            "context": ["I can see why you're upset", "Anyone would be stressed", "That's completely justified"]
+          },
+          "target": "WorkStressDetails"
+        },
+        "askForSolutions": {
+          "intent": "ei.ask.solutions",
+          "expectedContains": "what would help",
+          "rlTemplate": {
+            "prefix": ["What would help", "What do you think would make this better", "How can we"],
+            "request": ["resolve this", "make this easier", "handle this situation"],
+            "context": ["for you", "to feel better", "to move forward"]
+          },
+          "target": "WorkStressDetails"
+        },
+        "expressRelief": {
+          "intent": "ei.express.relief",
+          "expectedContains": "I feel better",
+          "rlTemplate": {
+            "prefix": ["I feel better", "I feel relieved", "I feel calmer"],
+            "relief": ["after talking to you", "now that I've shared", "getting this off my chest"],
+            "context": ["thank you for listening", "this really helped", "I needed this"]
+          },
+          "target": "SupportEnd"
+        },
+        "expressHope": {
+          "intent": "ei.express.hope",
+          "expectedContains": "I feel hopeful",
+          "rlTemplate": {
+            "prefix": ["I feel hopeful", "I feel optimistic", "I feel better about"],
+            "hope": ["the future", "things getting better", "handling this"],
+            "context": ["thank you for helping me see", "this gives me hope", "I feel more confident"]
+          },
+          "target": "SupportEnd"
+        }
+      }
+    },
+    "SupportEnd": {
+      "transitions": {
+        "thankForSupport": {
+          "intent": "ei.end.thanks",
+          "expectedContains": "thank you",
+          "rlTemplate": {
+            "prefix": ["Thank you", "Thanks", "I really appreciate"],
+            "gratitude": ["for your support", "for listening", "for being here"],
+            "context": ["I really appreciate it", "it means a lot", "you've been so helpful"]
+          },
+          "target": "End"
+        }
+      }
+    },
+    "End": {
+      "transitions": {}
+    }
+  }
+} 
