@@ -73,18 +73,28 @@ public class RLPromptGenerator {
 
     public static List<List<PromptTestCase>> generateConversationPaths(FsmDefinition fsm, String startState) {
         List<List<PromptTestCase>> conversations = new ArrayList<>();
-        walkFsm(fsm, startState, new ArrayList<>(), conversations);
+        walkFsm(fsm, startState, new ArrayList<>(), conversations, new java.util.HashSet<>());
         return conversations;
     }
 
     private static void walkFsm(FsmDefinition fsm, String currentState,
                                 List<PromptTestCase> currentPath,
-                                List<List<PromptTestCase>> allPaths) {
+                                List<List<PromptTestCase>> allPaths,
+                                java.util.Set<String> visitedStates) {
+        // Check for cycles
+        if (visitedStates.contains(currentState)) {
+            allPaths.add(new ArrayList<>(currentPath)); // End path at cycle
+            return;
+        }
+        
         FsmState state = fsm.states.get(currentState);
         if (state == null || state.transitions == null || state.transitions.isEmpty()) {
             allPaths.add(new ArrayList<>(currentPath)); // End of path
             return;
         }
+
+        // Add current state to visited set
+        visitedStates.add(currentState);
 
         for (Map.Entry<String, FsmTransition> entry : state.transitions.entrySet()) {
             FsmTransition transition = entry.getValue();
@@ -102,8 +112,11 @@ public class RLPromptGenerator {
             
             PromptTestCase testCase = new PromptTestCase(prompt, transition.intent, transition.expectedContains);
             currentPath.add(testCase);
-            walkFsm(fsm, nextState, currentPath, allPaths);
+            walkFsm(fsm, nextState, currentPath, allPaths, visitedStates);
             currentPath.remove(currentPath.size() - 1);
         }
+        
+        // Remove current state from visited set when backtracking
+        visitedStates.remove(currentState);
     }
 }

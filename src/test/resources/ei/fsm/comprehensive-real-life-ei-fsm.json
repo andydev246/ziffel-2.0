@@ -237,7 +237,7 @@
             "context": ["Everyone else has moved on", "I can't talk to anyone", "I feel like a burden"],
             "despair": ["I don't know how to go on", "I miss them so much", "I feel empty inside"]
           },
-          "next": "GriefLonelinessCrisis"
+          "next": "GriefGuiltCrisis"
         },
         "seekGriefSupport": {
           "intent": "ei.grief.support",
@@ -291,7 +291,7 @@
             "motivation": ["I feel alive again", "I'm passionate about this", "I see my future clearly"],
             "confidence": ["I know I can do this", "I'm ready for the challenge", "This is my calling"]
           },
-          "next": "CareerExcitementResponse"
+          "next": "CareerGuidanceResponse"
         },
         "validateFeelings": {
           "intent": "ei.validate.feelings",
@@ -335,7 +335,7 @@
             "context": ["They're my family", "They raised me", "They love me in their own way"],
             "confusion": ["I don't know what to do", "I feel torn", "I want to do the right thing"]
           },
-          "next": "FamilyGuiltCrisis"
+          "next": "GriefGuiltCrisis"
         },
         "agreeWithFeelings": {
           "intent": "ei.agree.response",
@@ -379,7 +379,7 @@
             "context": ["The debt keeps growing", "I can't find a better job", "I see no way out"],
             "despair": ["I want to give up", "I can't see a future", "I feel like a burden"]
           },
-          "next": "FinancialHopelessCrisis"
+          "next": "FinancialShameCrisis"
         },
         "acknowledgeResponse": {
           "intent": "ei.acknowledge.response",

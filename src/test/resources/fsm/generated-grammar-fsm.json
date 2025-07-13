@@ -4,30 +4,6 @@
     "Start" : {
       "transitions" : {
         "reportdetails" : {
-          "intent" : "technical.support",
-          "rlTemplate" : {
-            "prefix" : [ "", "Hey", "Hi" ],
-            "action" : [ "need", "want", "looking for" ],
-            "object" : [ "help", "information" ]
-          },
-          "expectedContains" : "general help",
-          "next" : "Problem1"
-        }
-      }
-    },
-    "Confirmation1" : {
-      "transitions" : {
-        "clarifyinformation" : {
-          "intent" : "business.inquiry",
-          "rlTemplate" : {
-            "prefix" : [ "", "Hey", "Hi" ],
-            "action" : [ "need", "want", "looking for" ],
-            "object" : [ "help", "information" ]
-          },
-          "expectedContains" : "general help",
-          "next" : "End"
-        },
-        "asksupport" : {
           "intent" : "billing.inquiry",
           "rlTemplate" : {
             "prefix" : [ "", "Hey", "Hi" ],
@@ -35,23 +11,23 @@
             "object" : [ "my bill", "my payment" ]
           },
           "expectedContains" : "billing information",
-          "next" : "Confirmation1"
-        }
-      }
-    },
-    "Problem2" : {
-      "transitions" : {
-        "resolveinformation" : {
-          "intent" : "product.information",
+          "next" : "Solution3"
+        },
+        "confirmassistance" : {
+          "intent" : "support.request",
           "rlTemplate" : {
             "prefix" : [ "", "Hey", "Hi" ],
             "action" : [ "need", "want", "looking for" ],
             "object" : [ "help", "information" ]
           },
-          "expectedContains" : "product details",
+          "expectedContains" : "support assistance",
           "next" : "End"
-        },
-        "requestsupport" : {
+        }
+      }
+    },
+    "Question1" : {
+      "transitions" : {
+        "confirmhelp" : {
           "intent" : "general.inquiry",
           "rlTemplate" : {
             "prefix" : [ "", "Hey", "Hi" ],
@@ -59,13 +35,13 @@
             "object" : [ "help", "information" ]
           },
           "expectedContains" : "general help",
-          "next" : "Solution1"
+          "next" : "End"
         }
       }
     },
-    "Confirmation3" : {
+    "Question2" : {
       "transitions" : {
-        "reportinformation" : {
+        "askdetails" : {
           "intent" : "support.request",
           "rlTemplate" : {
             "prefix" : [ "", "Hey", "Hi" ],
@@ -73,30 +49,44 @@
             "object" : [ "help", "information" ]
           },
           "expectedContains" : "support assistance",
-          "next" : "Question1"
+          "next" : "Question2"
         },
-        "confirminformation" : {
-          "intent" : "support.request",
+        "resolveinformation" : {
+          "intent" : "account.management",
+          "rlTemplate" : {
+            "prefix" : [ "", "Hey", "Hi" ],
+            "action" : [ "forgot", "lost", "need to reset" ],
+            "object" : [ "my password", "my account" ]
+          },
+          "expectedContains" : "account management",
+          "next" : "End"
+        }
+      }
+    },
+    "Solution3" : {
+      "transitions" : {
+        "reportsupport" : {
+          "intent" : "business.inquiry",
           "rlTemplate" : {
             "prefix" : [ "", "Hey", "Hi" ],
             "action" : [ "need", "want", "looking for" ],
             "object" : [ "help", "information" ]
           },
-          "expectedContains" : "support assistance",
-          "next" : "Solution1"
+          "expectedContains" : "general help",
+          "next" : "Question1"
         }
       }
     },
     "End" : {
       "transitions" : {
-        "askdetails" : {
-          "intent" : "general.inquiry",
+        "resolvehelp" : {
+          "intent" : "account.management",
           "rlTemplate" : {
             "prefix" : [ "", "Hey", "Hi" ],
-            "action" : [ "need", "want", "looking for" ],
-            "object" : [ "help", "information" ]
+            "action" : [ "forgot", "lost", "need to reset" ],
+            "object" : [ "my password", "my account" ]
           },
-          "expectedContains" : "general help",
+          "expectedContains" : "account management",
           "next" : "End"
         }
       }

@@ -108,7 +108,7 @@ public class GrammarBasedFsmGenerator {
             int numTransitions = random.nextInt(config.maxTransitionsPerState) + 1;
             for (int i = 0; i < numTransitions; i++) {
                 String transitionName = generateTransitionName();
-                ObjectNode transitionNode = generateTransitionNode(config, mapper);
+                ObjectNode transitionNode = generateTransitionNode(config, mapper, stateNames);
                 transitionsNode.set(transitionName, transitionNode);
             }
             
@@ -146,7 +146,7 @@ public class GrammarBasedFsmGenerator {
         return action + object.charAt(0) + object.substring(1);
     }
     
-    private ObjectNode generateTransitionNode(FsmGenerationConfig config, ObjectMapper mapper) {
+    private ObjectNode generateTransitionNode(FsmGenerationConfig config, ObjectMapper mapper, List<String> availableStates) {
         ObjectNode transitionNode = mapper.createObjectNode();
         
         // Select a random topic and intent
@@ -197,12 +197,24 @@ public class GrammarBasedFsmGenerator {
         String expectedContent = generateExpectedContent(intent);
         transitionNode.put("expectedContains", expectedContent);
         
-        // Determine next state
+        // Determine next state - use only available states
         if (random.nextDouble() < config.conversationEndProbability) {
             transitionNode.put("next", "End");
         } else {
-            String[] nextStates = {"Question1", "Problem1", "Solution1", "Confirmation1"};
-            transitionNode.put("next", nextStates[random.nextInt(nextStates.length)]);
+            // Filter out "Start" and "End" states for transitions
+            List<String> validNextStates = new ArrayList<>();
+            for (String state : availableStates) {
+                if (!state.equals("Start") && !state.equals("End")) {
+                    validNextStates.add(state);
+                }
+            }
+            
+            if (!validNextStates.isEmpty()) {
+                String nextState = validNextStates.get(random.nextInt(validNextStates.size()));
+                transitionNode.put("next", nextState);
+            } else {
+                transitionNode.put("next", "End");
+            }
         }
         
         return transitionNode;
