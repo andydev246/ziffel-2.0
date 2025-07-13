@@ -11,7 +11,7 @@
             "support": ["emotional support", "someone to talk to", "help with my feelings"],
             "context": ["right now", "today", "with what I'm going through"]
           },
-          "target": "ExpressEmotion"
+          "next": "ExpressEmotion"
         },
         "requestEmpathy": {
           "intent": "ei.request.empathy",
@@ -21,7 +21,7 @@
             "request": ["someone to understand me", "empathy", "someone to listen"],
             "context": ["with my situation", "about what happened", "with my feelings"]
           },
-          "target": "ExpressEmotion"
+          "next": "ExpressEmotion"
         },
         "requestValidation": {
           "intent": "ei.request.validation",
@@ -31,7 +31,7 @@
             "request": ["if my feelings are normal", "if it's okay to feel this way", "validation"],
             "context": ["about what I'm feeling", "about my reaction", "about my emotions"]
           },
-          "target": "ExpressEmotion"
+          "next": "ExpressEmotion"
         }
       }
     },
@@ -45,7 +45,7 @@
             "emotion": ["frustrated", "angry", "furious", "upset"],
             "context": ["with this situation", "about what happened", "at work", "with my boss"]
           },
-          "target": "SeekResponse"
+          "next": "SeekResponse"
         },
         "expressSadness": {
           "intent": "ei.express.sadness",
@@ -55,7 +55,7 @@
             "emotion": ["sad", "down", "depressed", "heartbroken"],
             "context": ["about the loss", "today", "lately", "with my relationship"]
           },
-          "target": "SeekResponse"
+          "next": "SeekResponse"
         },
         "expressFear": {
           "intent": "ei.express.fear",
@@ -65,7 +65,7 @@
             "emotion": ["scared", "anxious", "worried", "terrified"],
             "context": ["about the future", "about my health", "about what might happen"]
           },
-          "target": "SeekResponse"
+          "next": "SeekResponse"
         },
         "expressJoy": {
           "intent": "ei.express.joy",
@@ -75,7 +75,7 @@
             "emotion": ["happy", "thrilled", "excited", "delighted"],
             "context": ["about the news", "with the results", "about my achievement"]
           },
-          "target": "SeekResponse"
+          "next": "SeekResponse"
         },
         "expressSurprise": {
           "intent": "ei.express.surprise",
@@ -85,7 +85,7 @@
             "emotion": ["shocked", "amazed", "surprised", "stunned"],
             "context": ["by this news", "by what happened", "by the results"]
           },
-          "target": "SeekResponse"
+          "next": "SeekResponse"
         }
       }
     },
@@ -99,7 +99,7 @@
             "request": ["understand how I feel", "see my perspective", "get where I'm coming from"],
             "context": ["in this situation", "about what happened", "with my feelings"]
           },
-          "target": "EscalateEmotion"
+          "next": "EscalateEmotion"
         },
         "askForValidation": {
           "intent": "ei.seek.validation",
@@ -109,7 +109,7 @@
             "request": ["okay to feel this way", "my feelings are normal", "I'm overreacting"],
             "context": ["about this", "in this situation", "with what happened"]
           },
-          "target": "EscalateEmotion"
+          "next": "EscalateEmotion"
         },
         "askForSupport": {
           "intent": "ei.seek.support",
@@ -119,7 +119,7 @@
             "request": ["be here for me", "support me", "help me through this"],
             "context": ["right now", "with this", "through this difficult time"]
           },
-          "target": "EscalateEmotion"
+          "next": "EscalateEmotion"
         }
       }
     },
@@ -133,7 +133,7 @@
             "intensity": ["more and more frustrated", "increasingly anxious", "more depressed", "more angry"],
             "context": ["with this situation", "about everything", "about what's happening"]
           },
-          "target": "CrisisRequest"
+          "next": "CrisisRequest"
         },
         "expressMixedEmotions": {
           "intent": "ei.mixed.emotions",
@@ -144,13 +144,13 @@
             "but": ["but also", "however", "though"],
             "emotion2": ["sad about the loss", "worried about the challenges", "anxious about the future"]
           },
-          "target": "ComplexRequest"
+          "next": "ComplexRequest"
         },
         "expressImprovement": {
           "intent": "ei.improvement.closure",
           "expectedContains": "feeling better",
           "prompt": "I'm feeling a bit better now. Thank you for listening.",
-          "target": "SupportEnd"
+          "next": "SupportEnd"
         }
       }
     },
@@ -164,7 +164,7 @@
             "request": ["help with this crisis", "support right now", "someone to talk to"],
             "context": ["because I'm really struggling", "because this is serious", "because I can't handle this"]
           },
-          "target": "SupportEnd"
+          "next": "SupportEnd"
         },
         "requestProfessional": {
           "intent": "ei.crisis.professional",
@@ -174,7 +174,7 @@
             "request": ["talk to a professional", "see a therapist", "get professional help"],
             "context": ["for this", "about my feelings", "with what I'm going through"]
           },
-          "target": "SupportEnd"
+          "next": "SupportEnd"
         }
       }
     },
@@ -188,7 +188,7 @@
             "request": ["understand these mixed feelings", "sort through these emotions", "make sense of this"],
             "context": ["because I'm confused", "because it's complicated", "because I don't understand"]
           },
-          "target": "SupportEnd"
+          "next": "SupportEnd"
         },
         "requestValidation": {
           "intent": "ei.complex.validation",
@@ -198,7 +198,7 @@
             "request": ["normal to feel this way", "okay to have mixed emotions", "weird to feel both"],
             "context": ["about this", "in this situation", "with what happened"]
           },
-          "target": "SupportEnd"
+          "next": "SupportEnd"
         }
       }
     },
@@ -208,7 +208,7 @@
           "intent": "ei.end.thanks",
           "expectedContains": "thank you",
           "prompt": "Thank you for your support. I really appreciate it.",
-          "target": "End"
+          "next": "End"
         }
       }
     },

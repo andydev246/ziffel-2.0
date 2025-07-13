@@ -11,17 +11,17 @@
             "loss": ["my partner passed away", "my loved one died", "they're gone"],
             "reaction": ["I can't believe this is real", "Everything feels like a dream", "This doesn't feel real"]
           },
-          "target": "ShockDenial"
+          "next": "ShockDenial"
         },
         "expressAnger": {
           "intent": "ei.grief.anger",
           "expectedContains": "angry",
           "rlTemplate": {
             "prefix": ["Why did this happen", "This isn't fair", "I'm so angry"],
-            "target": ["at everything", "at the world", "at life"],
+            "targetOfAnger": ["at everything", "at the world", "at life"],
             "context": ["right now", "I can't believe this", "It's not fair"]
           },
-          "target": "AngerStage"
+          "next": "AngerStage"
         },
         "expressSadness": {
           "intent": "ei.grief.sadness",
@@ -31,7 +31,7 @@
             "emotion": ["inside", "all the time", "right now"],
             "context": ["I don't know how I'll get through this", "I can't imagine life without them", "Everything feels meaningless"]
           },
-          "target": "DeepSadness"
+          "next": "DeepSadness"
         }
       }
     },
@@ -45,7 +45,7 @@
             "expectation": ["I keep expecting them to walk through the door", "I keep thinking they'll call", "I keep waiting for them"],
             "context": ["any minute", "to come home", "to be here"]
           },
-          "target": "AngerStage"
+          "next": "AngerStage"
         },
         "denialSadness": {
           "intent": "ei.grief.denial.sadness",
@@ -55,7 +55,7 @@
             "description": ["Like I'm watching this happen to someone else", "Like this isn't real", "Like I'm in a dream"],
             "context": ["I can't process this", "I can't feel anything", "I'm just going through the motions"]
           },
-          "target": "DeepSadness"
+          "next": "DeepSadness"
         },
         "denialAcceptance": {
           "intent": "ei.grief.denial.acceptance",
@@ -65,7 +65,7 @@
             "but": ["but I'm not ready to face it yet", "but I can't accept it", "but I don't want to believe it"],
             "context": ["I need more time", "I'm not ready", "I can't handle this yet"]
           },
-          "target": "BeginningAcceptance"
+          "next": "BeginningAcceptance"
         }
       }
     },
@@ -79,17 +79,17 @@
             "guilt": ["I wasn't there when they needed me", "I could have done more", "I should have known"],
             "context": ["I feel so guilty", "I blame myself", "I can't forgive myself"]
           },
-          "target": "SelfBlame"
+          "next": "SelfBlame"
         },
         "angerOthers": {
           "intent": "ei.grief.anger.others",
           "expectedContains": "blame",
           "rlTemplate": {
             "prefix": ["The doctors failed them", "The hospital didn't do enough", "Someone has to pay"],
-            "target": ["for this", "for what happened", "for their death"],
+            "targetOfAnger": ["for this", "for what happened", "for their death"],
             "context": ["They didn't try hard enough", "They made mistakes", "They should have saved them"]
           },
-          "target": "BlamingOthers"
+          "next": "BlamingOthers"
         },
         "angerSadness": {
           "intent": "ei.grief.anger.sadness",
@@ -99,7 +99,7 @@
             "but": ["but underneath it all", "but really", "but actually"],
             "context": ["I'm just so sad", "I'm just hurting", "I'm just in pain"]
           },
-          "target": "DeepSadness"
+          "next": "DeepSadness"
         }
       }
     },
@@ -113,7 +113,7 @@
             "reason": ["I just want to be alone with my pain", "I can't face people", "I need time to myself"],
             "context": ["I can't handle being around others", "I need space", "I need to process this alone"]
           },
-          "target": "Isolation"
+          "next": "Isolation"
         },
         "sadnessAcceptance": {
           "intent": "ei.grief.sadness.acceptance",
@@ -123,7 +123,7 @@
             "but": ["but I'm starting to understand", "but I'm beginning to accept", "but I'm learning"],
             "context": ["they're not coming back", "they're really gone", "this is permanent"]
           },
-          "target": "BeginningAcceptance"
+          "next": "BeginningAcceptance"
         },
         "sadnessGuilt": {
           "intent": "ei.grief.sadness.guilt",
@@ -133,7 +133,7 @@
             "reason": ["for still being here when they're gone", "for being alive", "for surviving"],
             "context": ["I don't deserve to be happy", "I should have died instead", "I don't deserve to live"]
           },
-          "target": "SelfBlame"
+          "next": "SelfBlame"
         }
       }
     },
@@ -147,7 +147,7 @@
             "but": ["but I still feel responsible", "but I still blame myself", "but I still feel guilty"],
             "context": ["I need to forgive myself", "I need to let go of the guilt", "I need to be kinder to myself"]
           },
-          "target": "SelfForgiveness"
+          "next": "SelfForgiveness"
         },
         "guiltSadness": {
           "intent": "ei.grief.guilt.sadness",
@@ -157,7 +157,7 @@
             "effect": ["I don't deserve to be happy", "I can't be happy", "I shouldn't be happy"],
             "context": ["I don't deserve anything good", "I should suffer", "I deserve to be miserable"]
           },
-          "target": "DeepSadness"
+          "next": "DeepSadness"
         },
         "guiltAcceptance": {
           "intent": "ei.grief.guilt.acceptance",
@@ -167,7 +167,7 @@
             "difficulty": ["but it's so hard", "but it's not easy", "but it takes time"],
             "context": ["I'm doing the work", "I'm making progress", "I'm getting better"]
           },
-          "target": "BeginningAcceptance"
+          "next": "BeginningAcceptance"
         }
       }
     },
@@ -181,7 +181,7 @@
             "but": ["but I'm so angry", "but I'm so hurt", "but I'm so frustrated"],
             "context": ["I need someone to blame", "I need answers", "I need someone to be responsible"]
           },
-          "target": "BeginningAcceptance"
+          "next": "BeginningAcceptance"
         },
         "blameSadness": {
           "intent": "ei.grief.blame.sadness",
@@ -191,7 +191,7 @@
             "transition": ["I'm just so tired and sad", "I'm just so exhausted", "I'm just so worn out"],
             "context": ["I can't keep being angry", "I need to let go", "I need to find peace"]
           },
-          "target": "DeepSadness"
+          "next": "DeepSadness"
         },
         "blameUnderstanding": {
           "intent": "ei.grief.blame.understanding",
@@ -201,7 +201,7 @@
             "realization": ["that sometimes bad things just happen", "that life isn't fair", "that I can't control everything"],
             "context": ["I'm working on accepting this", "I'm trying to find peace", "I'm learning to let go"]
           },
-          "target": "Understanding"
+          "next": "Understanding"
         }
       }
     },
@@ -215,7 +215,7 @@
             "realization": ["I can't do this alone", "I need others", "I need connection"],
             "context": ["I'm ready to reach out", "I'm ready to let people in", "I'm ready for support"]
           },
-          "target": "Connection"
+          "next": "Connection"
         },
         "isolationSadness": {
           "intent": "ei.grief.isolation.sadness",
@@ -225,7 +225,7 @@
             "realization": ["I need others", "I need support", "I need connection"],
             "context": ["I can't do this alone", "I need help", "I need people"]
           },
-          "target": "DeepSadness"
+          "next": "DeepSadness"
         },
         "isolationAcceptance": {
           "intent": "ei.grief.isolation.acceptance",
@@ -235,7 +235,7 @@
             "readiness": ["I'm ready to connect", "I'm ready to be vulnerable", "I'm ready to accept help"],
             "context": ["I'm ready to heal", "I'm ready to move forward", "I'm ready to grow"]
           },
-          "target": "Connection"
+          "next": "Connection"
         }
       }
     },
@@ -249,7 +249,7 @@
             "method": ["by living well", "by helping others", "by being the person they knew"],
             "context": ["I want to make them proud", "I want to honor their legacy", "I want to remember them well"]
           },
-          "target": "FindingMeaning"
+          "next": "FindingMeaning"
         },
         "acceptanceGrowth": {
           "intent": "ei.grief.acceptance.growth",
@@ -259,7 +259,7 @@
             "change": ["I'm a different person", "I see life differently", "I value different things"],
             "context": ["I'm stronger", "I'm more compassionate", "I'm more grateful"]
           },
-          "target": "PersonalGrowth"
+          "next": "PersonalGrowth"
         },
         "acceptanceSetback": {
           "intent": "ei.grief.acceptance.setback",
@@ -269,7 +269,7 @@
             "setback": ["but I'm struggling again", "but I'm hurting again", "but I'm sad again"],
             "context": ["I'm disappointed", "I'm frustrated", "I'm confused"]
           },
-          "target": "DeepSadness"
+          "next": "DeepSadness"
         }
       }
     },
@@ -283,7 +283,7 @@
             "realization": ["I need to honor their memory", "I need to live well", "I need to be happy"],
             "context": ["for their sake", "to honor them", "to remember them well"]
           },
-          "target": "FindingMeaning"
+          "next": "FindingMeaning"
         },
         "forgivenessGrowth": {
           "intent": "ei.grief.forgiveness.growth",
@@ -293,7 +293,7 @@
             "growth": ["I'm becoming stronger", "I'm becoming more compassionate", "I'm becoming more resilient"],
             "context": ["I'm learning", "I'm growing", "I'm healing"]
           },
-          "target": "PersonalGrowth"
+          "next": "PersonalGrowth"
         },
         "forgivenessConnection": {
           "intent": "ei.grief.forgiveness.connection",
@@ -303,7 +303,7 @@
             "readiness": ["I'm ready to be vulnerable", "I'm ready to reach out", "I'm ready to accept help"],
             "context": ["I'm ready to heal", "I'm ready to grow", "I'm ready to move forward"]
           },
-          "target": "Connection"
+          "next": "Connection"
         }
       }
     },
@@ -317,7 +317,7 @@
             "lesson": ["about what really matters", "about what's important", "about what's valuable"],
             "context": ["I see life differently", "I value different things", "I appreciate what I have"]
           },
-          "target": "FindingMeaning"
+          "next": "FindingMeaning"
         },
         "understandingGrowth": {
           "intent": "ei.grief.understanding.growth",
@@ -327,7 +327,7 @@
             "perspective": ["I value different things", "I appreciate what I have", "I see what's important"],
             "context": ["I'm grateful", "I'm more compassionate", "I'm more understanding"]
           },
-          "target": "PersonalGrowth"
+          "next": "PersonalGrowth"
         },
         "understandingAcceptance": {
           "intent": "ei.grief.understanding.acceptance",
@@ -337,7 +337,7 @@
             "acceptance": ["that some things are beyond my control", "that I can't control everything", "that life isn't always fair"],
             "context": ["I'm finding peace", "I'm letting go", "I'm moving forward"]
           },
-          "target": "BeginningAcceptance"
+          "next": "BeginningAcceptance"
         }
       }
     },
@@ -351,7 +351,7 @@
             "benefit": ["is helping me heal", "is giving me hope", "is helping me grow"],
             "context": ["I'm not alone", "Others understand", "I'm finding support"]
           },
-          "target": "FindingMeaning"
+          "next": "FindingMeaning"
         },
         "connectionGrowth": {
           "intent": "ei.grief.connection.growth",
@@ -361,7 +361,7 @@
             "goal": ["I want to help others who are grieving", "I want to support others", "I want to give back"],
             "context": ["I want to honor their memory", "I want to make them proud", "I want to help others heal"]
           },
-          "target": "PersonalGrowth"
+          "next": "PersonalGrowth"
         },
         "connectionSetback": {
           "intent": "ei.grief.connection.setback",
@@ -371,7 +371,7 @@
             "frustration": ["They don't understand my pain", "They don't know how to help", "They make it worse"],
             "context": ["I feel isolated", "I feel misunderstood", "I feel alone"]
           },
-          "target": "Isolation"
+          "next": "Isolation"
         }
       }
     },
@@ -385,7 +385,7 @@
             "method": ["by helping others", "by making a difference", "by giving back"],
             "context": ["I want to make them proud", "I want to honor their legacy", "I want to help others heal"]
           },
-          "target": "PersonalGrowth"
+          "next": "PersonalGrowth"
         },
         "meaningIntegration": {
           "intent": "ei.grief.meaning.integration",
@@ -395,7 +395,7 @@
             "integration": ["as part of who I am", "into my life story", "into my identity"],
             "context": ["I'm not getting over it", "I'm learning to live with it", "I'm honoring both the loss and life"]
           },
-          "target": "Integration"
+          "next": "Integration"
         },
         "meaningSetback": {
           "intent": "ei.grief.meaning.setback",
@@ -405,7 +405,7 @@
             "struggle": ["I'm struggling to find purpose", "I'm struggling to find hope", "I'm struggling to find meaning"],
             "context": ["I'm discouraged", "I'm frustrated", "I'm lost"]
           },
-          "target": "DeepSadness"
+          "next": "DeepSadness"
         }
       }
     },
@@ -419,7 +419,7 @@
             "growth": ["I'm more resilient", "I'm more understanding", "I'm more grateful"],
             "context": ["I'm honoring their memory", "I'm making them proud", "I'm growing through this"]
           },
-          "target": "Integration"
+          "next": "Integration"
         }
       }
     },

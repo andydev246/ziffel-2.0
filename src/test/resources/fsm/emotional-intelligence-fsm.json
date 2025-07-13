@@ -10,7 +10,7 @@
             "greeting": ["Hello", "Hi", "Hey"],
             "intro": ["I need to talk", "I want to discuss something", "Can we chat?"]
           },
-          "target": "EmotionDetection"
+          "next": "EmotionDetection"
         }
       }
     },
@@ -24,7 +24,7 @@
             "emotion": ["frustrated", "angry", "furious"],
             "context": ["with this situation", "about what happened", "at work", "with my boss"]
           },
-          "target": "AngerResponse"
+          "next": "AngerResponse"
         },
         "sadnessExpression": {
           "intent": "ei.sadness.validation",
@@ -34,7 +34,7 @@
             "emotion": ["sad", "down", "depressed", "heartbroken"],
             "context": ["about the loss", "today", "lately", "with my relationship"]
           },
-          "target": "SadnessResponse"
+          "next": "SadnessResponse"
         },
         "fearExpression": {
           "intent": "ei.fear.support",
@@ -44,7 +44,7 @@
             "emotion": ["scared", "anxious", "worried", "terrified"],
             "context": ["about the future", "about my health", "about what might happen"]
           },
-          "target": "FearResponse"
+          "next": "FearResponse"
         },
         "joyExpression": {
           "intent": "ei.joy.celebration",
@@ -54,7 +54,7 @@
             "emotion": ["happy", "thrilled", "excited", "delighted"],
             "context": ["about the news", "with the results", "about my achievement"]
           },
-          "target": "JoyResponse"
+          "next": "JoyResponse"
         },
         "surpriseExpression": {
           "intent": "ei.surprise.acknowledgment",
@@ -64,7 +64,7 @@
             "emotion": ["shocked", "amazed", "surprised", "stunned"],
             "context": ["by this news", "by what happened", "by the results"]
           },
-          "target": "SurpriseResponse"
+          "next": "SurpriseResponse"
         }
       }
     },
@@ -74,19 +74,19 @@
           "intent": "ei.anger.empathy",
           "expectedContains": "understand your frustration",
           "prompt": "I understand how you're feeling. That sounds really difficult.",
-          "target": "EmotionEscalation"
+          "next": "EmotionEscalation"
         },
         "validationResponse": {
           "intent": "ei.anger.validation",
           "expectedContains": "your feelings are valid",
           "prompt": "It's completely understandable that you'd feel that way.",
-          "target": "EmotionEscalation"
+          "next": "EmotionEscalation"
         },
         "calmingResponse": {
           "intent": "ei.anger.calming",
           "expectedContains": "take a deep breath",
           "prompt": "Let's take a moment to breathe and work through this together.",
-          "target": "EmotionEscalation"
+          "next": "EmotionEscalation"
         }
       }
     },
@@ -96,19 +96,19 @@
           "intent": "ei.sadness.empathy",
           "expectedContains": "hear your sadness",
           "prompt": "I hear how sad you're feeling. That sounds really hard.",
-          "target": "EmotionEscalation"
+          "next": "EmotionEscalation"
         },
         "supportResponse": {
           "intent": "ei.sadness.support",
           "expectedContains": "here for you",
           "prompt": "I'm here to support you through this difficult time.",
-          "target": "EmotionEscalation"
+          "next": "EmotionEscalation"
         },
         "validationResponse": {
           "intent": "ei.sadness.validation",
           "expectedContains": "okay to feel sad",
           "prompt": "It's completely okay to feel sad. Your feelings matter.",
-          "target": "EmotionEscalation"
+          "next": "EmotionEscalation"
         }
       }
     },
@@ -118,19 +118,19 @@
           "intent": "ei.fear.reassurance",
           "expectedContains": "understand your fear",
           "prompt": "I understand your fear. Let's work through this step by step.",
-          "target": "EmotionEscalation"
+          "next": "EmotionEscalation"
         },
         "supportResponse": {
           "intent": "ei.fear.support",
           "expectedContains": "not alone",
           "prompt": "You're not alone in this. I'm here to help you through it.",
-          "target": "EmotionEscalation"
+          "next": "EmotionEscalation"
         },
         "calmingResponse": {
           "intent": "ei.fear.calming",
           "expectedContains": "stay calm",
           "prompt": "Try to stay calm. We'll figure this out together.",
-          "target": "EmotionEscalation"
+          "next": "EmotionEscalation"
         }
       }
     },
@@ -140,19 +140,19 @@
           "intent": "ei.joy.celebration",
           "expectedContains": "happy for you",
           "prompt": "I'm so happy for you! That's wonderful news.",
-          "target": "EmotionEscalation"
+          "next": "EmotionEscalation"
         },
         "validationResponse": {
           "intent": "ei.joy.validation",
           "expectedContains": "deserve to feel happy",
           "prompt": "You absolutely deserve to feel happy about this!",
-          "target": "EmotionEscalation"
+          "next": "EmotionEscalation"
         },
         "supportResponse": {
           "intent": "ei.joy.support",
           "expectedContains": "celebrate with you",
           "prompt": "I'm celebrating with you! This is fantastic.",
-          "target": "EmotionEscalation"
+          "next": "EmotionEscalation"
         }
       }
     },
@@ -162,13 +162,13 @@
           "intent": "ei.surprise.acknowledgment",
           "expectedContains": "understand your surprise",
           "prompt": "I understand your surprise! That's quite unexpected.",
-          "target": "EmotionEscalation"
+          "next": "EmotionEscalation"
         },
         "validationResponse": {
           "intent": "ei.surprise.validation",
           "expectedContains": "natural to be surprised",
           "prompt": "It's completely natural to be surprised by that!",
-          "target": "EmotionEscalation"
+          "next": "EmotionEscalation"
         }
       }
     },
@@ -182,7 +182,7 @@
             "intensity": ["more and more frustrated", "increasingly anxious", "more depressed", "more angry"],
             "context": ["with this situation", "about everything", "about what's happening"]
           },
-          "target": "CrisisResponse"
+          "next": "CrisisResponse"
         },
         "mixedEmotions": {
           "intent": "ei.mixed.emotions",
@@ -193,13 +193,13 @@
             "but": ["but also", "however", "though"],
             "emotion2": ["sad about the loss", "worried about the challenges", "anxious about the future"]
           },
-          "target": "MixedEmotionResponse"
+          "next": "MixedEmotionResponse"
         },
         "resolution": {
           "intent": "ei.resolution.closure",
           "expectedContains": "feeling better",
           "prompt": "I'm feeling a bit better now. Thank you for listening.",
-          "target": "EmotionalEnd"
+          "next": "EmotionalEnd"
         }
       }
     },
@@ -209,13 +209,13 @@
           "intent": "ei.crisis.intervention",
           "expectedContains": "deeply affecting you",
           "prompt": "I can see this is really deeply affecting you. Let's take a moment to breathe and work through this together.",
-          "target": "EmotionalEnd"
+          "next": "EmotionalEnd"
         },
         "professionalHelp": {
           "intent": "ei.crisis.professional",
           "expectedContains": "professional help",
           "prompt": "This sounds like it might be helpful to talk to a professional counselor or therapist.",
-          "target": "EmotionalEnd"
+          "next": "EmotionalEnd"
         }
       }
     },
@@ -225,13 +225,13 @@
           "intent": "ei.mixed.acknowledgment",
           "expectedContains": "mixed emotions",
           "prompt": "It sounds like you're experiencing mixed emotions. That's completely normal and understandable.",
-          "target": "EmotionalEnd"
+          "next": "EmotionalEnd"
         },
         "complexEmotionSupport": {
           "intent": "ei.mixed.support",
           "expectedContains": "complex situation",
           "prompt": "This is a complex situation with many feelings involved. I'm here to support you through it.",
-          "target": "EmotionalEnd"
+          "next": "EmotionalEnd"
         }
       }
     },
@@ -241,7 +241,7 @@
           "intent": "ei.end.farewell",
           "expectedContains": "thank you",
           "prompt": "Thank you for talking with me. Take care of yourself.",
-          "target": "End"
+          "next": "End"
         }
       }
     },

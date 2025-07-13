@@ -9,7 +9,7 @@
           "rlTemplate": {
             "question": ["What is Software testing?"]
           },
-          "target": "QualityassuranceState"
+          "next": "QualityassuranceState"
         },
         "howQuestion": {
           "intent": "software_testing.process.request",
@@ -17,7 +17,7 @@
           "rlTemplate": {
             "question": ["How does Software testing work?"]
           },
-          "target": "QualityassuranceState"
+          "next": "QualityassuranceState"
         }
       }
     },
@@ -29,7 +29,7 @@
           "rlTemplate": {
             "question": ["What is Quality assurance?"]
           },
-          "target": "AutomationState"
+          "next": "AutomationState"
         },
         "howQuestion": {
           "intent": "quality_assurance.process.request",
@@ -37,7 +37,7 @@
           "rlTemplate": {
             "question": ["How does Quality assurance work?"]
           },
-          "target": "AutomationState"
+          "next": "AutomationState"
         }
       }
     },
@@ -49,7 +49,7 @@
           "rlTemplate": {
             "question": ["What is Automation?"]
           },
-          "target": "End"
+          "next": "End"
         },
         "howQuestion": {
           "intent": "automation.process.request",
@@ -57,7 +57,7 @@
           "rlTemplate": {
             "question": ["How does Automation work?"]
           },
-          "target": "End"
+          "next": "End"
         }
       }
     },

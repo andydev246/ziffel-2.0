@@ -11,7 +11,7 @@
             "context": ["my boss is micromanaging", "I have too many deadlines", "my colleagues are toxic"],
             "intensity": ["I'm at my breaking point", "I can't sleep because of it", "I'm considering quitting"]
           },
-          "target": "WorkStressDetails"
+          "next": "WorkStressDetails"
         }
       }
     },
@@ -25,7 +25,7 @@
             "symptoms": ["I can't focus", "I'm irritable all the time", "I don't care anymore"],
             "duration": ["This has been going on for months", "I can't remember the last time I felt good", "I'm at my limit"]
           },
-          "target": "WorkStressDetails"
+          "next": "WorkStressDetails"
         },
         "seekWorkAdvice": {
           "intent": "ei.work.advice",
@@ -35,7 +35,7 @@
             "request": ["about my work situation", "on how to cope", "on what to do next"],
             "options": ["Should I quit", "Should I talk to HR", "Should I look for another job"]
           },
-          "target": "WorkStressDetails"
+          "next": "WorkStressDetails"
         },
         "respondWithEmpathy": {
           "intent": "ei.respond.empathy",
@@ -45,7 +45,7 @@
             "empathy": ["how stressful work can be", "how overwhelming this must feel", "how difficult this is"],
             "context": ["work stress is really hard", "I can see why you're struggling", "that sounds awful"]
           },
-          "target": "WorkStressDetails"
+          "next": "WorkStressDetails"
         },
         "acknowledgeResponse": {
           "intent": "ei.acknowledge.response",
@@ -55,7 +55,7 @@
             "acknowledgment": ["how hard this is", "what you're saying", "your situation"],
             "context": ["and I'm listening", "and I care", "and I'm here"]
           },
-          "target": "WorkStressDetails"
+          "next": "WorkStressDetails"
         },
         "askForClarification": {
           "intent": "ei.ask.clarification",
@@ -65,7 +65,7 @@
             "request": ["what you're saying", "how you're feeling", "the situation"],
             "context": ["so I can help better", "to understand you", "to support you properly"]
           },
-          "target": "WorkStressDetails"
+          "next": "WorkStressDetails"
         },
         "respondWithValidation": {
           "intent": "ei.validate.response",
@@ -75,7 +75,7 @@
             "validation": ["you'd feel that way", "you're stressed", "you're overwhelmed"],
             "context": ["given the situation", "considering what happened", "with everything going on"]
           },
-          "target": "WorkStressDetails"
+          "next": "WorkStressDetails"
         },
         "askForMoreInfo": {
           "intent": "ei.ask.more.info",
@@ -85,7 +85,7 @@
             "request": ["about your work situation", "about what's happening", "about how you're feeling"],
             "context": ["so I can help better", "to understand the full picture", "to support you properly"]
           },
-          "target": "WorkStressDetails"
+          "next": "WorkStressDetails"
         },
         "respondWithReassurance": {
           "intent": "ei.reassure.response",
@@ -95,7 +95,7 @@
             "reassurance": ["together", "step by step", "one day at a time"],
             "context": ["I believe in you", "You're stronger than you think", "You can handle this"]
           },
-          "target": "WorkStressDetails"
+          "next": "WorkStressDetails"
         },
         "respondWithAgreement": {
           "intent": "ei.agree.response",
@@ -105,7 +105,7 @@
             "agreement": ["that's unfair", "that's frustrating", "that's unacceptable"],
             "context": ["I can see why you're upset", "Anyone would be stressed", "That's completely justified"]
           },
-          "target": "WorkStressDetails"
+          "next": "WorkStressDetails"
         },
         "askForSolutions": {
           "intent": "ei.ask.solutions",
@@ -115,7 +115,7 @@
             "request": ["resolve this", "make this easier", "handle this situation"],
             "context": ["for you", "to feel better", "to move forward"]
           },
-          "target": "WorkStressDetails"
+          "next": "WorkStressDetails"
         },
         "expressRelief": {
           "intent": "ei.express.relief",
@@ -125,7 +125,7 @@
             "relief": ["after talking to you", "now that I've shared", "getting this off my chest"],
             "context": ["thank you for listening", "this really helped", "I needed this"]
           },
-          "target": "SupportEnd"
+          "next": "SupportEnd"
         },
         "expressHope": {
           "intent": "ei.express.hope",
@@ -135,7 +135,7 @@
             "hope": ["the future", "things getting better", "handling this"],
             "context": ["thank you for helping me see", "this gives me hope", "I feel more confident"]
           },
-          "target": "SupportEnd"
+          "next": "SupportEnd"
         }
       }
     },
@@ -149,7 +149,7 @@
             "gratitude": ["for your support", "for listening", "for being here"],
             "context": ["I really appreciate it", "it means a lot", "you've been so helpful"]
           },
-          "target": "End"
+          "next": "End"
         }
       }
     },

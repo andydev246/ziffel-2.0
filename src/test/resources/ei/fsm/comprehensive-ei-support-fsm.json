@@ -11,7 +11,7 @@
             "support": ["emotional support", "someone to talk to", "help with my feelings"],
             "context": ["right now", "today", "with what I'm going through"]
           },
-          "target": "ExpressSadness"
+          "next": "ExpressSadness"
         },
         "requestEmpathy": {
           "intent": "ei.request.empathy",
@@ -21,7 +21,7 @@
             "request": ["someone to understand me", "empathy", "someone to listen"],
             "context": ["with my situation", "about what happened", "with my feelings"]
           },
-          "target": "ExpressAnger"
+          "next": "ExpressAnger"
         },
         "requestValidation": {
           "intent": "ei.request.validation",
@@ -31,7 +31,7 @@
             "request": ["if my feelings are normal", "if it's okay to feel this way", "if I'm overreacting"],
             "context": ["about my future", "about what's happening", "about my situation"]
           },
-          "target": "ExpressFear"
+          "next": "ExpressFear"
         }
       }
     },
@@ -45,7 +45,7 @@
             "request": ["understand how I feel", "see my perspective", "get where I'm coming from"],
             "context": ["in this situation", "about what happened", "with my feelings"]
           },
-          "target": "EscalateSadness"
+          "next": "EscalateSadness"
         },
         "seekValidation": {
           "intent": "ei.seek.validation",
@@ -55,7 +55,7 @@
             "request": ["okay to feel this way", "my feelings are normal", "I'm overreacting"],
             "context": ["about this", "in this situation", "with what happened"]
           },
-          "target": "EscalateSadness"
+          "next": "EscalateSadness"
         },
         "respondWithEmpathy": {
           "intent": "ei.respond.empathy",
@@ -65,7 +65,7 @@
             "empathy": ["how you feel", "this is hard", "this sucks"],
             "context": ["it's really difficult", "I can see why", "that sounds awful"]
           },
-          "target": "EscalateSadness"
+          "next": "EscalateSadness"
         },
         "askForMoreDetails": {
           "intent": "ei.ask.details",
@@ -75,7 +75,7 @@
             "request": ["about what happened", "about how you're feeling", "about the situation"],
             "context": ["so I can help better", "to understand better", "to support you"]
           },
-          "target": "EscalateSadness"
+          "next": "EscalateSadness"
         },
         "expressSympathy": {
           "intent": "ei.express.sympathy",
@@ -85,7 +85,7 @@
             "sympathy": ["I'm sorry you're going through this", "That sounds really hard", "That must be really difficult"],
             "context": ["I can't imagine", "That's really tough", "I feel for you"]
           },
-          "target": "EscalateSadness"
+          "next": "EscalateSadness"
         },
         "respondWithAcknowledgment": {
           "intent": "ei.acknowledge.response",
@@ -95,7 +95,7 @@
             "acknowledgment": ["what you're saying", "how you feel", "your situation"],
             "context": ["and I'm listening", "and I care", "and I'm here"]
           },
-          "target": "EscalateSadness"
+          "next": "EscalateSadness"
         },
         "askForClarification": {
           "intent": "ei.ask.clarification",
@@ -105,7 +105,7 @@
             "request": ["what you're saying", "how you're feeling", "the situation"],
             "context": ["so I can help better", "to understand you", "to support you properly"]
           },
-          "target": "EscalateSadness"
+          "next": "EscalateSadness"
         }
       }
     },
@@ -119,7 +119,7 @@
             "request": ["understand how I feel", "see my perspective", "get where I'm coming from"],
             "context": ["in this situation", "about what happened", "with my feelings"]
           },
-          "target": "EscalateAnger"
+          "next": "EscalateAnger"
         },
         "seekValidation": {
           "intent": "ei.seek.validation",
@@ -129,7 +129,7 @@
             "request": ["okay to feel this way", "my feelings are normal", "I'm overreacting"],
             "context": ["about this", "in this situation", "with what happened"]
           },
-          "target": "EscalateAnger"
+          "next": "EscalateAnger"
         },
         "validateAnger": {
           "intent": "ei.validate.anger",
@@ -139,7 +139,7 @@
             "validation": ["you have every right to be angry", "your anger is justified", "I'd be angry too"],
             "context": ["that's completely understandable", "anyone would be angry", "that's totally reasonable"]
           },
-          "target": "EscalateAnger"
+          "next": "EscalateAnger"
         },
         "askForContext": {
           "intent": "ei.ask.context",
@@ -149,7 +149,7 @@
             "request": ["what led to this", "what caused this", "the full story"],
             "context": ["so I can understand", "to help you better", "to support you"]
           },
-          "target": "EscalateAnger"
+          "next": "EscalateAnger"
         },
         "expressUnderstanding": {
           "intent": "ei.express.understanding",
@@ -159,7 +159,7 @@
             "understanding": ["why you're angry", "how frustrating this must be", "how maddening this is"],
             "context": ["that's really frustrating", "I can see why", "that makes sense"]
           },
-          "target": "EscalateAnger"
+          "next": "EscalateAnger"
         },
         "respondWithValidation": {
           "intent": "ei.validate.response",
@@ -169,7 +169,7 @@
             "validation": ["you'd feel that way", "you're angry", "you're frustrated"],
             "context": ["given the situation", "considering what happened", "with everything going on"]
           },
-          "target": "EscalateAnger"
+          "next": "EscalateAnger"
         },
         "askForMoreInfo": {
           "intent": "ei.ask.more.info",
@@ -179,7 +179,7 @@
             "request": ["about what happened", "about the situation", "about how you're feeling"],
             "context": ["so I can help better", "to understand the full picture", "to support you properly"]
           },
-          "target": "EscalateAnger"
+          "next": "EscalateAnger"
         }
       }
     },
@@ -193,7 +193,7 @@
             "request": ["understand how I feel", "see my perspective", "get where I'm coming from"],
             "context": ["in this situation", "about what happened", "with my feelings"]
           },
-          "target": "EscalateFear"
+          "next": "EscalateFear"
         },
         "seekValidation": {
           "intent": "ei.seek.validation",
@@ -203,7 +203,7 @@
             "request": ["okay to feel this way", "my feelings are normal", "I'm overreacting"],
             "context": ["about this", "in this situation", "with what happened"]
           },
-          "target": "EscalateFear"
+          "next": "EscalateFear"
         },
         "reassureSafety": {
           "intent": "ei.reassure.safety",
@@ -213,7 +213,7 @@
             "reassurance": ["it's natural to be afraid", "your fear is valid", "it's okay to be scared"],
             "context": ["but you're safe", "you're going to be okay", "we'll get through this"]
           },
-          "target": "EscalateFear"
+          "next": "EscalateFear"
         },
         "askForSpecifics": {
           "intent": "ei.ask.specifics",
@@ -223,7 +223,7 @@
             "request": ["what you're afraid of", "what's causing your fear", "what's worrying you"],
             "context": ["so I can help", "to understand better", "to support you"]
           },
-          "target": "EscalateFear"
+          "next": "EscalateFear"
         },
         "expressComfort": {
           "intent": "ei.express.comfort",
@@ -233,7 +233,7 @@
             "comfort": ["to help you through this", "to support you", "to listen"],
             "context": ["we'll face this together", "I've got your back", "you can count on me"]
           },
-          "target": "EscalateFear"
+          "next": "EscalateFear"
         },
         "respondWithReassurance": {
           "intent": "ei.reassure.response",
@@ -243,7 +243,7 @@
             "reassurance": ["together", "step by step", "one day at a time"],
             "context": ["I believe in you", "You're stronger than you think", "You can handle this"]
           },
-          "target": "EscalateFear"
+          "next": "EscalateFear"
         },
         "askForSpecifics": {
           "intent": "ei.ask.specifics",
@@ -253,7 +253,7 @@
             "request": ["what you're afraid of", "what's causing your fear", "what's worrying you"],
             "context": ["so I can help", "to understand better", "to support you"]
           },
-          "target": "EscalateFear"
+          "next": "EscalateFear"
         }
       }
     },
@@ -267,7 +267,7 @@
             "intensity": ["more and more depressed", "increasingly sad", "more hopeless"],
             "context": ["with this situation", "about everything", "about what's happening"]
           },
-          "target": "CrisisRequest"
+          "next": "CrisisRequest"
         },
         "expressImprovement": {
           "intent": "ei.improvement.closure",
@@ -277,7 +277,7 @@
             "improvement": ["a bit better now", "slightly better", "somewhat improved"],
             "gratitude": ["thank you for listening", "thanks for your help", "I appreciate it"]
           },
-          "target": "SupportEnd"
+          "next": "SupportEnd"
         },
         "respondWithEncouragement": {
           "intent": "ei.encourage.positive",
@@ -287,7 +287,7 @@
             "encouragement": ["you're stronger than you think", "you can get through this", "you have what it takes"],
             "context": ["you've got this", "you're capable", "you'll make it"]
           },
-          "target": "EscalateSadness"
+          "next": "EscalateSadness"
         },
         "offerPracticalHelp": {
           "intent": "ei.offer.help",
@@ -297,7 +297,7 @@
             "offer": ["to make this easier", "to support you", "to help you feel better"],
             "context": ["right now", "today", "through this"]
           },
-          "target": "EscalateSadness"
+          "next": "EscalateSadness"
         },
         "expressHope": {
           "intent": "ei.express.hope",
@@ -307,7 +307,7 @@
             "hope": ["things will get better", "this won't last forever", "you'll feel better"],
             "context": ["this is temporary", "you'll get through this", "there's light ahead"]
           },
-          "target": "EscalateSadness"
+          "next": "EscalateSadness"
         }
       }
     },
@@ -321,7 +321,7 @@
             "intensity": ["more and more frustrated", "increasingly angry", "more furious"],
             "context": ["with this situation", "about everything", "about what's happening"]
           },
-          "target": "CrisisRequest"
+          "next": "CrisisRequest"
         },
         "expressImprovement": {
           "intent": "ei.improvement.closure",
@@ -331,7 +331,7 @@
             "improvement": ["a bit better now", "slightly better", "somewhat improved"],
             "gratitude": ["thank you for listening", "thanks for your help", "I appreciate it"]
           },
-          "target": "SupportEnd"
+          "next": "SupportEnd"
         },
         "suggestCalming": {
           "intent": "ei.suggest.calming",
@@ -341,7 +341,7 @@
             "suggestion": ["we take a deep breath", "you take a moment", "we pause for a second"],
             "context": ["to calm down", "to collect yourself", "to center yourself"]
           },
-          "target": "EscalateAnger"
+          "next": "EscalateAnger"
         },
         "validateFeelings": {
           "intent": "ei.validate.feelings",
@@ -351,7 +351,7 @@
             "validation": ["your feelings are completely valid", "you have every right to be angry", "this is justified"],
             "context": ["but let's work through it", "but we can handle this", "but we'll get through this"]
           },
-          "target": "EscalateAnger"
+          "next": "EscalateAnger"
         },
         "offerPerspective": {
           "intent": "ei.offer.perspective",
@@ -361,7 +361,7 @@
             "perspective": ["look at this differently", "step back for a moment", "consider another angle"],
             "context": ["to help you feel better", "to find a solution", "to work through this"]
           },
-          "target": "EscalateAnger"
+          "next": "EscalateAnger"
         },
         "respondWithAgreement": {
           "intent": "ei.agree.response",
@@ -371,7 +371,7 @@
             "agreement": ["that's unfair", "that's frustrating", "that's unacceptable"],
             "context": ["I can see why you're angry", "Anyone would be upset", "That's completely justified"]
           },
-          "target": "EscalateAnger"
+          "next": "EscalateAnger"
         },
         "askForSolutions": {
           "intent": "ei.ask.solutions",
@@ -381,7 +381,7 @@
             "request": ["resolve this", "make this easier", "handle this situation"],
             "context": ["for you", "to feel better", "to move forward"]
           },
-          "target": "EscalateAnger"
+          "next": "EscalateAnger"
         }
       }
     },
@@ -395,7 +395,7 @@
             "intensity": ["more and more anxious", "increasingly worried", "more terrified"],
             "context": ["with this situation", "about everything", "about what's happening"]
           },
-          "target": "CrisisRequest"
+          "next": "CrisisRequest"
         },
         "expressImprovement": {
           "intent": "ei.improvement.closure",
@@ -405,7 +405,7 @@
             "improvement": ["a bit better now", "slightly better", "somewhat improved"],
             "gratitude": ["thank you for listening", "thanks for your help", "I appreciate it"]
           },
-          "target": "SupportEnd"
+          "next": "SupportEnd"
         },
         "suggestGrounding": {
           "intent": "ei.suggest.grounding",
@@ -415,7 +415,7 @@
             "grounding": ["focus on your breathing", "take a moment to ground yourself", "use some calming techniques"],
             "context": ["to help you feel better", "to reduce your anxiety", "to center yourself"]
           },
-          "target": "EscalateFear"
+          "next": "EscalateFear"
         },
         "reassureSafety": {
           "intent": "ei.reassure.safety",
@@ -425,7 +425,7 @@
             "reassurance": ["this is scary", "your fear is valid", "it's natural to be afraid"],
             "context": ["but you're safe right now", "but we'll get through this", "but you're going to be okay"]
           },
-          "target": "EscalateFear"
+          "next": "EscalateFear"
         },
         "offerComfort": {
           "intent": "ei.offer.comfort",
@@ -435,7 +435,7 @@
             "comfort": ["to help you through this", "to support you", "to listen"],
             "context": ["we'll face this together", "I've got your back", "you can count on me"]
           },
-          "target": "EscalateFear"
+          "next": "EscalateFear"
         }
       }
     },
@@ -449,7 +449,7 @@
             "request": ["help with this crisis", "support right now", "someone to talk to"],
             "context": ["because I'm really struggling", "because this is serious", "because I can't handle this"]
           },
-          "target": "SupportEnd"
+          "next": "SupportEnd"
         },
         "requestProfessional": {
           "intent": "ei.crisis.professional",
@@ -459,7 +459,7 @@
             "request": ["talk to a professional", "see a therapist", "get professional help"],
             "context": ["for this", "about my feelings", "with what I'm going through"]
           },
-          "target": "SupportEnd"
+          "next": "SupportEnd"
         },
         "expressUrgency": {
           "intent": "ei.express.urgency",
@@ -469,7 +469,7 @@
             "urgency": ["I'm really struggling", "I can't handle this", "I need immediate support"],
             "context": ["right now", "immediately", "as soon as possible"]
           },
-          "target": "SupportEnd"
+          "next": "SupportEnd"
         },
         "askForImmediateSupport": {
           "intent": "ei.ask.immediate",
@@ -479,7 +479,7 @@
             "request": ["help me right now", "support me immediately", "be here for me"],
             "context": ["I'm really struggling", "I can't do this alone", "I need someone"]
           },
-          "target": "SupportEnd"
+          "next": "SupportEnd"
         }
       }
     },
@@ -493,7 +493,7 @@
             "gratitude": ["for your support", "for listening", "for being here"],
             "context": ["I really appreciate it", "it means a lot", "you've been so helpful"]
           },
-          "target": "End"
+          "next": "End"
         },
         "expressGratitude": {
           "intent": "ei.express.gratitude",
@@ -503,7 +503,7 @@
             "gratitude": ["for your help", "for your support", "for being here"],
             "context": ["it means so much", "you've been wonderful", "I'm so thankful"]
           },
-          "target": "End"
+          "next": "End"
         },
         "acknowledgeHelp": {
           "intent": "ei.acknowledge.help",
@@ -513,7 +513,7 @@
             "acknowledgment": ["feel better", "get through this", "understand myself"],
             "context": ["I'm so grateful", "thank you so much", "I really needed that"]
           },
-          "target": "End"
+          "next": "End"
         },
         "expressRelief": {
           "intent": "ei.express.relief",
@@ -523,7 +523,7 @@
             "relief": ["after talking to you", "now that I've shared", "getting this off my chest"],
             "context": ["thank you for listening", "this really helped", "I needed this"]
           },
-          "target": "End"
+          "next": "End"
         },
         "expressHope": {
           "intent": "ei.express.hope",
@@ -533,7 +533,7 @@
             "hope": ["the future", "things getting better", "handling this"],
             "context": ["thank you for helping me see", "this gives me hope", "I feel more confident"]
           },
-          "target": "End"
+          "next": "End"
         }
       }
     },

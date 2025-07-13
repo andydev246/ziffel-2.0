@@ -11,7 +11,7 @@
             "context": ["my boss is micromanaging", "I have too many deadlines", "my colleagues are toxic"],
             "intensity": ["I'm at my breaking point", "I can't sleep because of it", "I'm considering quitting"]
           },
-          "target": "WorkStressDetails"
+          "next": "WorkStressDetails"
         },
         "relationshipIssues": {
           "intent": "ei.relationship.problems",
@@ -21,7 +21,7 @@
             "context": ["we keep fighting", "we're growing apart", "I don't feel heard"],
             "emotion": ["I'm heartbroken", "I feel lonely", "I'm scared we'll break up"]
           },
-          "target": "RelationshipDetails"
+          "next": "RelationshipDetails"
         },
         "healthConcerns": {
           "intent": "ei.health.worries",
@@ -31,7 +31,7 @@
             "context": ["I have unexplained pain", "my test results are concerning", "I'm afraid it's serious"],
             "impact": ["it's affecting my daily life", "I can't stop worrying", "I'm losing sleep over it"]
           },
-          "target": "HealthConcernsDetails"
+          "next": "HealthConcernsDetails"
         },
         "griefLoss": {
           "intent": "ei.grief.loss",
@@ -41,7 +41,7 @@
             "context": ["it was sudden", "it was my parent", "it was my best friend"],
             "feeling": ["I'm devastated", "I can't believe they're gone", "I feel so alone"]
           },
-          "target": "GriefDetails"
+          "next": "GriefDetails"
         },
         "careerTransition": {
           "intent": "ei.career.change",
@@ -51,7 +51,7 @@
             "context": ["I'm not happy in my field", "I want to follow my passion", "I feel stuck"],
             "fear": ["I'm scared to start over", "What if I fail", "I'm too old to change"]
           },
-          "target": "CareerTransitionDetails"
+          "next": "CareerTransitionDetails"
         },
         "familyConflict": {
           "intent": "ei.family.conflict",
@@ -61,7 +61,7 @@
             "context": ["they're controlling", "we have different values", "there's constant conflict"],
             "impact": ["I feel trapped", "I can't be myself", "I'm considering cutting them off"]
           },
-          "target": "FamilyConflictDetails"
+          "next": "FamilyConflictDetails"
         },
         "financialStress": {
           "intent": "ei.financial.worries",
@@ -71,7 +71,7 @@
             "context": ["I lost my job", "medical bills are overwhelming", "I made bad financial decisions"],
             "stress": ["I can't sleep", "I'm constantly anxious", "I feel like a failure"]
           },
-          "target": "FinancialStressDetails"
+          "next": "FinancialStressDetails"
         },
         "socialAnxiety": {
           "intent": "ei.social.anxiety",
@@ -81,7 +81,7 @@
             "context": ["I avoid parties", "I'm scared of being judged", "I feel like everyone hates me"],
             "impact": ["I'm lonely", "I miss out on opportunities", "I feel like a freak"]
           },
-          "target": "SocialAnxietyDetails"
+          "next": "SocialAnxietyDetails"
         }
       }
     },
@@ -95,7 +95,7 @@
             "symptoms": ["I can't focus", "I'm irritable all the time", "I don't care anymore"],
             "duration": ["This has been going on for months", "I can't remember the last time I felt good", "I'm at my limit"]
           },
-          "target": "BurnoutCrisis"
+          "next": "BurnoutCrisis"
         },
         "seekWorkAdvice": {
           "intent": "ei.work.advice",
@@ -105,7 +105,7 @@
             "request": ["about my work situation", "on how to cope", "on what to do next"],
             "options": ["Should I quit", "Should I talk to HR", "Should I look for another job"]
           },
-          "target": "WorkAdviceResponse"
+          "next": "WorkAdviceResponse"
         },
         "expressImprovement": {
           "intent": "ei.improvement.work",
@@ -115,7 +115,7 @@
             "context": ["I talked to my boss", "I set better boundaries", "I'm taking breaks"],
             "gratitude": ["Thanks for listening", "This helped", "I appreciate your support"]
           },
-          "target": "SupportEnd"
+          "next": "SupportEnd"
         }
       }
     },
@@ -129,7 +129,7 @@
             "context": ["I saw messages", "They've been hiding things", "I trusted them completely"],
             "impact": ["I'm devastated", "I can't trust anyone", "I feel so stupid"]
           },
-          "target": "BetrayalCrisis"
+          "next": "BetrayalCrisis"
         },
         "communicationIssues": {
           "intent": "ei.communication.problems",
@@ -139,7 +139,7 @@
             "context": ["I try to talk but they shut down", "They interrupt me", "They don't understand me"],
             "frustration": ["I'm so frustrated", "I feel unheard", "I don't know what to do"]
           },
-          "target": "CommunicationCrisis"
+          "next": "CommunicationCrisis"
         },
         "seekRelationshipAdvice": {
           "intent": "ei.relationship.advice",
@@ -149,7 +149,7 @@
             "request": ["with my relationship", "to save my marriage", "to understand them"],
             "options": ["Should I stay", "Should I leave", "Should we get counseling"]
           },
-          "target": "RelationshipAdviceResponse"
+          "next": "RelationshipAdviceResponse"
         }
       }
     },
@@ -163,7 +163,7 @@
             "symptoms": ["My heart is racing", "I'm sweating", "I feel dizzy"],
             "fear": ["I'm so scared", "What if something is wrong", "I can't calm down"]
           },
-          "target": "HealthPanicCrisis"
+          "next": "HealthPanicCrisis"
         },
         "seekMedicalAdvice": {
           "intent": "ei.medical.advice",
@@ -173,17 +173,7 @@
             "context": ["I have chest pain", "I'm losing weight", "I have persistent symptoms"],
             "anxiety": ["I'm scared to go", "What if it's serious", "I don't want to waste their time"]
           },
-          "target": "MedicalAdviceResponse"
-        },
-        "expressHypochondria": {
-          "intent": "ei.hypochondria.express",
-          "expectedContains": "anxiety",
-          "rlTemplate": {
-            "prefix": ["I think I have cancer", "I'm convinced I'm sick", "I can't stop worrying about my health"],
-            "behavior": ["I Google symptoms constantly", "I check my body obsessively", "I'm always at the doctor"],
-            "impact": ["It's ruining my life", "I can't enjoy anything", "I'm driving my family crazy"]
-          },
-          "target": "HypochondriaCrisis"
+          "next": "MedicalAdviceResponse"
         }
       }
     },
@@ -197,7 +187,7 @@
             "context": ["I wasn't there enough", "I said things I regret", "I didn't tell them I loved them"],
             "pain": ["I can't forgive myself", "I'll never get over this", "I don't deserve to be happy"]
           },
-          "target": "GriefGuiltCrisis"
+          "next": "GriefGuiltCrisis"
         },
         "expressLoneliness": {
           "intent": "ei.grief.loneliness",
@@ -207,7 +197,7 @@
             "context": ["Everyone else has moved on", "I can't talk to anyone", "I feel like a burden"],
             "despair": ["I don't know how to go on", "I miss them so much", "I feel empty inside"]
           },
-          "target": "GriefLonelinessCrisis"
+          "next": "GriefLonelinessCrisis"
         },
         "seekGriefSupport": {
           "intent": "ei.grief.support",
@@ -217,7 +207,7 @@
             "request": ["support groups", "counseling", "ways to remember them"],
             "hope": ["I want to heal", "I want to honor their memory", "I need to find meaning"]
           },
-          "target": "GriefSupportResponse"
+          "next": "GriefSupportResponse"
         }
       }
     },
@@ -231,7 +221,7 @@
             "doubts": ["I don't have the skills", "I'll never make enough money", "Everyone will think I'm crazy"],
             "pressure": ["I have bills to pay", "My family depends on me", "I can't afford to fail"]
           },
-          "target": "CareerFearCrisis"
+          "next": "CareerFearCrisis"
         },
         "seekCareerGuidance": {
           "intent": "ei.career.guidance",
@@ -241,7 +231,7 @@
             "request": ["skill assessment", "networking advice", "financial planning"],
             "goals": ["I want to be happy", "I want to make a difference", "I want to use my talents"]
           },
-          "target": "CareerGuidanceResponse"
+          "next": "CareerGuidanceResponse"
         },
         "expressExcitement": {
           "intent": "ei.career.excitement",
@@ -251,7 +241,7 @@
             "motivation": ["I feel alive again", "I'm passionate about this", "I see my future clearly"],
             "confidence": ["I know I can do this", "I'm ready for the challenge", "This is my calling"]
           },
-          "target": "CareerExcitementResponse"
+          "next": "CareerExcitementResponse"
         }
       }
     },
@@ -265,7 +255,7 @@
             "context": ["They're controlling", "They don't respect my choices", "They're emotionally abusive"],
             "decision": ["I'm considering cutting them off", "I need space", "I have to protect myself"]
           },
-          "target": "BoundariesCrisis"
+          "next": "BoundariesCrisis"
         },
         "seekFamilyTherapy": {
           "intent": "ei.family.therapy",
@@ -275,7 +265,7 @@
             "context": ["We have deep wounds", "We need professional help", "I want to understand them"],
             "hope": ["I want to forgive", "I want to move forward", "I want a healthy relationship"]
           },
-          "target": "FamilyTherapyResponse"
+          "next": "FamilyTherapyResponse"
         },
         "expressGuilt": {
           "intent": "ei.family.guilt",
@@ -285,7 +275,7 @@
             "context": ["They're my family", "They raised me", "They love me in their own way"],
             "confusion": ["I don't know what to do", "I feel torn", "I want to do the right thing"]
           },
-          "target": "FamilyGuiltCrisis"
+          "next": "FamilyGuiltCrisis"
         }
       }
     },
@@ -299,7 +289,7 @@
             "context": ["I made bad decisions", "I should have saved more", "I'm behind everyone else"],
             "isolation": ["I can't tell anyone", "I feel like a loser", "I'm too ashamed to get help"]
           },
-          "target": "FinancialShameCrisis"
+          "next": "FinancialShameCrisis"
         },
         "seekFinancialHelp": {
           "intent": "ei.financial.help",
@@ -309,7 +299,7 @@
             "request": ["budgeting help", "debt consolidation", "financial planning"],
             "goals": ["I want to be debt-free", "I want to save money", "I want financial security"]
           },
-          "target": "FinancialHelpResponse"
+          "next": "FinancialHelpResponse"
         },
         "expressHopelessness": {
           "intent": "ei.financial.hopeless",
@@ -319,7 +309,7 @@
             "context": ["The debt keeps growing", "I can't find a better job", "I see no way out"],
             "despair": ["I want to give up", "I can't see a future", "I feel like a burden"]
           },
-          "target": "FinancialHopelessCrisis"
+          "next": "FinancialHopelessCrisis"
         }
       }
     },
@@ -333,7 +323,7 @@
             "context": ["I avoid all social situations", "I can't make connections", "I'm invisible to people"],
             "pain": ["I'm so lonely", "I miss human connection", "I feel like a ghost"]
           },
-          "target": "SocialIsolationCrisis"
+          "next": "SocialIsolationCrisis"
         },
         "seekSocialSkills": {
           "intent": "ei.social.skills",
@@ -343,7 +333,7 @@
             "request": ["conversation tips", "how to start conversations", "how to be more confident"],
             "goals": ["I want to connect", "I want to be liked", "I want to belong"]
           },
-          "target": "SocialSkillsResponse"
+          "next": "SocialSkillsResponse"
         },
         "expressPanic": {
           "intent": "ei.social.panic",
@@ -353,7 +343,7 @@
             "trigger": ["I have to go to a party", "I have a job interview", "I have to give a presentation"],
             "symptoms": ["My heart is racing", "I'm sweating", "I feel like I'm dying"]
           },
-          "target": "SocialPanicCrisis"
+          "next": "SocialPanicCrisis"
         }
       }
     },
@@ -367,7 +357,7 @@
             "urgency": ["I'm having thoughts of quitting", "I can't function", "I'm completely overwhelmed"],
             "request": ["I need to talk to someone", "I need support", "I need to get help"]
           },
-          "target": "CrisisIntervention"
+          "next": "CrisisIntervention"
         },
         "seekProfessionalHelp": {
           "intent": "ei.professional.help",
@@ -377,7 +367,7 @@
             "context": ["This is beyond what I can handle", "I need expert guidance", "I want to get better"],
             "hope": ["I want to recover", "I want to be healthy", "I want to find balance"]
           },
-          "target": "ProfessionalHelpResponse"
+          "next": "ProfessionalHelpResponse"
         }
       }
     },
@@ -391,7 +381,7 @@
             "impact": ["I trusted them completely", "I feel so stupid", "I don't know who to trust"],
             "pain": ["I'm heartbroken", "I feel so betrayed", "I can't stop crying"]
           },
-          "target": "BetrayalDevastationCrisis"
+          "next": "BetrayalDevastationCrisis"
         },
         "seekRelationshipCounseling": {
           "intent": "ei.relationship.counseling",
@@ -401,7 +391,7 @@
             "context": ["I still love them", "We have children", "I want to try to work it out"],
             "goals": ["I want to heal", "I want to understand", "I want to move forward"]
           },
-          "target": "RelationshipCounselingResponse"
+          "next": "RelationshipCounselingResponse"
         }
       }
     },
@@ -415,7 +405,7 @@
             "context": ["I try to talk but they shut down", "They interrupt me", "They don't understand me"],
             "despair": ["I don't know what to do", "I feel unheard", "I'm giving up"]
           },
-          "target": "CommunicationFrustrationCrisis"
+          "next": "CommunicationFrustrationCrisis"
         },
         "seekCommunicationHelp": {
           "intent": "ei.communication.help",
@@ -425,7 +415,7 @@
             "request": ["communication techniques", "how to express myself", "how to listen better"],
             "goals": ["I want to be heard", "I want to understand them", "I want to connect"]
           },
-          "target": "CommunicationHelpResponse"
+          "next": "CommunicationHelpResponse"
         }
       }
     },
@@ -439,7 +429,7 @@
             "symptoms": ["I can't breathe", "I have chest pain", "I think I'm having a heart attack"],
             "urgency": ["I'm really scared", "I need help right now", "I don't know what to do"]
           },
-          "target": "EmergencyResponse"
+          "next": "EmergencyResponse"
         },
         "seekCalmingHelp": {
           "intent": "ei.calming.help",
@@ -449,7 +439,17 @@
             "request": ["breathing exercises", "ways to calm down", "how to stop panicking"],
             "context": ["I'm hyperventilating", "I can't think clearly", "I'm so scared"]
           },
-          "target": "CalmingHelpResponse"
+          "next": "CalmingHelpResponse"
+        },
+        "expressHypochondria": {
+          "intent": "ei.hypochondria.express",
+          "expectedContains": "anxiety",
+          "rlTemplate": {
+            "prefix": ["I think I have cancer", "I'm convinced I'm sick", "I can't stop worrying about my health"],
+            "behavior": ["I Google symptoms constantly", "I check my body obsessively", "I'm always at the doctor"],
+            "impact": ["It's ruining my life", "I can't enjoy anything", "I'm driving my family crazy"]
+          },
+          "next": "HealthPanicCrisis"
         }
       }
     },
@@ -463,7 +463,7 @@
             "context": ["I should have been there", "It's my fault they died", "I can't forgive myself"],
             "urgency": ["I'm thinking of ending it", "I can't take this pain", "I need help"]
           },
-          "target": "SuicideCrisisIntervention"
+          "next": "SuicideCrisisIntervention"
         },
         "seekGriefCounseling": {
           "intent": "ei.grief.counseling",
@@ -473,7 +473,7 @@
             "context": ["The guilt is consuming me", "I can't move forward", "I need to process this"],
             "hope": ["I want to heal", "I want to forgive myself", "I want to honor their memory"]
           },
-          "target": "GriefCounselingResponse"
+          "next": "GriefCounselingResponse"
         }
       }
     },
@@ -487,7 +487,7 @@
             "context": ["I'm too scared to change", "I'm afraid of failing", "I don't know what to do"],
             "impact": ["I'm miserable in my job", "I feel trapped", "I'm wasting my life"]
           },
-          "target": "CareerParalysisCrisis"
+          "next": "CareerParalysisCrisis"
         },
         "seekCareerCounseling": {
           "intent": "ei.career.counseling",
@@ -497,7 +497,7 @@
             "context": ["I'm confused about my path", "I need to assess my skills", "I need a plan"],
             "goals": ["I want to be happy", "I want to use my talents", "I want to make a difference"]
           },
-          "target": "CareerCounselingResponse"
+          "next": "CareerCounselingResponse"
         }
       }
     },
@@ -511,7 +511,7 @@
             "context": ["They've hurt me too many times", "They don't respect me", "They're controlling"],
             "decision": ["I'm cutting them off", "I'm setting boundaries", "I'm protecting myself"]
           },
-          "target": "BoundariesAngerCrisis"
+          "next": "BoundariesAngerCrisis"
         },
         "seekFamilyCounseling": {
           "intent": "ei.family.counseling",
@@ -521,7 +521,7 @@
             "context": ["The dynamics are toxic", "I need to set boundaries", "I want to heal"],
             "goals": ["I want a healthy relationship", "I want to understand them", "I want to move forward"]
           },
-          "target": "FamilyCounselingResponse"
+          "next": "FamilyCounselingResponse"
         }
       }
     },
@@ -535,7 +535,7 @@
             "context": ["I'm drowning in debt", "I can't find a better job", "I see no way out"],
             "despair": ["I want to give up", "I can't see a future", "I feel like a burden"]
           },
-          "target": "FinancialHopelessCrisis"
+          "next": "FinancialHopelessCrisis"
         },
         "seekFinancialCounseling": {
           "intent": "ei.financial.counseling",
@@ -545,7 +545,7 @@
             "context": ["I'm overwhelmed by my finances", "I need professional help", "I want to get better"],
             "goals": ["I want to be debt-free", "I want financial security", "I want to save money"]
           },
-          "target": "FinancialCounselingResponse"
+          "next": "FinancialCounselingResponse"
         }
       }
     },
@@ -559,7 +559,7 @@
             "context": ["I can't connect with anyone", "I'm invisible to people", "I have no friends"],
             "despair": ["I don't see the point", "I'm so lonely", "I want to give up"]
           },
-          "target": "SocialDepressionCrisis"
+          "next": "SocialDepressionCrisis"
         },
         "seekSocialCounseling": {
           "intent": "ei.social.counseling",
@@ -569,7 +569,7 @@
             "context": ["My social anxiety is crippling", "I can't make friends", "I need professional help"],
             "goals": ["I want to connect", "I want to belong", "I want to be happy"]
           },
-          "target": "SocialCounselingResponse"
+          "next": "SocialCounselingResponse"
         }
       }
     },
@@ -583,7 +583,7 @@
             "request": ["crisis hotlines", "emergency services", "immediate help"],
             "urgency": ["I need help right now", "I can't wait", "This is urgent"]
           },
-          "target": "CrisisResourcesResponse"
+          "next": "CrisisResourcesResponse"
         },
         "expressGratitude": {
           "intent": "ei.crisis.gratitude",
@@ -593,7 +593,7 @@
             "context": ["I was in crisis", "You saved me", "I needed someone"],
             "gratitude": ["I'm so grateful", "Thank you for being here", "You made a difference"]
           },
-          "target": "SupportEnd"
+          "next": "SupportEnd"
         }
       }
     },
@@ -607,7 +607,7 @@
             "context": ["I know what to do", "I feel more confident", "I can handle this"],
             "gratitude": ["Thank you for the advice", "This really helped", "I appreciate your guidance"]
           },
-          "target": "SupportEnd"
+          "next": "SupportEnd"
         },
         "seekMoreAdvice": {
           "intent": "ei.work.more.advice",
@@ -617,7 +617,7 @@
             "request": ["about this approach", "about other options", "about potential challenges"],
             "context": ["I want to be prepared", "I need to think this through", "I want to make the right choice"]
           },
-          "target": "WorkAdviceResponse"
+          "next": "WorkAdviceResponse"
         }
       }
     },
@@ -631,7 +631,7 @@
             "context": ["I have a plan", "I understand what to do", "I feel more confident"],
             "gratitude": ["Thank you for the advice", "This really helped", "I appreciate your support"]
           },
-          "target": "SupportEnd"
+          "next": "SupportEnd"
         },
         "expressDoubt": {
           "intent": "ei.relationship.doubt",
@@ -641,7 +641,7 @@
             "context": ["I'm scared to try", "I don't know if they'll change", "I'm afraid of getting hurt"],
             "request": ["Can you help me more", "I need more guidance", "I'm still confused"]
           },
-          "target": "RelationshipAdviceResponse"
+          "next": "RelationshipAdviceResponse"
         }
       }
     },
@@ -655,7 +655,7 @@
             "context": ["I understand what to do", "I have a plan", "I know when to get help"],
             "gratitude": ["Thank you for the advice", "This really helped", "I appreciate your guidance"]
           },
-          "target": "SupportEnd"
+          "next": "SupportEnd"
         },
         "expressContinuedWorry": {
           "intent": "ei.medical.worry",
@@ -665,7 +665,7 @@
             "context": ["I'm still anxious", "I can't shake the fear", "I need more reassurance"],
             "request": ["Can you help me more", "I need more guidance", "I'm still scared"]
           },
-          "target": "MedicalAdviceResponse"
+          "next": "MedicalAdviceResponse"
         }
       }
     },
@@ -679,7 +679,7 @@
             "context": ["I know I'm not alone", "I have resources", "I can get through this"],
             "gratitude": ["Thank you for the support", "This really helped", "I appreciate your kindness"]
           },
-          "target": "SupportEnd"
+          "next": "SupportEnd"
         },
         "expressContinuedPain": {
           "intent": "ei.grief.pain",
@@ -689,7 +689,7 @@
             "context": ["It's still so fresh", "I miss them so much", "I don't know how to go on"],
             "request": ["I need more support", "Can you help me more", "I'm still struggling"]
           },
-          "target": "GriefSupportResponse"
+          "next": "GriefSupportResponse"
         }
       }
     },
@@ -703,7 +703,7 @@
             "context": ["I have a clear plan", "I feel confident", "I see my future"],
             "gratitude": ["Thank you for the guidance", "This really helped", "I appreciate your support"]
           },
-          "target": "SupportEnd"
+          "next": "SupportEnd"
         },
         "expressUncertainty": {
           "intent": "ei.career.uncertainty",
@@ -713,7 +713,7 @@
             "context": ["I'm scared to take the leap", "I don't know if I can do it", "I'm afraid of failing"],
             "request": ["Can you help me more", "I need more guidance", "I'm still confused"]
           },
-          "target": "CareerGuidanceResponse"
+          "next": "CareerGuidanceResponse"
         }
       }
     },
@@ -727,7 +727,7 @@
             "context": ["I have a plan", "I understand what to do", "I feel more confident"],
             "gratitude": ["Thank you for the advice", "This really helped", "I appreciate your guidance"]
           },
-          "target": "SupportEnd"
+          "next": "SupportEnd"
         },
         "expressSkepticism": {
           "intent": "ei.family.skepticism",
@@ -737,7 +737,7 @@
             "context": ["They've hurt me so many times", "I don't trust them", "I'm afraid to hope"],
             "request": ["Can you help me more", "I need more guidance", "I'm still confused"]
           },
-          "target": "FamilyTherapyResponse"
+          "next": "FamilyTherapyResponse"
         }
       }
     },
@@ -751,7 +751,7 @@
             "context": ["I know what to do", "I feel more confident", "I can get out of this"],
             "gratitude": ["Thank you for the help", "This really helped", "I appreciate your guidance"]
           },
-          "target": "SupportEnd"
+          "next": "SupportEnd"
         },
         "expressOverwhelm": {
           "intent": "ei.financial.overwhelm",
@@ -761,7 +761,7 @@
             "context": ["The debt is so huge", "I don't have the skills", "I'm afraid I can't do it"],
             "request": ["Can you help me more", "I need more guidance", "I need step-by-step help"]
           },
-          "target": "FinancialHelpResponse"
+          "next": "FinancialHelpResponse"
         }
       }
     },
@@ -775,7 +775,7 @@
             "context": ["I know what to do", "I feel prepared", "I can practice these skills"],
             "gratitude": ["Thank you for the advice", "This really helped", "I appreciate your guidance"]
           },
-          "target": "SupportEnd"
+          "next": "SupportEnd"
         },
         "expressFear": {
           "intent": "ei.social.fear",
@@ -785,7 +785,7 @@
             "context": ["I've been hurt before", "I don't know if I can do it", "I'm afraid of being judged"],
             "request": ["Can you help me more", "I need more guidance", "I need more practice"]
           },
-          "target": "SocialSkillsResponse"
+          "next": "SocialSkillsResponse"
         }
       }
     },
@@ -799,7 +799,7 @@
             "context": ["I was really struggling", "You listened", "You understood"],
             "gratitude": ["I'm so grateful", "Thank you for being here", "You made a difference"]
           },
-          "target": "End"
+          "next": "End"
         },
         "expressContinuedNeed": {
           "intent": "ei.end.continued",
@@ -809,7 +809,7 @@
             "context": ["I have more to say", "I need more support", "I'm still struggling"],
             "request": ["Can you keep listening", "I need more time", "I'm not done"]
           },
-          "target": "ContinuedSupport"
+          "next": "ContinuedSupport"
         }
       }
     },
@@ -823,7 +823,7 @@
             "context": ["I have more feelings", "I need more guidance", "I'm not ready to stop"],
             "request": ["Can you keep helping me", "I need more support", "I want to explore this more"]
           },
-          "target": "InitialContact"
+          "next": "InitialContact"
         }
       }
     },

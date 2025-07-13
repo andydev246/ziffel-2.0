@@ -36,7 +36,6 @@ public class FsmLoader {
         public String expectedContains;
         public Map<String, List<String>> rlTemplate;
         
-        @JsonProperty("target")
         public String next;
     }
 

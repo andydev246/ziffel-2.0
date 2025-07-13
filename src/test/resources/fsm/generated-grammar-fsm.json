@@ -3,7 +3,21 @@
   "states" : {
     "Start" : {
       "transitions" : {
-        "askassistance" : {
+        "reportdetails" : {
+          "intent" : "technical.support",
+          "rlTemplate" : {
+            "prefix" : [ "", "Hey", "Hi" ],
+            "action" : [ "need", "want", "looking for" ],
+            "object" : [ "help", "information" ]
+          },
+          "expectedContains" : "general help",
+          "next" : "Problem1"
+        }
+      }
+    },
+    "Confirmation1" : {
+      "transitions" : {
+        "clarifyinformation" : {
           "intent" : "business.inquiry",
           "rlTemplate" : {
             "prefix" : [ "", "Hey", "Hi" ],
@@ -11,13 +25,33 @@
             "object" : [ "help", "information" ]
           },
           "expectedContains" : "general help",
-          "next" : "Question1"
+          "next" : "End"
+        },
+        "asksupport" : {
+          "intent" : "billing.inquiry",
+          "rlTemplate" : {
+            "prefix" : [ "", "Hey", "Hi" ],
+            "action" : [ "have a question about", "need help with", "problem with" ],
+            "object" : [ "my bill", "my payment" ]
+          },
+          "expectedContains" : "billing information",
+          "next" : "Confirmation1"
         }
       }
     },
-    "FollowUp1" : {
+    "Problem2" : {
       "transitions" : {
-        "clarifyinformation" : {
+        "resolveinformation" : {
+          "intent" : "product.information",
+          "rlTemplate" : {
+            "prefix" : [ "", "Hey", "Hi" ],
+            "action" : [ "need", "want", "looking for" ],
+            "object" : [ "help", "information" ]
+          },
+          "expectedContains" : "product details",
+          "next" : "End"
+        },
+        "requestsupport" : {
           "intent" : "general.inquiry",
           "rlTemplate" : {
             "prefix" : [ "", "Hey", "Hi" ],
@@ -25,13 +59,23 @@
             "object" : [ "help", "information" ]
           },
           "expectedContains" : "general help",
-          "next" : "End"
+          "next" : "Solution1"
         }
       }
     },
-    "Question2" : {
+    "Confirmation3" : {
       "transitions" : {
-        "clarifyinformation" : {
+        "reportinformation" : {
+          "intent" : "support.request",
+          "rlTemplate" : {
+            "prefix" : [ "", "Hey", "Hi" ],
+            "action" : [ "need", "want", "looking for" ],
+            "object" : [ "help", "information" ]
+          },
+          "expectedContains" : "support assistance",
+          "next" : "Question1"
+        },
+        "confirminformation" : {
           "intent" : "support.request",
           "rlTemplate" : {
             "prefix" : [ "", "Hey", "Hi" ],
@@ -43,34 +87,10 @@
         }
       }
     },
-    "Confirmation3" : {
-      "transitions" : {
-        "reportinformation" : {
-          "intent" : "product.information",
-          "rlTemplate" : {
-            "prefix" : [ "", "Hey", "Hi" ],
-            "action" : [ "need", "want", "looking for" ],
-            "object" : [ "help", "information" ]
-          },
-          "expectedContains" : "product details",
-          "next" : "Problem1"
-        }
-      }
-    },
     "End" : {
       "transitions" : {
-        "reportdetails" : {
-          "intent" : "business.inquiry",
-          "rlTemplate" : {
-            "prefix" : [ "", "Hey", "Hi" ],
-            "action" : [ "need", "want", "looking for" ],
-            "object" : [ "help", "information" ]
-          },
-          "expectedContains" : "general help",
-          "next" : "Problem1"
-        },
-        "confirmdetails" : {
-          "intent" : "business.inquiry",
+        "askdetails" : {
+          "intent" : "general.inquiry",
           "rlTemplate" : {
             "prefix" : [ "", "Hey", "Hi" ],
             "action" : [ "need", "want", "looking for" ],

@@ -300,7 +300,7 @@ public class ComprehensiveEITest {
         System.out.println("\n=== Testing RL Template Generation ===");
         
         // Load FSM
-        FsmDefinition fsm = FsmLoader.loadFromFile("fsm/comprehensive-ei-support-fsm.json");
+        FsmDefinition fsm = FsmLoader.loadFromFile("ei/fsm/comprehensive-ei-support-fsm.json");
         
         // Test RL template generation for each transition
         for (String stateName : fsm.states.keySet()) {
@@ -339,7 +339,7 @@ public class ComprehensiveEITest {
         System.out.println("\n=== Testing FSM Structure and Validation ===");
         
         // Load FSM
-        FsmDefinition fsm = FsmLoader.loadFromFile("fsm/comprehensive-ei-support-fsm.json");
+        FsmDefinition fsm = FsmLoader.loadFromFile("ei/fsm/comprehensive-ei-support-fsm.json");
         
         System.out.println("Start State: " + fsm.startState);
         System.out.println("Total States: " + fsm.states.size());
