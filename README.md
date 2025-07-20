@@ -1,134 +1,235 @@
-# Ziffel 2.0
+# 🧠 From Conversations to Validation:
+### A Dynamic FSM Framework for Testing Emotional Intelligence in AI
 
-**Model-Based Testing for LLMs using FSMs, RL Templates, and External Oracles**
-
-Ziffel 2.0 is an open-source framework to test Large Language Models (LLMs) like ChatGPT through automated, reproducible, and semantically meaningful test cases. It brings model-based testing principles from traditional software testing into the world of natural language.
-
----
-
-## ✨ What Makes Ziffel 2.0 Unique?
-
-| Feature                   | Description                                                                 |
-|--------------------------|-----------------------------------------------------------------------------|
-| FSM-based flow control   | Define test flows as state machines with labeled transitions                 |
-| Prompt generation (RL)   | Generate varied user prompts using structured DSLs                          |
-| Oracle-based validation  | Validate LLM output using JSON-defined expectations                         |
-| LLM regression testing   | Catch behavior drift across versions or over time                           |
-| CI/CD compatible         | JUnit-driven tests with REST Assured to call OpenAI or other LLM APIs       |
+**By Andres de Vivanco**
 
 ---
 
-## 📁 Project Structure
+## 🎯 The Problem
 
-```tree
-src/
-├── main/
-│ └── java/com/ziffel/
-│ ├── generator/ # FSM and RL prompt generator
-│ └── oracle/ # Oracle loading logic
-├── test/
-│ └── java/com/ziffel/runner/ # JUnit test runner
-│
-└── test/resources/
-├── fsm/ # FSM definitions with RL templates
-└── oracle/ # External oracle JSON by intent
-```
+Modern LLMs can generate coherent text — but can they show **empathy**?
 
-## 🛠️ How It Works
+Can they detect when someone is burned out or lost? Can they follow up with the right **pivot question** — one that nudges the user toward clarity?
 
-### 1. Define FSM Flow (Manual or Auto-Generated)
-In `fsm/example-fsm-rl.json`:
+This is more than NLP. This is about testing **emotional intelligence**.
+
+As an SDET, I wanted a system that doesn't just test grammar or syntax, but can assess whether an AI:
+- Understands user **tone**
+- Responds with **appropriate empathy**
+- Follows up with the right **pivot questions**
+
+---
+
+## 🛠️ Enter: Ziffel 2.0
+
+**Ziffel 2.0** is a dynamic framework that:
+- Scrapes emotional Reddit threads
+- Classifies user turns semantically using **local Sentence Transformers**
+- Extracts **intents**, **orientations**, **tones**, and **pivot questions**
+- Builds and **walks a Finite State Machine (FSM)** in real-time
+- Validates every AI response against a structured **Oracle**
+
+---
+
+## 🧱 Architecture Overview
+
+![Architecture Diagram](https://via.placeholder.com/800x400.png?text=FSM+Pipeline+Architecture)
+
+> _(You can replace this with a diagram made using Mermaid, draw.io, etc.)_
+
+---
+
+### 1. 🧵 Reddit Thread Fetching
+
+Given only the name of a subreddit (`r/DecidingToBeBetter`), we use:
+
+- **`RedditMarkdownFetcher`** – Downloads conversation threads  
+- **`MarkdownParser`** – Parses these into structured dialog turns between a user and a "therapist" or responder.
+
+---
+
+### 2. 🧠 Intent Detection via Local Embeddings
+
+No OpenAI used here. We use **Sentence Transformers** (via HuggingFace) locally to embed each utterance, then:
+
+- Reduce embeddings via **UMAP**
+- Cluster them with **KMeans or DBSCAN**
+- Assign inferred **intent IDs** per cluster (e.g. `user.burnout`, `user.fear`)
+
+This allows us to build the FSM semantically — **no pre-labeled data needed**.
+
+---
+
+### 3. 🎭 Orientation, Tone & Pivot Extraction
+
+Each turn is classified by:
+- **Orientation:** `practical`, `emotional`, `spiritual`, `mixed`
+- **Tone:** `empathetic`, `encouraging`, `reflective`, etc.
+- **Pivot Question:** Identified by looking for question marks and analyzing context.
+
+---
+
+### 4. 🔄 FSM & Oracle Generation
+
+The FSM represents conversation flow. The Oracle defines what we expect.
+
+Here’s a **complex FSM** dynamically generated from Reddit:
+
+---
+
+### ✅ FSM Example: Multi-Path Emotional Branching
+
 ```json
-"transitions": {
-  "forgotPassword": {
-    "intent": "account.reset",
-    "rlTemplate": {
-      "action": ["forgot", "lost"],
-      "object": ["password"]
+{
+  "startState": "Neutral",
+  "states": {
+    "Neutral": {
+      "transitions": {
+        "t0": {
+          "prompt": "I just feel stuck, like I’m not making progress in life.",
+          "intent": "user.stuck",
+          "orientation": "mixed",
+          "expectedContains": "That can be tough to deal with",
+          "expectedTone": "empathetic",
+          "expectedPivot": "what's holding you back?",
+          "next": ["ExploreFear", "SeekMotivation", "DiscussRoutine"]
+        }
+      }
+    },
+    "ExploreFear": {
+      "transitions": {
+        "t1": {
+          "prompt": "I think I’m afraid of failing again.",
+          "intent": "user.fear",
+          "orientation": "emotional",
+          "expectedContains": "Fear of failure is very common",
+          "expectedTone": "reassuring",
+          "expectedPivot": "where do you think that fear comes from?",
+          "next": "Exit"
+        }
+      }
+    },
+    "SeekMotivation": {
+      "transitions": {
+        "t2": {
+          "prompt": "I just need something to get me moving.",
+          "intent": "user.unmotivated",
+          "orientation": "action-oriented",
+          "expectedContains": "Let's try identifying small wins",
+          "expectedTone": "encouraging",
+          "expectedPivot": "what’s one thing you could do today?",
+          "next": "Exit"
+        }
+      }
+    },
+    "DiscussRoutine": {
+      "transitions": {
+        "t3": {
+          "prompt": "My days feel chaotic. I need more structure.",
+          "intent": "user.needsStructure",
+          "orientation": "practical",
+          "expectedContains": "Structure can really help with consistency",
+          "expectedTone": "practical",
+          "expectedPivot": "have you tried scheduling small habits?",
+          "next": "Exit"
+        }
+      }
+    },
+    "Exit": {
+      "transitions": {}
     }
   }
 }
 ```
 
-### 2. Define Expected Outputs (Oracle)
-In `oracle/intents.json`:
+### 🧪 Oracle (Validation Layer)
+
 ```json
-"account.reset": {
-"expectedContains": ["reset your password", "recover access"]
+{
+  "Neutral": {
+    "t0": {
+      "expectedContains": "That can be tough to deal with",
+      "expectedTone": "empathetic",
+      "expectedPivot": "what's holding you back?"
+    }
+  },
+  "ExploreFear": {
+    "t1": {
+      "expectedContains": "Fear of failure is very common",
+      "expectedTone": "reassuring",
+      "expectedPivot": "where do you think that fear comes from?"
+    }
+  },
+  "SeekMotivation": {
+    "t2": {
+      "expectedContains": "Let's try identifying small wins",
+      "expectedTone": "encouraging",
+      "expectedPivot": "what’s one thing you could do today?"
+    }
+  },
+  "DiscussRoutine": {
+    "t3": {
+      "expectedContains": "Structure can really help with consistency",
+      "expectedTone": "practical",
+      "expectedPivot": "have you tried scheduling small habits?"
+    }
+  }
 }
 ```
+---
 
-### 3. Run the Tests
-```bash
-mvn test
-```
-* (Or Tests can be run from IntelliJ using JUnit)
-* Prompts are generated from RL templates
-* Sent to the LLM via API
-* Responses are matched against oracles
-* Failures indicate unexpected or degraded model behavior
+### 5 🧪 How We Validate
 
-## 🤖 Auto-Generation Features
+Every step of the FSM is tested in real time:
+- Prompt is sent to OpenAI or another LLM
+- Response is checked for:
+  - `expectedContains`
+  - `expectedTone` (via lightweight sentiment model)
+  - `expectedPivot` (string matching or fuzzy matching)
+- If correct → walk to next state
+- If incorrect → fail and log
 
-### Grammar-Based FSM Generation
-Generate FSMs using predefined grammar templates:
+---
 
-```bash
-# Using CLI
-java -cp target/classes com.ziffel.cli.FsmGeneratorCLI grammar fsm.json 5 3 0.4
+### 6 🔁 Progressive Execution
 
-# Using Java API
-GrammarBasedFsmGenerator generator = new GrammarBasedFsmGenerator();
-FsmGenerationConfig config = new FsmGenerationConfig();
-config.maxStates = 5;
-config.maxTransitionsPerState = 3;
-String fsmJson = generator.generateFsmJson(config);
-```
+The tool expands the FSM and Oracle dynamically:
+1. Start with first N dialog turns from Reddit
+2. Build FSM + Oracle
+3. Run test runner to validate
+4. Continue reading next N turns
+5. Expand FSM and Oracle
+6. Resume walk from last known state
 
-### Wikipedia-Based Content Generation
-Generate domain-specific FSMs using Wikipedia content:
+This makes it capable of running against entire threads over time — like an infinite test crawl of emotional intelligence.
 
-```bash
-# Using CLI
-java -cp target/classes com.ziffel.cli.FsmGeneratorCLI wikipedia "artificial intelligence" 3 fsm.json oracle.json
+---
 
-# Using Java API
-WikipediaContentGenerator generator = new WikipediaContentGenerator();
-List<WikiTopic> topics = generator.searchAndExtractTopics("machine learning", 5);
-String fsmJson = generator.generateDomainSpecificFsm(topics, config);
-Map<String, Object> oracle = generator.generateOracleFromTopics(topics, config);
-```
+### 7. Why This Matters
 
-### Hybrid Generation
-Combine grammar templates with Wikipedia content:
+✅ No human labeling required
 
-```bash
-# Using CLI
-java -cp target/classes com.ziffel.cli.FsmGeneratorCLI hybrid "software testing" 2 fsm.json oracle.json
-```
+✅ Fully dynamic and evolving
 
-## 🔮 Why This Matters
-LLMs like ChatGPT often respond fluently—but not always correctly. Ziffel 2.0 focuses on semantic validation by explicitly modeling the expected intent and content of responses.
+✅ Tests tone, empathy, and conversation flow
 
-## 📦 Dependencies
-* Java 17+
-* Maven
-* JUnit 5
-* Rest Assured
-* Jackson (for JSON)
-* Jsoup (for web scraping)
-* Stanford CoreNLP (for NLP)
-* Apache OpenNLP (for grammar processing)
+✅ Uses real human data
 
-## 🚀 Roadmap
-* Support for multi-turn conversations
-* LLM-as-an-oracle fallback validation
-* CLI for FSM & oracle management
-* LangChain/OpenAI eval integration
-* Plugin for VSCode/intelliJ authoring
+✅ Independent of the LLM being tested
 
-## 🙌 Credits
-Ziffel 2.0 is inspired by the original Ziffel model-based testing tool developed at Microsoft, now reimagined for the LLM era.
+---
 
-## 📫 Contribute
-Open an issue, fork the repo, or reach out. Help shape the future of automated LLM testing!
+### 🧬 Origins
+
+Ziffel 2.0 is inspired by Ziffel, the model-based testing framework I wrote during my internship at Microsoft in 2000, under the mentorship of Harry Robinson.
+
+This new version takes that legacy forward — into the realm of AI and human emotions.
+
+---
+
+### 🚀 What’s Next
+
+I'm preparing to release the tool as open source. If you care about AI alignment, emotional UX, or human-centered QA, I'd love to collaborate.
+
+
+
