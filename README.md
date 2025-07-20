@@ -180,9 +180,9 @@ Here’s a **complex FSM** dynamically generated from Reddit:
 Every step of the FSM is tested in real time:
 - Prompt is sent to OpenAI or another LLM
 - Response is checked for:
-    - `expectedContains`
-    - `expectedTone` (via lightweight sentiment model)
-    - `expectedPivot` (string matching or fuzzy matching)
+  - `expectedContains`
+  - `expectedTone` (via lightweight sentiment model)
+  - `expectedPivot` (string matching or fuzzy matching)
 - If correct → walk to next state
 - If incorrect → fail and log
 
